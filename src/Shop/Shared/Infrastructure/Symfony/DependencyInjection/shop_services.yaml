@@ -1,0 +1,19 @@
+services:
+  # Databases
+  Doctrine\ORM\EntityManager:
+    factory: [ 'TyCode\Shop\Shared\Infrastructure\Doctrine\ProductEntityManagerFactory', 'create' ]
+    arguments:
+      - driver: '%env(SHOP_DATABASE_DRIVER)%'
+        host: '%env(SHOP_DATABASE_HOST)%'
+        port: '%env(SHOP_DATABASE_PORT)%'
+        dbname: '%env(SHOP_DATABASE_NAME)%'
+        user: '%env(SHOP_DATABASE_USER)%'
+        password: '%env(SHOP_DATABASE_PASSWORD)%'
+      - '%env(APP_ENV)%'
+    tags:
+      - { name: tycode.database_connection }
+    public: true
+
+
+  # Product
+  TyCode\Shop\Product\Domain\ProductRepository: '@TyCode\Shop\Product\Infrastructure\Persistence\DoctrineProductRepository'

@@ -34,13 +34,13 @@ POST http://127.0.0.1:8000/product
 Content-Type: application/json
 
 {
-    "id": "766c5451-3288-4f3d-b84c-74d37d1e66k5",
-    "name": "Samsumg S23 Ultra",
-    "price": 1100.50,
+    "id": "1d17967b-5c10-4c6f-9d6e-6fa060b62044",
+    "name": "Samsumg S22 Ultra",
+    "price": 899.50,
     "images": [
         "localhost/image1",
         "localhost/image2",
         "localhost/image3"
     ],
-    "stockQuantity": 25
+    "stockQuantity": 56
 }

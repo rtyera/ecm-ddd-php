@@ -1,4 +1,0 @@
-health_check_get:
-  path: /health-check
-  controller: TyCode\Product\Infrastructure\Web\HealthCheck\HealthCheckGetController
-  methods:  [GET]

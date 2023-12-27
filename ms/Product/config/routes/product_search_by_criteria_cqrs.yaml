@@ -1,4 +1,0 @@
-product_search_by_criteria_cqrs_get:
-  path: /product-by-criteria-cqrs
-  controller: TyCode\Product\Infrastructure\Web\Product\GetProductByCriteriaCQRS
-  methods:  [GET]
