@@ -1,0 +1,39 @@
+imports:
+    - { resource: ../../../src/Product/Shared/Infrastructure/Symfony/DependencyInjection/product_services.yaml }
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    # Configure
+    _instanceof:
+        TyCode\Shared\Domain\Bus\Command\CommandHandler:
+            tags: ['tycode.command_handler']
+
+        TyCode\Shared\Domain\Bus\Query\QueryHandler:
+            tags: ['tycode.query_handler']
+
+    TyCode\Product\:
+        resource: '../../../src/Product'
+        exclude:
+            - '../../../src/Product/Domain/Product/Products.php'
+
+    TyCode\Shared\:
+        resource: '../../../src/Shared'
+
+    TyCode\Product\Infrastructure\Web\:
+        resource: '../../../src/Product/Infrastructure/Web'
+        tags: ['controller.service_arguments']
+
+    # Command/Query Handlers
+    TyCode\Shared\Infrastructure\Bus\Command\SymfonyMessageCommandBus:
+        arguments: [!tagged tycode.command_handler]
+
+    TyCode\Shared\Infrastructure\Bus\Query\SymfonyMessageQueryBus:
+        arguments: [!tagged tycode.query_handler]
+
+    TyCode\Shared\Domain\Bus\Command\CommandBus: '@TyCode\Shared\Infrastructure\Bus\Command\SymfonyMessageCommandBus'
+
+    TyCode\Shared\Domain\Bus\Query\QueryBus: '@TyCode\Shared\Infrastructure\Bus\Query\SymfonyMessageQueryBus'
+

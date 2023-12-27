@@ -1,0 +1,9 @@
+controllers:
+    resource:
+        path: ../../../../src/Product/Infrastructure/Web/
+        namespace: TyCode\Product\Infrastructure\Web
+    type: attribute
+
+kernel:
+    resource: TyCode\ms\Product\ProductKernel
+    type: attribute
