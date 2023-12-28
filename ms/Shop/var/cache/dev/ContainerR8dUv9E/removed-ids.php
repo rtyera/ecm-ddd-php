@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerUiLL25I;
+namespace ContainerR8dUv9E;
 
 return [
     '.Psr\\Container\\ContainerInterface $parameter_bag' => true,
@@ -169,6 +169,7 @@ return [
     'TyCode\\Shared\\Domain\\Criteria\\OrderBy' => true,
     'TyCode\\Shared\\Domain\\Criteria\\OrderType' => true,
     'TyCode\\Shared\\Domain\\Utils' => true,
+    'TyCode\\Shared\\Domain\\ValueObject\\JsonTypeInterface' => true,
     'TyCode\\Shared\\Domain\\ValueObject\\Uuid' => true,
     'TyCode\\Shared\\Infrastructure\\Bus\\Command\\SymfonyMessageCommandBus' => true,
     'TyCode\\Shared\\Infrastructure\\Bus\\Query\\SymfonyMessageQueryBus' => true,
@@ -185,7 +186,9 @@ return [
     'TyCode\\Shared\\Infrsatructure\\HttpQuery\\QueryCriteriaConverter' => true,
     'TyCode\\Shared\\Infrsatructure\\Persistence\\Doctrine\\DoctrineCriteriaConverter' => true,
     'TyCode\\Shared\\Infrsatructure\\Persistence\\Doctrine\\DoctrineRepository' => true,
+    'TyCode\\Shared\\Infrsatructure\\Persistence\\Doctrine\\JsonCustomType' => true,
     'TyCode\\Shared\\Infrsatructure\\Persistence\\Doctrine\\UuidType' => true,
+    'TyCode\\Shop\\ProductReview\\Domain\\ProductReview' => true,
     'TyCode\\Shop\\Product\\Application\\CQRS\\Create\\CreateProductCommand' => true,
     'TyCode\\Shop\\Product\\Application\\CQRS\\Create\\CreateProductCommandHandler' => true,
     'TyCode\\Shop\\Product\\Application\\CQRS\\FindByCriteria\\FindProductByCriteriaQuery' => true,
@@ -201,11 +204,16 @@ return [
     'TyCode\\Shop\\Product\\Domain\\ProductImages' => true,
     'TyCode\\Shop\\Product\\Domain\\ProductName' => true,
     'TyCode\\Shop\\Product\\Domain\\ProductPrice' => true,
+    'TyCode\\Shop\\Product\\Domain\\ProductRating' => true,
     'TyCode\\Shop\\Product\\Domain\\ProductRepository' => true,
+    'TyCode\\Shop\\Product\\Domain\\ProductReviews' => true,
     'TyCode\\Shop\\Product\\Domain\\ProductStockQuantity' => true,
     'TyCode\\Shop\\Product\\Domain\\Products' => true,
+    'TyCode\\Shop\\Product\\Domain\\Review' => true,
+    'TyCode\\Shop\\Product\\Domain\\Reviews' => true,
     'TyCode\\Shop\\Product\\Infrastructure\\Persistence\\DoctrineProductRepository' => true,
     'TyCode\\Shop\\Product\\Infrastructure\\Persistence\\Doctrine\\ProductIdType' => true,
+    'TyCode\\Shop\\Product\\Infrastructure\\Persistence\\Doctrine\\ProductReviewsType' => true,
     'TyCode\\Shop\\Shared\\Infrastructure\\Doctrine\\DbalTypesSearcher' => true,
     'TyCode\\Shop\\Shared\\Infrastructure\\Doctrine\\DoctrinePrefixesSearcher' => true,
     'TyCode\\Shop\\Shared\\Infrastructure\\Doctrine\\ProductEntityManagerFactory' => true,

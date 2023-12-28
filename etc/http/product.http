@@ -26,7 +26,14 @@ Content-Type: application/json
         "localhost/image2",
         "localhost/image3"
     ],
-    "stockQuantity": 30
+    "stockQuantity": 30,
+    "rating": 4,
+    "reviews": [
+        {
+            "message" : "Sansumg is my favotire",
+            "authorFullName" : "X Alfonso"
+        }
+    ]
 }
 
 ###
@@ -34,13 +41,13 @@ POST http://127.0.0.1:8000/product
 Content-Type: application/json
 
 {
-    "id": "1d17967b-5c10-4c6f-9d6e-6fa060b62044",
-    "name": "Samsumg S22 Ultra",
-    "price": 899.50,
+    "id": "eb0c69b9-160f-480a-98e3-36f9f142cc03",
+    "name": "Samsumg S20",
+    "price": 600.50,
     "images": [
         "localhost/image1",
         "localhost/image2",
         "localhost/image3"
     ],
-    "stockQuantity": 56
+    "stockQuantity": 70
 }

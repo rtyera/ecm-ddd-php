@@ -9,7 +9,9 @@ use TyCode\Shop\Product\Domain\ProductId;
 use TyCode\Shop\Product\Domain\ProductImages;
 use TyCode\Shop\Product\Domain\ProductName;
 use TyCode\Shop\Product\Domain\ProductPrice;
+use TyCode\Shop\Product\Domain\ProductRating;
 use TyCode\Shop\Product\Domain\ProductRepository;
+use TyCode\Shop\Product\Domain\ProductReviews;
 use TyCode\Shop\Product\Domain\ProductStockQuantity;
 
 final class ProductCreator
@@ -18,9 +20,15 @@ final class ProductCreator
     {
     }
 
-    public function __invoke(ProductId $id, ProductName $name, ProductPrice $price, ProductImages $productImages, ProductStockQuantity $stockQuantity): void
+    public function __invoke(ProductId $id,
+                            ProductName $name,
+                            ProductPrice $price,
+                            ProductImages $productImages,
+                            ProductStockQuantity $stockQuantity,
+                            ProductRating $rating,
+                            ProductReviews $reviews): void
     {
-        $product = Product::create($id, $name, $price, $productImages, $stockQuantity);
+        $product = Product::create($id, $name, $price, $productImages, $stockQuantity, $rating, $reviews);
 
         $this->repository->save($product);
     }

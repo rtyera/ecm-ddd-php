@@ -12,7 +12,9 @@ final class CreateProductCommand implements Command
                                 private readonly string $name,
                                 private readonly float $price,
                                 private readonly array $images,
-                                private readonly int $stockQuantity)
+                                private readonly int $stockQuantity,
+                                private readonly ?int $rating = null,
+                                private readonly ?array $reviews = null)
     {
     }
 
@@ -39,5 +41,15 @@ final class CreateProductCommand implements Command
     public function stockQuantity(): int
     {
         return $this->stockQuantity;
+    }
+
+    public function rating(): ?int
+    {
+        return $this->rating;
+    }
+
+    public function reviews(): ?array
+    {
+        return $this->reviews;
     }
 }

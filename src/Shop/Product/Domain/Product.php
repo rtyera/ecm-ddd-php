@@ -12,7 +12,9 @@ final class Product extends AggregateRoot
                                 private readonly ProductName $name,
                                 private readonly ProductPrice $price,
                                 private readonly ProductImages $images,
-                                private readonly ProductStockQuantity $stockQuantity)
+                                private readonly ProductStockQuantity $stockQuantity,
+                                private readonly ProductRating $rating,
+                                private readonly ProductReviews $reviews)
     {
     }
 
@@ -21,9 +23,11 @@ final class Product extends AggregateRoot
         ProductName $name,
         ProductPrice $price,
         ProductImages $images,
-        ProductStockQuantity $stockQuantity): self
+        ProductStockQuantity $stockQuantity,
+        ProductRating $rating,
+        ProductReviews $reviews): self
     {
-        $product = new self($id, $name, $price, $images, $stockQuantity);
+        $product = new self($id, $name, $price, $images, $stockQuantity, $rating, $reviews);
 
         return $product;
     }
@@ -52,19 +56,14 @@ final class Product extends AggregateRoot
     {
         return $this->stockQuantity->value();
     }
-
-    public function isAvailable() : bool
+    public function rating(): int
     {
-        return true;
+        return $this->rating->value();
     }
 
-    public static function fromPrimitives(array $primitives): Product
+    public function reviews(): array
     {
-        return new self(new ProductId($primitives['id']),
-                        new ProductName($primitives['name']),
-                        new ProductPrice($primitives['price']),
-                        new ProductImages($primitives['images']),
-                        new ProductStockQuantity($primitives['stockQuantity']));
+        return $this->reviews->value();
     }
 
     public function toPrimitives(): array
@@ -74,7 +73,9 @@ final class Product extends AggregateRoot
             'name'          => $this->name->value(),
             'price'         => $this->price->value(),
             'images'        => $this->images->value(),
-            'stockQuantity' => $this->stockQuantity->value()
+            'stockQuantity' => $this->stockQuantity->value(),
+            'rating'        => $this->rating->value(),
+            'reviews'       => $this->reviews->value()
         ];
     }
 }

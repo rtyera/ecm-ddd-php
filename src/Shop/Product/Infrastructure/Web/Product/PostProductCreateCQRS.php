@@ -21,7 +21,9 @@ final class PostProductCreateCQRS
             $parameters['name'],
             (float)$parameters['price'],
             (array)$parameters['images'],
-            (int)$parameters['stockQuantity']
+            (int)$parameters['stockQuantity'],
+            array_key_exists('rating', $parameters) ? (int)$parameters['rating'] : null,
+            array_key_exists('reviews', $parameters) ? (array)$parameters['reviews'] : null
         );
 
         $commandBus->dispatch($createProductCommand);

@@ -9,8 +9,10 @@ use TyCode\Shop\Product\Domain\ProductId;
 use TyCode\Shop\Product\Domain\ProductImages;
 use TyCode\Shop\Product\Domain\ProductName;
 use TyCode\Shop\Product\Domain\ProductPrice;
+use TyCode\Shop\Product\Domain\ProductRating;
 use TyCode\Shop\Product\Domain\ProductStockQuantity;
 use TyCode\Shared\Domain\Bus\Command\CommandHandler;
+use TyCode\Shop\Product\Domain\ProductReviews;
 
 final class CreateProductCommandHandler implements CommandHandler
 {
@@ -25,7 +27,9 @@ final class CreateProductCommandHandler implements CommandHandler
         $price          = new ProductPrice($command->price());
         $images         = new ProductImages($command->images());
         $stockQuantity  = new ProductStockQuantity($command->stockQuantity());
+        $rating         = new ProductRating($command->rating());
+        $reviews        = ProductReviews::fromPrimitives($command->reviews());
 
-        $this->productCreator->__invoke($id, $name, $price, $images, $stockQuantity);
+        $this->productCreator->__invoke($id, $name, $price, $images, $stockQuantity, $rating, $reviews);
     }
 }

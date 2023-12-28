@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg', 'embed'], true)) {
 }
 
 require dirname(__DIR__, 5).''.\DIRECTORY_SEPARATOR.'vendor/autoload.php';
-(require __DIR__.'/TyCode_ms_Shop_ShopKernelDevDebugContainer.php')->set(\ContainerUiLL25I\TyCode_ms_Shop_ShopKernelDevDebugContainer::class, null);
+(require __DIR__.'/TyCode_ms_Shop_ShopKernelDevDebugContainer.php')->set(\ContainerR8dUv9E\TyCode_ms_Shop_ShopKernelDevDebugContainer::class, null);
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';

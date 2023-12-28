@@ -9,8 +9,8 @@
     <parameter key="kernel.runtime_mode.cli">%env(not:default:kernel.runtime_mode.web:)%</parameter>
     <parameter key="kernel.runtime_mode.worker">%env(bool:default::key:worker:default:kernel.runtime_mode:)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev</parameter>
-    <parameter key="kernel.cache_dir">D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev</parameter>
+    <parameter key="kernel.build_dir">D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev</parameter>
+    <parameter key="kernel.cache_dir">D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev</parameter>
     <parameter key="kernel.logs_dir">D:\Study\vhosts-php\ecommerce\ms\Shop\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
@@ -55,12 +55,12 @@
     <parameter key="kernel.error_controller">error_controller</parameter>
     <parameter key="debug.file_link_format">%env(default::SYMFONY_IDE)%</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/TyCode_ms_Shop_ShopKernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/TyCode_ms_Shop_ShopKernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
-    <parameter key="router.cache_dir">D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev</parameter>
+    <parameter key="router.cache_dir">D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
     <parameter key="cache.prefix.seed">_D:\Study\vhosts-php\ecommerce\ms\Shop.TyCode_ms_Shop_ShopKernelDevDebugContainer</parameter>
@@ -99,6 +99,7 @@
     <service id="TyCode\Shop\Product\Domain\Products" class="TyCode\Shop\Product\Domain\Products" abstract="true">
       <tag name="container.excluded" source="in &quot;config/services.yaml&quot;"/>
     </service>
+    <service id="TyCode\Shop\ProductReview\Domain\ProductReview" class="TyCode\Shop\ProductReview\Domain\ProductReview" autowire="true" autoconfigure="true"/>
     <service id="TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommand" class="TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommand" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommand&quot;: argument &quot;$id&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
     </service>
@@ -134,6 +135,8 @@
       <argument type="service" id="TyCode\Shop\Product\Domain\ProductPrice"/>
       <argument type="service" id="TyCode\Shop\Product\Domain\ProductImages"/>
       <argument type="service" id="TyCode\Shop\Product\Domain\ProductStockQuantity"/>
+      <argument type="service" id="TyCode\Shop\Product\Domain\ProductRating"/>
+      <argument type="service" id="TyCode\Shop\Product\Domain\ProductReviews"/>
     </service>
     <service id="TyCode\Shop\Product\Domain\ProductDesc" class="TyCode\Shop\Product\Domain\ProductDesc" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Product\Domain\ProductDesc&quot;: argument &quot;$value&quot; of method &quot;TyCode\Shared\Domain\ValueObject\StringValueObject::__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
@@ -150,14 +153,29 @@
     <service id="TyCode\Shop\Product\Domain\ProductPrice" class="TyCode\Shop\Product\Domain\ProductPrice" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Product\Domain\ProductPrice&quot;: argument &quot;$value&quot; of method &quot;__construct()&quot; is type-hinted &quot;float&quot;, you should configure its value explicitly."/>
     </service>
+    <service id="TyCode\Shop\Product\Domain\ProductRating" class="TyCode\Shop\Product\Domain\ProductRating" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Product\Domain\ProductRating&quot;: argument &quot;$value&quot; of method &quot;__construct()&quot; is type-hinted &quot;int&quot;, you should configure its value explicitly."/>
+    </service>
+    <service id="TyCode\Shop\Product\Domain\ProductReviews" class="TyCode\Shop\Product\Domain\ProductReviews" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Class &quot;TyCode\Shared\Domain\ValueObject\JsonInterface&quot; not found while loading &quot;TyCode\Shop\Product\Domain\ProductReviews&quot;."/>
+    </service>
     <service id="TyCode\Shop\Product\Domain\ProductStockQuantity" class="TyCode\Shop\Product\Domain\ProductStockQuantity" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Product\Domain\ProductStockQuantity&quot;: argument &quot;$value&quot; of method &quot;TyCode\Shared\Domain\ValueObject\IntValueObject::__construct()&quot; is type-hinted &quot;int&quot;, you should configure its value explicitly."/>
+    </service>
+    <service id="TyCode\Shop\Product\Domain\Review" class="TyCode\Shop\Product\Domain\Review" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Product\Domain\Review&quot;: argument &quot;$message&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
+    </service>
+    <service id="TyCode\Shop\Product\Domain\Reviews" class="TyCode\Shop\Product\Domain\Reviews" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Product\Domain\Reviews&quot;: argument &quot;$items&quot; of method &quot;TyCode\Shared\Domain\Collection::__construct()&quot; is type-hinted &quot;array&quot;, you should configure its value explicitly."/>
     </service>
     <service id="TyCode\Shop\Product\Infrastructure\Persistence\DoctrineProductRepository" class="TyCode\Shop\Product\Infrastructure\Persistence\DoctrineProductRepository" autowire="true" autoconfigure="true">
       <argument type="service" id="Doctrine\ORM\EntityManager"/>
     </service>
     <service id="TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductIdType" class="TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductIdType" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Class &quot;TyCode\Shared\Infrastructure\Persistence\Doctrine\UuidType&quot; not found while loading &quot;TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductIdType&quot;."/>
+    </service>
+    <service id="TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductReviewsType" class="TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductReviewsType" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Class &quot;TyCode\Shared\Infrastructure\Persistence\Doctrine\JsonCustomType&quot; not found while loading &quot;TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductReviewsType&quot;."/>
     </service>
     <service id="TyCode\Shop\Product\Infrastructure\Web\HealthCheck\HealthCheckGetController" class="TyCode\Shop\Product\Infrastructure\Web\HealthCheck\HealthCheckGetController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
@@ -218,6 +236,9 @@
       <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shared\Domain\Criteria\OrderType&quot;: argument &quot;$value&quot; of method &quot;TyCode\Shared\Domain\ValueObject\Enum::__construct()&quot; has no type-hint, you should configure its value explicitly."/>
     </service>
     <service id="TyCode\Shared\Domain\Utils" class="TyCode\Shared\Domain\Utils" autowire="true" autoconfigure="true"/>
+    <service id="TyCode\Shared\Domain\ValueObject\JsonTypeInterface" class="TyCode\Shared\Domain\ValueObject\JsonTypeInterface" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Domain\ValueObject\JsonTypeInterface&quot; to be defined in file &quot;D:\Study\vhosts-php\ecommerce\vendor\composer/../../src\Shared\Domain\ValueObject\JsonTypeInterface.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
     <service id="TyCode\Shared\Domain\ValueObject\Uuid" class="TyCode\Shared\Domain\ValueObject\Uuid" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shared\Domain\ValueObject\Uuid&quot;: argument &quot;$value&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
     </service>
@@ -259,6 +280,9 @@
     </service>
     <service id="TyCode\Shared\Infrsatructure\Persistence\Doctrine\DoctrineRepository" class="TyCode\Shared\Infrsatructure\Persistence\Doctrine\DoctrineRepository" autowire="true" autoconfigure="true">
       <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Persistence\Doctrine\DoctrineRepository&quot; to be defined in file &quot;D:\Study\vhosts-php\ecommerce\vendor\composer/../../src\Shared\Infrsatructure\Persistence\Doctrine\DoctrineRepository.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
+    <service id="TyCode\Shared\Infrsatructure\Persistence\Doctrine\JsonCustomType" class="TyCode\Shared\Infrsatructure\Persistence\Doctrine\JsonCustomType" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Persistence\Doctrine\JsonCustomType&quot; to be defined in file &quot;D:\Study\vhosts-php\ecommerce\vendor\composer/../../src\Shared\Infrsatructure\Persistence\Doctrine\JsonCustomType.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
     </service>
     <service id="TyCode\Shared\Infrsatructure\Persistence\Doctrine\UuidType" class="TyCode\Shared\Infrsatructure\Persistence\Doctrine\UuidType" autowire="true" autoconfigure="true">
       <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Persistence\Doctrine\UuidType&quot; to be defined in file &quot;D:\Study\vhosts-php\ecommerce\vendor\composer/../../src\Shared\Infrsatructure\Persistence\Doctrine\UuidType.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
@@ -373,7 +397,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/http_cache</argument>
+      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -383,7 +407,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/TyCode_ms_Shop_ShopKernelDevDebugContainerDeprecations.log</argument>
+      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/TyCode_ms_Shop_ShopKernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer">
       <argument type="tagged_iterator" tag="kernel.cache_clearer"/>
@@ -965,7 +989,7 @@
       <tag name="kernel.reset" method="reset"/>
       <argument>5-BmoUcYie</argument>
       <argument>0</argument>
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/app</argument>
+      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -981,7 +1005,7 @@
       <argument>WvGrRDR1Mx</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
+      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -991,7 +1015,7 @@
       <argument>YawXUAUzoY</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
+      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1001,7 +1025,7 @@
       <argument>FcHFDs17ZQ</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
+      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1011,7 +1035,7 @@
       <argument>RRu6rNuY51</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
+      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1021,7 +1045,7 @@
       <argument>JSe7lgcgHa</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
+      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1030,7 +1054,7 @@
       <tag name="kernel.reset" method="reset"/>
       <argument>rHIhqUEtnq</argument>
       <argument>0</argument>
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/app</argument>
+      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1042,7 +1066,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
+      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1061,7 +1085,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/app</argument>
+      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1553,7 +1577,7 @@
       <argument type="service" id=".service_locator.PvoQzFT.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev</argument>
+        <argument key="cache_dir">D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -1664,7 +1688,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/sessions</argument>
+      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
