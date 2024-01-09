@@ -9,8 +9,8 @@
     <parameter key="kernel.runtime_mode.cli">%env(not:default:kernel.runtime_mode.web:)%</parameter>
     <parameter key="kernel.runtime_mode.worker">%env(bool:default::key:worker:default:kernel.runtime_mode:)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev</parameter>
-    <parameter key="kernel.cache_dir">D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev</parameter>
+    <parameter key="kernel.build_dir">D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev</parameter>
+    <parameter key="kernel.cache_dir">D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev</parameter>
     <parameter key="kernel.logs_dir">D:\Study\vhosts-php\ecommerce\ms\Shop\var\log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
@@ -55,12 +55,12 @@
     <parameter key="kernel.error_controller">error_controller</parameter>
     <parameter key="debug.file_link_format">%env(default::SYMFONY_IDE)%</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/TyCode_ms_Shop_ShopKernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/TyCode_ms_Shop_ShopKernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
-    <parameter key="router.cache_dir">D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev</parameter>
+    <parameter key="router.cache_dir">D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
     <parameter key="cache.prefix.seed">_D:\Study\vhosts-php\ecommerce\ms\Shop.TyCode_ms_Shop_ShopKernelDevDebugContainer</parameter>
@@ -94,12 +94,14 @@
         <argument key="password">%env(SHOP_DATABASE_PASSWORD)%</argument>
       </argument>
       <argument>%env(APP_ENV)%</argument>
-      <factory class="TyCode\Shop\Shared\Infrastructure\Doctrine\ProductEntityManagerFactory" method="create"/>
+      <factory class="TyCode\Shop\Shared\Infrastructure\Doctrine\ShopEntityManagerFactory" method="create"/>
     </service>
     <service id="TyCode\Shop\Product\Domain\Products" class="TyCode\Shop\Product\Domain\Products" abstract="true">
       <tag name="container.excluded" source="in &quot;config/services.yaml&quot;"/>
     </service>
-    <service id="TyCode\Shop\ProductReview\Domain\ProductReview" class="TyCode\Shop\ProductReview\Domain\ProductReview" autowire="true" autoconfigure="true"/>
+    <service id="TyCode\Shop\Review\Domain\Reviews" class="TyCode\Shop\Review\Domain\Reviews" abstract="true">
+      <tag name="container.excluded" source="in &quot;config/services.yaml&quot;"/>
+    </service>
     <service id="TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommand" class="TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommand" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommand&quot;: argument &quot;$id&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
     </service>
@@ -177,33 +179,63 @@
     <service id="TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductReviewsType" class="TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductReviewsType" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Class &quot;TyCode\Shared\Infrastructure\Persistence\Doctrine\JsonCustomType&quot; not found while loading &quot;TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductReviewsType&quot;."/>
     </service>
-    <service id="TyCode\Shop\Product\Infrastructure\Web\HealthCheck\HealthCheckGetController" class="TyCode\Shop\Product\Infrastructure\Web\HealthCheck\HealthCheckGetController" public="true" autowire="true" autoconfigure="true">
+    <service id="TyCode\Shop\Product\Infrastructure\Web\GetProduct" class="TyCode\Shop\Product\Infrastructure\Web\GetProduct" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteria" class="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteria" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteriaCQRS" class="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteriaCQRS" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="TyCode\Shop\Product\Infrastructure\Web\GetProducts" class="TyCode\Shop\Product\Infrastructure\Web\GetProducts" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="TyCode\Shop\Product\Infrastructure\Web\HealthCheckGetController" class="TyCode\Shop\Product\Infrastructure\Web\HealthCheckGetController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="TyCode\Shop\Product\Infrastructure\Web\PostProductCreate" class="TyCode\Shop\Product\Infrastructure\Web\PostProductCreate" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="TyCode\Shop\Product\Infrastructure\Web\PostProductCreateCQRS" class="TyCode\Shop\Product\Infrastructure\Web\PostProductCreateCQRS" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
     <service id="TyCode\Shop\Product\Infrastructure\Web\ProductResponse" class="TyCode\Shop\Product\Infrastructure\Web\ProductResponse" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
-    <service id="TyCode\Shop\Product\Infrastructure\Web\Product\GetProduct" class="TyCode\Shop\Product\Infrastructure\Web\Product\GetProduct" public="true" autowire="true" autoconfigure="true">
+    <service id="TyCode\Shop\Review\Domain\Review" class="TyCode\Shop\Review\Domain\Review" autowire="true" autoconfigure="true">
+      <argument type="service" id="TyCode\Shop\Review\Domain\ReviewId"/>
+      <argument type="service" id="TyCode\Shop\Review\Domain\ReviewAuthor"/>
+      <argument type="service" id="TyCode\Shop\Review\Domain\ReviewMessage"/>
+      <argument type="service" id="TyCode\Shop\Review\Domain\ReviewCreateOn"/>
+    </service>
+    <service id="TyCode\Shop\Review\Domain\ReviewAuthor" class="TyCode\Shop\Review\Domain\ReviewAuthor" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Review\Domain\ReviewAuthor&quot;: argument &quot;$value&quot; of method &quot;TyCode\Shared\Domain\ValueObject\StringValueObject::__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
+    </service>
+    <service id="TyCode\Shop\Review\Domain\ReviewCreateOn" class="TyCode\Shop\Review\Domain\ReviewCreateOn" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Review\Domain\ReviewCreateOn&quot;: argument &quot;$value&quot; of method &quot;TyCode\Shared\Domain\ValueObject\DateValueObject::__construct()&quot; references class &quot;DateTime&quot; but no such service exists."/>
+    </service>
+    <service id="TyCode\Shop\Review\Domain\ReviewId" class="TyCode\Shop\Review\Domain\ReviewId" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Review\Domain\ReviewId&quot;: argument &quot;$value&quot; of method &quot;TyCode\Shared\Domain\ValueObject\Uuid::__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
+    </service>
+    <service id="TyCode\Shop\Review\Domain\ReviewMessage" class="TyCode\Shop\Review\Domain\ReviewMessage" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Review\Domain\ReviewMessage&quot;: argument &quot;$value&quot; of method &quot;TyCode\Shared\Domain\ValueObject\StringValueObject::__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
+    </service>
+    <service id="TyCode\Shop\Review\Infrastructure\Persistence\DoctrineProductReviewRepository" class="TyCode\Shop\Review\Infrastructure\Persistence\DoctrineProductReviewRepository" autowire="true" autoconfigure="true">
+      <argument type="service" id="Doctrine\ORM\EntityManager"/>
+    </service>
+    <service id="TyCode\Shop\Review\Infrastructure\Persistence\Doctrine\ReviewIdType" class="TyCode\Shop\Review\Infrastructure\Persistence\Doctrine\ReviewIdType" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Class &quot;TyCode\Shared\Infrastructure\Persistence\Doctrine\UuidType&quot; not found while loading &quot;TyCode\Shop\Review\Infrastructure\Persistence\Doctrine\ReviewIdType&quot;."/>
+    </service>
+    <service id="TyCode\Shop\Review\Infrastructure\Web\HealthCheckGetController" class="TyCode\Shop\Review\Infrastructure\Web\HealthCheckGetController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
-    <service id="TyCode\Shop\Product\Infrastructure\Web\Product\GetProductByCriteria" class="TyCode\Shop\Product\Infrastructure\Web\Product\GetProductByCriteria" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-    </service>
-    <service id="TyCode\Shop\Product\Infrastructure\Web\Product\GetProductByCriteriaCQRS" class="TyCode\Shop\Product\Infrastructure\Web\Product\GetProductByCriteriaCQRS" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-    </service>
-    <service id="TyCode\Shop\Product\Infrastructure\Web\Product\GetProducts" class="TyCode\Shop\Product\Infrastructure\Web\Product\GetProducts" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-    </service>
-    <service id="TyCode\Shop\Product\Infrastructure\Web\Product\PostProductCreate" class="TyCode\Shop\Product\Infrastructure\Web\Product\PostProductCreate" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-    </service>
-    <service id="TyCode\Shop\Product\Infrastructure\Web\Product\PostProductCreateCQRS" class="TyCode\Shop\Product\Infrastructure\Web\Product\PostProductCreateCQRS" public="true" autowire="true" autoconfigure="true">
+    <service id="TyCode\Shop\Review\Infrastructure\Web\ReviewResponse" class="TyCode\Shop\Review\Infrastructure\Web\ReviewResponse" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
     <service id="TyCode\Shop\Shared\Infrastructure\Doctrine\DbalTypesSearcher" class="TyCode\Shop\Shared\Infrastructure\Doctrine\DbalTypesSearcher" autowire="true" autoconfigure="true"/>
     <service id="TyCode\Shop\Shared\Infrastructure\Doctrine\DoctrinePrefixesSearcher" class="TyCode\Shop\Shared\Infrastructure\Doctrine\DoctrinePrefixesSearcher" autowire="true" autoconfigure="true"/>
-    <service id="TyCode\Shop\Shared\Infrastructure\Doctrine\ProductEntityManagerFactory" class="TyCode\Shop\Shared\Infrastructure\Doctrine\ProductEntityManagerFactory" autowire="true" autoconfigure="true"/>
+    <service id="TyCode\Shop\Shared\Infrastructure\Doctrine\ShopEntityManagerFactory" class="TyCode\Shop\Shared\Infrastructure\Doctrine\ShopEntityManagerFactory" autowire="true" autoconfigure="true"/>
     <service id="TyCode\Shared\Domain\Assert" class="TyCode\Shared\Domain\Assert" autowire="true" autoconfigure="true"/>
     <service id="TyCode\Shared\Domain\Criteria\Criteria" class="TyCode\Shared\Domain\Criteria\Criteria" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shared\Domain\Criteria\Criteria&quot;: argument &quot;$offset&quot; of method &quot;__construct()&quot; is type-hinted &quot;int&quot;, you should configure its value explicitly."/>
@@ -316,7 +348,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.QPoKmD8"/>
+      <argument type="service" id=".service_locator.SS4YCfj"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -397,7 +429,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/http_cache</argument>
+      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -407,7 +439,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/TyCode_ms_Shop_ShopKernelDevDebugContainerDeprecations.log</argument>
+      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/TyCode_ms_Shop_ShopKernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer">
       <argument type="tagged_iterator" tag="kernel.cache_clearer"/>
@@ -989,7 +1021,7 @@
       <tag name="kernel.reset" method="reset"/>
       <argument>5-BmoUcYie</argument>
       <argument>0</argument>
-      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/pools/app</argument>
+      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1005,7 +1037,7 @@
       <argument>WvGrRDR1Mx</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/pools/system</argument>
+      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1015,7 +1047,7 @@
       <argument>YawXUAUzoY</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/pools/system</argument>
+      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1025,7 +1057,7 @@
       <argument>FcHFDs17ZQ</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/pools/system</argument>
+      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1035,7 +1067,7 @@
       <argument>RRu6rNuY51</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/pools/system</argument>
+      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1045,7 +1077,7 @@
       <argument>JSe7lgcgHa</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/pools/system</argument>
+      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1054,7 +1086,7 @@
       <tag name="kernel.reset" method="reset"/>
       <argument>rHIhqUEtnq</argument>
       <argument>0</argument>
-      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/pools/app</argument>
+      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1066,7 +1098,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/pools/system</argument>
+      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1085,7 +1117,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/pools/app</argument>
+      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1482,7 +1514,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.QPoKmD8"/>
+      <argument type="service" id=".service_locator.SS4YCfj"/>
     </service>
     <service id="routing.resolver" class="Symfony\Component\Config\Loader\LoaderResolver">
       <call method="addLoader">
@@ -1577,7 +1609,7 @@
       <argument type="service" id=".service_locator.PvoQzFT.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev</argument>
+        <argument key="cache_dir">D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -1688,7 +1720,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop\var\cache\dev/sessions</argument>
+      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -2398,10 +2430,6 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.y4_Zrx..Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
-    <service id=".service_locator.B2729Jl" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection"/>
-    </service>
     <service id=".service_locator.Fibiztl" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -2438,29 +2466,37 @@
         <argument key="commandBus" type="service_closure" id="TyCode\Shared\Infrastructure\Bus\Command\SymfonyMessageCommandBus"/>
       </argument>
     </service>
-    <service id=".service_locator.QPoKmD8" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.B2729Jl" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
+    </service>
+    <service id=".service_locator.LGsG099" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
+    </service>
+    <service id=".service_locator.SS4YCfj" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\Product\GetProduct::__invoke" type="service_closure" id=".service_locator.Fibiztl"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\Product\GetProductByCriteria::__invoke" type="service_closure" id=".service_locator.aIPOfxe"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\Product\GetProductByCriteriaCQRS::__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\Product\GetProducts::__invoke" type="service_closure" id=".service_locator.Vw4xC8x"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\Product\PostProductCreate::__invoke" type="service_closure" id=".service_locator.6Q6Yeh_"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\Product\PostProductCreateCQRS::__invoke" type="service_closure" id=".service_locator.lwNoDbx"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProduct::__invoke" type="service_closure" id=".service_locator.Fibiztl"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteria::__invoke" type="service_closure" id=".service_locator.aIPOfxe"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteriaCQRS::__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProducts::__invoke" type="service_closure" id=".service_locator.Vw4xC8x"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\PostProductCreate::__invoke" type="service_closure" id=".service_locator.6Q6Yeh_"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\PostProductCreateCQRS::__invoke" type="service_closure" id=".service_locator.lwNoDbx"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\Product\GetProduct:__invoke" type="service_closure" id=".service_locator.Fibiztl"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\Product\GetProduct" type="service_closure" id=".service_locator.Fibiztl"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\Product\GetProductByCriteria:__invoke" type="service_closure" id=".service_locator.aIPOfxe"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\Product\GetProductByCriteria" type="service_closure" id=".service_locator.aIPOfxe"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\Product\GetProductByCriteriaCQRS:__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\Product\GetProductByCriteriaCQRS" type="service_closure" id=".service_locator.EgMTexf"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\Product\GetProducts:__invoke" type="service_closure" id=".service_locator.Vw4xC8x"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\Product\GetProducts" type="service_closure" id=".service_locator.Vw4xC8x"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\Product\PostProductCreate:__invoke" type="service_closure" id=".service_locator.6Q6Yeh_"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\Product\PostProductCreate" type="service_closure" id=".service_locator.6Q6Yeh_"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\Product\PostProductCreateCQRS:__invoke" type="service_closure" id=".service_locator.lwNoDbx"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\Product\PostProductCreateCQRS" type="service_closure" id=".service_locator.lwNoDbx"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProduct:__invoke" type="service_closure" id=".service_locator.Fibiztl"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProduct" type="service_closure" id=".service_locator.Fibiztl"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteria:__invoke" type="service_closure" id=".service_locator.aIPOfxe"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteria" type="service_closure" id=".service_locator.aIPOfxe"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteriaCQRS:__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteriaCQRS" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProducts:__invoke" type="service_closure" id=".service_locator.Vw4xC8x"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProducts" type="service_closure" id=".service_locator.Vw4xC8x"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\PostProductCreate:__invoke" type="service_closure" id=".service_locator.6Q6Yeh_"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\PostProductCreate" type="service_closure" id=".service_locator.6Q6Yeh_"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\PostProductCreateCQRS:__invoke" type="service_closure" id=".service_locator.lwNoDbx"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\PostProductCreateCQRS" type="service_closure" id=".service_locator.lwNoDbx"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
       </argument>
@@ -3181,6 +3217,7 @@
       </argument>
     </service>
     <service id="TyCode\Shop\Product\Domain\ProductRepository" alias="TyCode\Shop\Product\Infrastructure\Persistence\DoctrineProductRepository"/>
+    <service id="TyCode\Shop\Review\Domain\ReviewRepository" alias="TyCode\Shop\Review\Infrastructure\Persistence\DoctrineProductReviewRepository"/>
     <service id="TyCode\Shared\Domain\Bus\Command\CommandBus" alias="TyCode\Shared\Infrastructure\Bus\Command\SymfonyMessageCommandBus"/>
     <service id="TyCode\Shared\Domain\Bus\Query\QueryBus" alias="TyCode\Shared\Infrastructure\Bus\Query\SymfonyMessageQueryBus"/>
     <service id="TyCode\Shared\Domain\Bus\Command\Command" alias="TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommand"/>
@@ -3247,11 +3284,11 @@
     <service id="messenger.default_bus" alias="messenger.bus.default" public="true"/>
     <service id="Symfony\Component\Messenger\MessageBusInterface" alias="messenger.bus.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.w7.f4fT" public="true"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.QPoKmD8"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.SS4YCfj"/>
     <service id="Psr\Log\LoggerInterface" alias="logger"/>
     <service id=".service_locator.Xbsa8iG" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.bJ.4HC5" alias=".service_locator.w7.f4fT"/>
-    <service id=".service_locator.rJSCC8j" alias=".service_locator.QPoKmD8"/>
+    <service id=".service_locator.YwZ3y33" alias=".service_locator.SS4YCfj"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>
     <service id="controller_resolver" alias="debug.controller_resolver"/>
     <service id="argument_resolver" alias="debug.argument_resolver"/>

@@ -1,4 +1,0 @@
-product_create_post:
-  path: /product
-  controller: TyCode\Shop\Product\Infrastructure\Web\Product\PostProductCreate
-  methods:  [POST]

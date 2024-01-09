@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg', 'embed'], true)) {
 }
 
 require dirname(__DIR__, 5).''.\DIRECTORY_SEPARATOR.'vendor/autoload.php';
-(require __DIR__.'/TyCode_ms_Shop_ShopKernelDevDebugContainer.php')->set(\ContainerR8dUv9E\TyCode_ms_Shop_ShopKernelDevDebugContainer::class, null);
+(require __DIR__.'/TyCode_ms_Shop_ShopKernelDevDebugContainer.php')->set(\ContainerEFtvUef\TyCode_ms_Shop_ShopKernelDevDebugContainer::class, null);
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -34,7 +34,7 @@ $classes[] = 'Symfony\Bundle\FrameworkBundle\Console\Application';
 $classes[] = 'Symfony\Component\Messenger\Handler\RedispatchMessageHandler';
 $classes[] = 'Symfony\Component\DependencyInjection\ServiceLocator';
 $classes[] = 'Doctrine\ORM\EntityManager';
-$classes[] = 'TyCode\Shop\Shared\Infrastructure\Doctrine\ProductEntityManagerFactory';
+$classes[] = 'TyCode\Shop\Shared\Infrastructure\Doctrine\ShopEntityManagerFactory';
 $classes[] = 'Symfony\Bundle\FrameworkBundle\Controller\RedirectController';
 $classes[] = 'Symfony\Bundle\FrameworkBundle\Controller\TemplateController';
 $classes[] = 'TyCode\Shared\Infrastructure\Bus\Command\SymfonyMessageCommandBus';
@@ -46,14 +46,16 @@ $classes[] = 'TyCode\Shop\Product\Application\Find\ProductFinderAll';
 $classes[] = 'TyCode\Shop\Product\Application\Find\ProductFinderByCriteria';
 $classes[] = 'TyCode\Shop\Product\Application\Find\ProductFinderId';
 $classes[] = 'TyCode\Shop\Product\Infrastructure\Persistence\DoctrineProductRepository';
-$classes[] = 'TyCode\Shop\Product\Infrastructure\Web\HealthCheck\HealthCheckGetController';
+$classes[] = 'TyCode\Shop\Product\Infrastructure\Web\GetProduct';
+$classes[] = 'TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteria';
+$classes[] = 'TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteriaCQRS';
+$classes[] = 'TyCode\Shop\Product\Infrastructure\Web\GetProducts';
+$classes[] = 'TyCode\Shop\Product\Infrastructure\Web\HealthCheckGetController';
+$classes[] = 'TyCode\Shop\Product\Infrastructure\Web\PostProductCreate';
+$classes[] = 'TyCode\Shop\Product\Infrastructure\Web\PostProductCreateCQRS';
 $classes[] = 'TyCode\Shop\Product\Infrastructure\Web\ProductResponse';
-$classes[] = 'TyCode\Shop\Product\Infrastructure\Web\Product\GetProduct';
-$classes[] = 'TyCode\Shop\Product\Infrastructure\Web\Product\GetProductByCriteria';
-$classes[] = 'TyCode\Shop\Product\Infrastructure\Web\Product\GetProductByCriteriaCQRS';
-$classes[] = 'TyCode\Shop\Product\Infrastructure\Web\Product\GetProducts';
-$classes[] = 'TyCode\Shop\Product\Infrastructure\Web\Product\PostProductCreate';
-$classes[] = 'TyCode\Shop\Product\Infrastructure\Web\Product\PostProductCreateCQRS';
+$classes[] = 'TyCode\Shop\Review\Infrastructure\Web\HealthCheckGetController';
+$classes[] = 'TyCode\Shop\Review\Infrastructure\Web\ReviewResponse';
 $classes[] = 'Symfony\Component\Cache\Adapter\FilesystemAdapter';
 $classes[] = 'Symfony\Component\HttpKernel\CacheClearer\Psr6CacheClearer';
 $classes[] = 'Symfony\Component\Cache\Marshaller\DefaultMarshaller';

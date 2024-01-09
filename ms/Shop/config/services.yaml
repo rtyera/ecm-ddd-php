@@ -18,12 +18,17 @@ services:
         resource: '../../../src/Shop'
         exclude:
             - '../../../src/Shop/Product/Domain/Products.php'
+            - '../../../src/Shop/Review/Domain/Reviews.php'
 
     TyCode\Shared\:
         resource: '../../../src/Shared'
 
     TyCode\Shop\Product\Infrastructure\Web\:
         resource: '../../../src/Shop/Product/Infrastructure/Web'
+        tags: ['controller.service_arguments']
+
+    TyCode\Shop\Review\Infrastructure\Web\:
+        resource: '../../../src/Shop/Review/Infrastructure/Web'
         tags: ['controller.service_arguments']
 
     # Command/Query Handlers

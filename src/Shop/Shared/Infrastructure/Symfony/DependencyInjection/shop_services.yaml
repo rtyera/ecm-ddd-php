@@ -1,7 +1,7 @@
 services:
   # Databases
   Doctrine\ORM\EntityManager:
-    factory: [ 'TyCode\Shop\Shared\Infrastructure\Doctrine\ProductEntityManagerFactory', 'create' ]
+    factory: [ 'TyCode\Shop\Shared\Infrastructure\Doctrine\ShopEntityManagerFactory', 'create' ]
     arguments:
       - driver: '%env(SHOP_DATABASE_DRIVER)%'
         host: '%env(SHOP_DATABASE_HOST)%'
@@ -17,3 +17,6 @@ services:
 
   # Product
   TyCode\Shop\Product\Domain\ProductRepository: '@TyCode\Shop\Product\Infrastructure\Persistence\DoctrineProductRepository'
+
+  # Review
+  TyCode\Shop\Review\Domain\ReviewRepository: '@TyCode\Shop\Review\Infrastructure\Persistence\DoctrineProductReviewRepository'

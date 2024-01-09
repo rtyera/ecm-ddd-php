@@ -1,0 +1,53 @@
+###
+GET http://127.0.0.1:8000/product-health-check
+
+###
+GET http://127.0.0.1:8000/product/766c5451-3288-4f3d-b84c-74d37d1e60c5
+
+###
+GET http://127.0.0.1:8000/products
+
+###
+http://127.0.0.1:8000/product-by-criteria?operator[lt]=price:400.0&operator[not_in]=name:Redmi Note 12 Pro,Samsumg A13
+
+###
+http://127.0.0.1:8000/product-by-criteria-cqrs?operator[lt]=price:400.0&operator[not_in]=name:Redmi Note 12 Pro
+
+###
+POST http://127.0.0.1:8000/product-cqrs
+Content-Type: application/json
+
+{
+    "id": "af8e08ae-a651-4416-9bde-92283b78737a",
+    "name": "Samsumg A52",
+    "price": 600.50,
+    "images": [
+        "localhost/image1",
+        "localhost/image2",
+        "localhost/image3"
+    ],
+    "stockQuantity": 30,
+    "rating": 4,
+    "reviews": [
+        {
+            "message" : "Sansumg is my favotire",
+            "authorFullName" : "X Alfonso"
+        }
+    ]
+}
+
+###
+POST http://127.0.0.1:8000/product
+Content-Type: application/json
+
+{
+    "id": "eb0c69b9-160f-480a-98e3-36f9f142cc03",
+    "name": "Samsumg S20",
+    "price": 600.50,
+    "images": [
+        "localhost/image1",
+        "localhost/image2",
+        "localhost/image3"
+    ],
+    "stockQuantity": 70
+}

@@ -43,6 +43,7 @@ Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Reso
 Symfony\Component\DependencyInjection\Compiler\AutowirePass: Skipping service "TyCode\Shop\Product\Domain\ProductReviews": Class or interface "TyCode\Shop\Product\Domain\ProductReviews" cannot be loaded.
 Symfony\Component\DependencyInjection\Compiler\AutowirePass: Skipping service "TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductIdType": Class or interface "TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductIdType" cannot be loaded.
 Symfony\Component\DependencyInjection\Compiler\AutowirePass: Skipping service "TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductReviewsType": Class or interface "TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductReviewsType" cannot be loaded.
+Symfony\Component\DependencyInjection\Compiler\AutowirePass: Skipping service "TyCode\Shop\Review\Infrastructure\Persistence\Doctrine\ReviewIdType": Class or interface "TyCode\Shop\Review\Infrastructure\Persistence\Doctrine\ReviewIdType" cannot be loaded.
 Symfony\Component\DependencyInjection\Compiler\AutowirePass: Skipping service "TyCode\Shared\Domain\ValueObject\JsonTypeInterface": Class or interface "TyCode\Shared\Domain\ValueObject\JsonTypeInterface" cannot be loaded.
 Symfony\Component\DependencyInjection\Compiler\AutowirePass: Skipping service "TyCode\Shared\Infrsatructure\Bus\CallableFirstParameterExtractor": Class or interface "TyCode\Shared\Infrsatructure\Bus\CallableFirstParameterExtractor" cannot be loaded.
 Symfony\Component\DependencyInjection\Compiler\AutowirePass: Skipping service "TyCode\Shared\Infrsatructure\Bus\Command\CommandNotRegisteredError": Class or interface "TyCode\Shared\Infrsatructure\Bus\Command\CommandNotRegisteredError" cannot be loaded.
@@ -60,7 +61,9 @@ Symfony\Component\DependencyInjection\Compiler\AutowirePass: Skipping service "T
 Symfony\Component\DependencyInjection\Compiler\AutowirePass: Skipping service "TyCode\Shared\Infrsatructure\Persistence\Doctrine\JsonCustomType": Class or interface "TyCode\Shared\Infrsatructure\Persistence\Doctrine\JsonCustomType" cannot be loaded.
 Symfony\Component\DependencyInjection\Compiler\AutowirePass: Skipping service "TyCode\Shared\Infrsatructure\Persistence\Doctrine\UuidType": Class or interface "TyCode\Shared\Infrsatructure\Persistence\Doctrine\UuidType" cannot be loaded.
 Symfony\Component\HttpKernel\DependencyInjection\RemoveEmptyControllerArgumentLocatorsPass: Removing service-argument resolver for controller "TyCode\Shop\Product\Infrastructure\Web\ProductResponse::productsToArray": no corresponding services exist for the referenced types.
+Symfony\Component\HttpKernel\DependencyInjection\RemoveEmptyControllerArgumentLocatorsPass: Removing service-argument resolver for controller "TyCode\Shop\Review\Infrastructure\Web\ReviewResponse::productsToArray": no corresponding services exist for the referenced types.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service "TyCode\Shop\Product\Domain\ProductRepository"; reason: private alias.
+Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service "TyCode\Shop\Review\Domain\ReviewRepository"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service "TyCode\Shared\Domain\Bus\Command\CommandBus"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service "TyCode\Shared\Domain\Bus\Query\QueryBus"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service "TyCode\Shared\Domain\Bus\Command\Command"; reason: private alias.
@@ -117,7 +120,7 @@ Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service "Psr\Log\LoggerInterface"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.Xbsa8iG"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.bJ.4HC5"; reason: private alias.
-Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.rJSCC8j"; reason: private alias.
+Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.YwZ3y33"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service "controller_resolver"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service "argument_resolver"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.gFlme_s"; reason: private alias.
@@ -151,6 +154,7 @@ Symfony\Component\DependencyInjection\Compiler\ReplaceAliasByActualDefinitionPas
 Symfony\Component\DependencyInjection\Compiler\ReplaceAliasByActualDefinitionPass: Changed reference of service ".service_locator.cUcW89y" previously pointing to "router.default" to "router".
 Symfony\Component\DependencyInjection\Compiler\ReplaceAliasByActualDefinitionPass: Changed reference of service ".service_locator.9ETxUxh" previously pointing to "debug.event_dispatcher" to "event_dispatcher".
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service "TyCode\Shop\Product\Domain\Products"; reason: abstract.
+Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service "TyCode\Shop\Review\Domain\Reviews"; reason: abstract.
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service "container.env"; reason: abstract.
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service "Symfony\Component\Config\Loader\LoaderInterface"; reason: abstract.
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service "Symfony\Component\HttpFoundation\Request"; reason: abstract.
@@ -176,7 +180,6 @@ Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Re
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".abstract.instanceof.TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommandHandler"; reason: abstract.
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".instanceof.TyCode\Shared\Domain\Bus\Query\QueryHandler.0.TyCode\Shop\Product\Application\CQRS\FindByCriteria\FindProductByCriteriaQueryHandler"; reason: abstract.
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".abstract.instanceof.TyCode\Shop\Product\Application\CQRS\FindByCriteria\FindProductByCriteriaQueryHandler"; reason: abstract.
-Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\ProductReview\Domain\ProductReview"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommand"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Product\Application\CQRS\FindByCriteria\FindProductByCriteriaQuery"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Product\Application\CQRS\FindByCriteria\ProductsResponse"; reason: unused.
@@ -193,9 +196,16 @@ Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Remo
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Product\Domain\Reviews"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductIdType"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductReviewsType"; reason: unused.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Review\Domain\Review"; reason: unused.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Review\Domain\ReviewAuthor"; reason: unused.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Review\Domain\ReviewCreateOn"; reason: unused.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Review\Domain\ReviewId"; reason: unused.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Review\Domain\ReviewMessage"; reason: unused.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Review\Infrastructure\Persistence\DoctrineProductReviewRepository"; reason: unused.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Review\Infrastructure\Persistence\Doctrine\ReviewIdType"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Shared\Infrastructure\Doctrine\DbalTypesSearcher"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Shared\Infrastructure\Doctrine\DoctrinePrefixesSearcher"; reason: unused.
-Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Shared\Infrastructure\Doctrine\ProductEntityManagerFactory"; reason: unused.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Shared\Infrastructure\Doctrine\ShopEntityManagerFactory"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shared\Domain\Assert"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shared\Domain\Criteria\Criteria"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shared\Domain\Criteria\Filter"; reason: unused.
@@ -256,6 +266,7 @@ Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Remo
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "maker.maker.make_subscriber"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "maker.maker.make_unit_test"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service ".service_locator.B2729Jl"; reason: unused.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service ".service_locator.LGsG099"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service ".service_locator.lLv4pWF"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service ".service_locator.XXv1IfR"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "clock" to "argument_resolver.datetime".

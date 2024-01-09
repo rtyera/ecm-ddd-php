@@ -22,8 +22,4 @@ final class DatabaseConnections
         each(fn (EntityManager $entityManager) => $entityManager->clear(), $this->connections);
     }
 
-    // public function truncate(): void
-    // {
-    //     apply(new MySqlDatabaseCleaner(), array_values($this->connections));
-    // }
 }
