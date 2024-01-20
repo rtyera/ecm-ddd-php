@@ -1,0 +1,4 @@
+review_create_post:
+  path: /review
+  controller: TyCode\Shop\Review\Infrastructure\Web\PostReviewCreate
+  methods:  [POST]

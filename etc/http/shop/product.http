@@ -1,5 +1,5 @@
 ###
-GET http://127.0.0.1:8000/product-health-check
+GET http://172.28.5.98:8000/product-health-check
 
 ###
 GET http://127.0.0.1:8000/product/766c5451-3288-4f3d-b84c-74d37d1e60c5
@@ -14,7 +14,7 @@ http://127.0.0.1:8000/product-by-criteria?operator[lt]=price:400.0&operator[not_
 http://127.0.0.1:8000/product-by-criteria-cqrs?operator[lt]=price:400.0&operator[not_in]=name:Redmi Note 12 Pro
 
 ###
-POST http://127.0.0.1:8000/product-cqrs
+POST http://172.28.5.98:8000/product-cqrs
 Content-Type: application/json
 
 {

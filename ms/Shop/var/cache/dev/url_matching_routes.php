@@ -14,6 +14,7 @@ return [
         '/products' => [[['_route' => 'product_search_all_get', '_controller' => 'TyCode\\Shop\\Product\\Infrastructure\\Web\\GetProducts'], null, ['GET' => 0], null, false, false, null]],
         '/product-by-criteria' => [[['_route' => 'product_search_by_criteria_get', '_controller' => 'TyCode\\Shop\\Product\\Infrastructure\\Web\\GetProductByCriteria'], null, ['GET' => 0], null, false, false, null]],
         '/product-by-criteria-cqrs' => [[['_route' => 'product_search_by_criteria_cqrs_get', '_controller' => 'TyCode\\Shop\\Product\\Infrastructure\\Web\\GetProductByCriteriaCQRS'], null, ['GET' => 0], null, false, false, null]],
+        '/review' => [[['_route' => 'review_create_post', '_controller' => 'TyCode\\Shop\\Review\\Infrastructure\\Web\\PostReviewCreate'], null, ['POST' => 0], null, false, false, null]],
         '/review-health-check' => [[['_route' => 'review_health_check_get', '_controller' => 'TyCode\\Shop\\Review\\Infrastructure\\Web\\HealthCheckGetController'], null, ['GET' => 0], null, false, false, null]],
     ],
     [ // $regexpList

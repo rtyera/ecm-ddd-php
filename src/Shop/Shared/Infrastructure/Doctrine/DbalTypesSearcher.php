@@ -52,10 +52,10 @@ final class DbalTypesSearcher
 
             $namespaces = map(
                 static function (string $file) use ($path, $contextName) {
-                    $fullPath     = $path.'\\'.$file;
-                    // $fullPath     = "$path/$file"; /**for linux system */
-                    $splittedPath = explode("\src\\$contextName\\", $fullPath);
-                    // $splittedPath = explode("/src/$contextName/", $fullPath); /**for linux system */
+                    // $fullPath     = $path.'\\'.$file; /**for windows system */
+                    $fullPath     = "$path/$file"; /**for linux system */
+                    // $splittedPath = explode("\src\\$contextName\\", $fullPath); /**for windows system */
+                    $splittedPath = explode("/src/$contextName/", $fullPath); /**for linux system */
                     $classWithoutPrefix = str_replace(['.php', '/'], ['', '\\'], $splittedPath[1]);
 
                     return "TyCode\\$contextName\\$classWithoutPrefix";

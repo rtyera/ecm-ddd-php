@@ -9,8 +9,8 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg', 'embed'], true)) {
     return;
 }
 
-require dirname(__DIR__, 5).''.\DIRECTORY_SEPARATOR.'vendor/autoload.php';
-(require __DIR__.'/TyCode_ms_Shop_ShopKernelDevDebugContainer.php')->set(\ContainerEFtvUef\TyCode_ms_Shop_ShopKernelDevDebugContainer::class, null);
+require dirname(__DIR__, 5).'/vendor/autoload.php';
+(require __DIR__.'/TyCode_ms_Shop_ShopKernelDevDebugContainer.php')->set(\ContainerG25fl5C\TyCode_ms_Shop_ShopKernelDevDebugContainer::class, null);
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -38,6 +38,7 @@ $classes[] = 'TyCode\Shop\Shared\Infrastructure\Doctrine\ShopEntityManagerFactor
 $classes[] = 'Symfony\Bundle\FrameworkBundle\Controller\RedirectController';
 $classes[] = 'Symfony\Bundle\FrameworkBundle\Controller\TemplateController';
 $classes[] = 'TyCode\Shared\Infrastructure\Bus\Command\SymfonyMessageCommandBus';
+$classes[] = 'TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConnection';
 $classes[] = 'TyCode\Shared\Infrastructure\Bus\Query\SymfonyMessageQueryBus';
 $classes[] = 'TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommandHandler';
 $classes[] = 'TyCode\Shop\Product\Application\CQRS\FindByCriteria\FindProductByCriteriaQueryHandler';
@@ -54,7 +55,10 @@ $classes[] = 'TyCode\Shop\Product\Infrastructure\Web\HealthCheckGetController';
 $classes[] = 'TyCode\Shop\Product\Infrastructure\Web\PostProductCreate';
 $classes[] = 'TyCode\Shop\Product\Infrastructure\Web\PostProductCreateCQRS';
 $classes[] = 'TyCode\Shop\Product\Infrastructure\Web\ProductResponse';
+$classes[] = 'TyCode\Shop\Review\Application\CQRS\Create\CreateReviewCommandHandler';
+$classes[] = 'TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventBus';
 $classes[] = 'TyCode\Shop\Review\Infrastructure\Web\HealthCheckGetController';
+$classes[] = 'TyCode\Shop\Review\Infrastructure\Web\PostReviewCreate';
 $classes[] = 'TyCode\Shop\Review\Infrastructure\Web\ReviewResponse';
 $classes[] = 'Symfony\Component\Cache\Adapter\FilesystemAdapter';
 $classes[] = 'Symfony\Component\HttpKernel\CacheClearer\Psr6CacheClearer';
@@ -95,6 +99,7 @@ $classes[] = 'Symfony\Component\Messenger\Transport\Sender\SendersLocator';
 $classes[] = 'Symfony\Component\Messenger\Middleware\TraceableMiddleware';
 $classes[] = 'Symfony\Component\Messenger\MessageBus';
 $classes[] = 'Symfony\Component\Messenger\EventListener\AddErrorDetailsStampListener';
+$classes[] = 'Symfony\Component\Messenger\EventListener\DispatchPcntlSignalListener';
 $classes[] = 'Symfony\Component\Messenger\EventListener\StopWorkerOnRestartSignalListener';
 $classes[] = 'Symfony\Component\Messenger\EventListener\StopWorkerOnCustomStopExceptionListener';
 $classes[] = 'Symfony\Component\Messenger\Middleware\DispatchAfterCurrentBusMiddleware';

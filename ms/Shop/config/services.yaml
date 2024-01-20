@@ -14,14 +14,23 @@ services:
         TyCode\Shared\Domain\Bus\Query\QueryHandler:
             tags: ['tycode.query_handler']
 
+        TyCode\Shared\Domain\Bus\Event\EventSubscriber:
+            tags: ['shop.event_subscriber']
+
     TyCode\Shop\:
-        resource: '../../../src/Shop'
+        resource: '../../../src/Shop/'
         exclude:
             - '../../../src/Shop/Product/Domain/Products.php'
             - '../../../src/Shop/Review/Domain/Reviews.php'
 
     TyCode\Shared\:
-        resource: '../../../src/Shared'
+        resource: '../../../src/Shared/'
+
+    TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConfigurer:
+        autowire: true
+
+    TyCode\Shared\Infrastructure\Bus\Event\EventJsonDeserializer:
+        autowire: true
 
     TyCode\Shop\Product\Infrastructure\Web\:
         resource: '../../../src/Shop/Product/Infrastructure/Web'
@@ -41,4 +50,42 @@ services:
     TyCode\Shared\Domain\Bus\Command\CommandBus: '@TyCode\Shared\Infrastructure\Bus\Command\SymfonyMessageCommandBus'
 
     TyCode\Shared\Domain\Bus\Query\QueryBus: '@TyCode\Shared\Infrastructure\Bus\Query\SymfonyMessageQueryBus'
+
+    # -- TAGGING --
+    TyCode\Shared\Infrastructure\Bus\Event\EventMapping:
+        arguments: [!tagged shop.event_subscriber]
+
+    TyCode\Shared\Infrastructure\Bus\Event\EventSubscriberLocator:
+        arguments: [!tagged shop.event_subscriber]
+
+    # RabbitMQ
+    TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConnection:
+        arguments:
+            - host: '%env(RABBITMQ_HOST)%'
+              port: '%env(RABBITMQ_PORT)%'
+              login: '%env(RABBITMQ_LOGIN)%'
+              password: '%env(RABBITMQ_PASSWORD)%'
+              read_timeout: 2
+              write_timeout: 2
+              connect_timeout: 5
+
+    TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand:
+        arguments:
+            - '@TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConfigurer'
+            - '%env(RABBITMQ_EXCHANGE)%'
+            - !tagged shop.event_subscriber
+
+    TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventBus:
+        arguments:
+            - '@TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConnection'
+            - '%env(RABBITMQ_EXCHANGE)%'
+
+    TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventsConsumer:
+        arguments:
+            - '@TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConnection'
+            - '@TyCode\Shared\Infrastructure\Bus\Event\EventJsonDeserializer'
+            - '%env(RABBITMQ_EXCHANGE)%'
+            - '%env(RABBITMQ_MAX_RETRIES)%'
+
+    TyCode\Shared\Domain\Bus\Event\EventBus: '@TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventBus'
 

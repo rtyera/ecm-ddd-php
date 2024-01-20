@@ -8,8 +8,10 @@ use LogicException;
 use ReflectionClass;
 use ReflectionMethod;
 use ReflectionNamedType;
+use TyCode\Shared\Domain\Bus\Event\EventSubscriber;
 
 use function Lambdish\Phunctional\map;
+use function Lambdish\Phunctional\reduce;
 use function Lambdish\Phunctional\reindex;
 
 final class CallableFirstParameterExtractor
@@ -19,9 +21,27 @@ final class CallableFirstParameterExtractor
         return map(self::unflatten(), reindex(self::classExtractor(new self()), $callables));
     }
 
+    public static function forPipedCallables(iterable $callables): array
+    {
+        return reduce(self::pipedCallablesReducer(), $callables, []);
+    }
+
     private static function classExtractor(CallableFirstParameterExtractor $parameterExtractor): callable
     {
         return static fn (callable $handler): ?string => $parameterExtractor->extract($handler);
+    }
+
+    private static function pipedCallablesReducer(): callable
+    {
+        return static function ($subscribers, EventSubscriber $subscriber): array {
+            $subscribedEvents = $subscriber::subscribedTo();
+
+            foreach ($subscribedEvents as $subscribedEvent) {
+                $subscribers[$subscribedEvent][] = $subscriber;
+            }
+
+            return $subscribers;
+        };
     }
 
     private static function unflatten(): callable

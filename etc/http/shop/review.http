@@ -1,2 +1,13 @@
 ###
-GET http://127.0.0.1:8000/review-health-check
+GET http://172.28.5.98:8000/review-health-check
+
+###
+POST http://172.28.5.98:8000/review
+Content-Type: application/json
+
+{
+    "id": "eb0c69b9-160f-480a-98e3-36f9f142cc03",
+    "productId": "af8e08ae-a651-4416-9bde-92283b78737a",
+    "author": "X Alfonso",
+    "message": "I love this phone"
+}

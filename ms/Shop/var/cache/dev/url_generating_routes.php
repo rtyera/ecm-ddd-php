@@ -10,5 +10,6 @@ return [
     'product_search_all_get' => [[], ['_controller' => 'TyCode\\Shop\\Product\\Infrastructure\\Web\\GetProducts'], [], [['text', '/products']], [], [], []],
     'product_search_by_criteria_get' => [[], ['_controller' => 'TyCode\\Shop\\Product\\Infrastructure\\Web\\GetProductByCriteria'], [], [['text', '/product-by-criteria']], [], [], []],
     'product_search_by_criteria_cqrs_get' => [[], ['_controller' => 'TyCode\\Shop\\Product\\Infrastructure\\Web\\GetProductByCriteriaCQRS'], [], [['text', '/product-by-criteria-cqrs']], [], [], []],
+    'review_create_post' => [[], ['_controller' => 'TyCode\\Shop\\Review\\Infrastructure\\Web\\PostReviewCreate'], [], [['text', '/review']], [], [], []],
     'review_health_check_get' => [[], ['_controller' => 'TyCode\\Shop\\Review\\Infrastructure\\Web\\HealthCheckGetController'], [], [['text', '/review-health-check']], [], [], []],
 ];

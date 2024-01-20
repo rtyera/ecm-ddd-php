@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.project_dir">D:\Study\vhosts-php\ecommerce\ms\Shop</parameter>
+    <parameter key="kernel.project_dir">/mnt/d/Study/vhosts-php/ecommerce/ms/Shop</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.runtime_environment">%env(default:kernel.environment:APP_RUNTIME_ENV)%</parameter>
     <parameter key="kernel.runtime_mode">%env(query_string:default:container.runtime_mode:APP_RUNTIME_MODE)%</parameter>
@@ -9,20 +9,20 @@
     <parameter key="kernel.runtime_mode.cli">%env(not:default:kernel.runtime_mode.web:)%</parameter>
     <parameter key="kernel.runtime_mode.worker">%env(bool:default::key:worker:default:kernel.runtime_mode:)%</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.build_dir">D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev</parameter>
-    <parameter key="kernel.cache_dir">D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev</parameter>
-    <parameter key="kernel.logs_dir">D:\Study\vhosts-php\ecommerce\ms\Shop\var\log</parameter>
+    <parameter key="kernel.build_dir">/mnt/d/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev</parameter>
+    <parameter key="kernel.cache_dir">/mnt/d/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev</parameter>
+    <parameter key="kernel.logs_dir">/mnt/d/Study/vhosts-php/ecommerce/ms/Shop/var/log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="MakerBundle">Symfony\Bundle\MakerBundle\MakerBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
-        <parameter key="path">D:\Study\vhosts-php\ecommerce\vendor\symfony\framework-bundle</parameter>
+        <parameter key="path">/mnt/d/Study/vhosts-php/ecommerce/vendor/symfony/framework-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
       </parameter>
       <parameter key="MakerBundle" type="collection">
-        <parameter key="path">D:\Study\vhosts-php\ecommerce\vendor\symfony\maker-bundle\src</parameter>
+        <parameter key="path">/mnt/d/Study/vhosts-php/ecommerce/vendor/symfony/maker-bundle/src</parameter>
         <parameter key="namespace">Symfony\Bundle\MakerBundle</parameter>
       </parameter>
     </parameter>
@@ -55,15 +55,15 @@
     <parameter key="kernel.error_controller">error_controller</parameter>
     <parameter key="debug.file_link_format">%env(default::SYMFONY_IDE)%</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/TyCode_ms_Shop_ShopKernelDevDebugContainer.xml</parameter>
+    <parameter key="debug.container.dump">/mnt/d/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/TyCode_ms_Shop_ShopKernelDevDebugContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
     <parameter key="router.resource">kernel::loadRoutes</parameter>
-    <parameter key="router.cache_dir">D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev</parameter>
+    <parameter key="router.cache_dir">/mnt/d/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
-    <parameter key="cache.prefix.seed">_D:\Study\vhosts-php\ecommerce\ms\Shop.TyCode_ms_Shop_ShopKernelDevDebugContainer</parameter>
+    <parameter key="cache.prefix.seed">_/mnt/d/Study/vhosts-php/ecommerce/ms/Shop.TyCode_ms_Shop_ShopKernelDevDebugContainer</parameter>
     <parameter key="session.metadata.storage_key">_sf2_meta</parameter>
     <parameter key="session.storage.options" type="collection">
       <parameter key="cache_limiter" type="string">0</parameter>
@@ -170,14 +170,14 @@
     <service id="TyCode\Shop\Product\Domain\Reviews" class="TyCode\Shop\Product\Domain\Reviews" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Product\Domain\Reviews&quot;: argument &quot;$items&quot; of method &quot;TyCode\Shared\Domain\Collection::__construct()&quot; is type-hinted &quot;array&quot;, you should configure its value explicitly."/>
     </service>
-    <service id="TyCode\Shop\Product\Infrastructure\Persistence\DoctrineProductRepository" class="TyCode\Shop\Product\Infrastructure\Persistence\DoctrineProductRepository" autowire="true" autoconfigure="true">
-      <argument type="service" id="Doctrine\ORM\EntityManager"/>
-    </service>
     <service id="TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductIdType" class="TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductIdType" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Class &quot;TyCode\Shared\Infrastructure\Persistence\Doctrine\UuidType&quot; not found while loading &quot;TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductIdType&quot;."/>
     </service>
     <service id="TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductReviewsType" class="TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductReviewsType" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Class &quot;TyCode\Shared\Infrastructure\Persistence\Doctrine\JsonCustomType&quot; not found while loading &quot;TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductReviewsType&quot;."/>
+    </service>
+    <service id="TyCode\Shop\Product\Infrastructure\Persistence\DoctrineProductRepository" class="TyCode\Shop\Product\Infrastructure\Persistence\DoctrineProductRepository" autowire="true" autoconfigure="true">
+      <argument type="service" id="Doctrine\ORM\EntityManager"/>
     </service>
     <service id="TyCode\Shop\Product\Infrastructure\Web\GetProduct" class="TyCode\Shop\Product\Infrastructure\Web\GetProduct" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
@@ -203,8 +203,22 @@
     <service id="TyCode\Shop\Product\Infrastructure\Web\ProductResponse" class="TyCode\Shop\Product\Infrastructure\Web\ProductResponse" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
+    <service id="TyCode\Shop\Review\Application\CQRS\Create\CreateReviewCommand" class="TyCode\Shop\Review\Application\CQRS\Create\CreateReviewCommand" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Review\Application\CQRS\Create\CreateReviewCommand&quot;: argument &quot;$id&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
+    </service>
+    <service id="TyCode\Shop\Review\Application\CQRS\Create\CreateReviewCommandHandler" class="TyCode\Shop\Review\Application\CQRS\Create\CreateReviewCommandHandler" autowire="true" autoconfigure="true">
+      <tag name="tycode.command_handler"/>
+      <argument type="service" id="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventBus"/>
+    </service>
+    <service id="TyCode\Shop\Review\Application\Event\CreatedReviewEvent" class="TyCode\Shop\Review\Application\Event\CreatedReviewEvent" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shop\Review\Application\Event\CreatedReviewEvent&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shop/Review/Application/Event/CreatedReviewEvent.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
+    <service id="TyCode\Shop\Review\Application\Subscriber\CreateReviewOn" class="TyCode\Shop\Review\Application\Subscriber\CreateReviewOn" autowire="true" autoconfigure="true">
+      <tag name="shop.event_subscriber"/>
+    </service>
     <service id="TyCode\Shop\Review\Domain\Review" class="TyCode\Shop\Review\Domain\Review" autowire="true" autoconfigure="true">
       <argument type="service" id="TyCode\Shop\Review\Domain\ReviewId"/>
+      <argument type="service" id="TyCode\Shop\Product\Domain\ProductId"/>
       <argument type="service" id="TyCode\Shop\Review\Domain\ReviewAuthor"/>
       <argument type="service" id="TyCode\Shop\Review\Domain\ReviewMessage"/>
       <argument type="service" id="TyCode\Shop\Review\Domain\ReviewCreateOn"/>
@@ -221,13 +235,43 @@
     <service id="TyCode\Shop\Review\Domain\ReviewMessage" class="TyCode\Shop\Review\Domain\ReviewMessage" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Review\Domain\ReviewMessage&quot;: argument &quot;$value&quot; of method &quot;TyCode\Shared\Domain\ValueObject\StringValueObject::__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
     </service>
-    <service id="TyCode\Shop\Review\Infrastructure\Persistence\DoctrineProductReviewRepository" class="TyCode\Shop\Review\Infrastructure\Persistence\DoctrineProductReviewRepository" autowire="true" autoconfigure="true">
-      <argument type="service" id="Doctrine\ORM\EntityManager"/>
+    <service id="TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand" class="TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand" autowire="true" autoconfigure="true">
+      <tag name="console.command"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConfigurer"/>
+      <argument>%env(RABBITMQ_EXCHANGE)%</argument>
+      <argument type="tagged_iterator" tag="shop.event_subscriber"/>
+      <call method="setName">
+        <argument>ecm:rabbitmq:configure</argument>
+      </call>
+    </service>
+    <service id="TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand" class="TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand" autowire="true" autoconfigure="true">
+      <tag name="console.command"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventsConsumer"/>
+      <argument type="service" id="TyCode\Shared\Infrastructure\Bus\Event\EventSubscriberLocator"/>
+      <call method="setName">
+        <argument>ecm:rabbitmq:events:consume</argument>
+      </call>
+    </service>
+    <service id="TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" class="TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" autowire="true" autoconfigure="true">
+      <tag name="console.command"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="TyCode\Shared\Infrastructure\Bus\Event\EventSubscriberLocator"/>
+      <call method="setName">
+        <argument>ecm:rabbitmq:events:generate-supervisor-files</argument>
+      </call>
     </service>
     <service id="TyCode\Shop\Review\Infrastructure\Persistence\Doctrine\ReviewIdType" class="TyCode\Shop\Review\Infrastructure\Persistence\Doctrine\ReviewIdType" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Class &quot;TyCode\Shared\Infrastructure\Persistence\Doctrine\UuidType&quot; not found while loading &quot;TyCode\Shop\Review\Infrastructure\Persistence\Doctrine\ReviewIdType&quot;."/>
     </service>
+    <service id="TyCode\Shop\Review\Infrastructure\Persistence\DoctrineProductReviewRepository" class="TyCode\Shop\Review\Infrastructure\Persistence\DoctrineProductReviewRepository" autowire="true" autoconfigure="true">
+      <argument type="service" id="Doctrine\ORM\EntityManager"/>
+    </service>
     <service id="TyCode\Shop\Review\Infrastructure\Web\HealthCheckGetController" class="TyCode\Shop\Review\Infrastructure\Web\HealthCheckGetController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="TyCode\Shop\Review\Infrastructure\Web\PostReviewCreate" class="TyCode\Shop\Review\Infrastructure\Web\PostReviewCreate" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
     <service id="TyCode\Shop\Review\Infrastructure\Web\ReviewResponse" class="TyCode\Shop\Review\Infrastructure\Web\ReviewResponse" public="true" autowire="true" autoconfigure="true">
@@ -269,61 +313,124 @@
     </service>
     <service id="TyCode\Shared\Domain\Utils" class="TyCode\Shared\Domain\Utils" autowire="true" autoconfigure="true"/>
     <service id="TyCode\Shared\Domain\ValueObject\JsonTypeInterface" class="TyCode\Shared\Domain\ValueObject\JsonTypeInterface" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Domain\ValueObject\JsonTypeInterface&quot; to be defined in file &quot;D:\Study\vhosts-php\ecommerce\vendor\composer/../../src\Shared\Domain\ValueObject\JsonTypeInterface.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Domain\ValueObject\JsonTypeInterface&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Domain/ValueObject/JsonTypeInterface.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
     </service>
     <service id="TyCode\Shared\Domain\ValueObject\Uuid" class="TyCode\Shared\Domain\ValueObject\Uuid" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shared\Domain\ValueObject\Uuid&quot;: argument &quot;$value&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
     </service>
     <service id="TyCode\Shared\Infrsatructure\Bus\CallableFirstParameterExtractor" class="TyCode\Shared\Infrsatructure\Bus\CallableFirstParameterExtractor" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Bus\CallableFirstParameterExtractor&quot; to be defined in file &quot;D:\Study\vhosts-php\ecommerce\vendor\composer/../../src\Shared\Infrsatructure\Bus\CallableFirstParameterExtractor.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Bus\CallableFirstParameterExtractor&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Bus/CallableFirstParameterExtractor.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
     </service>
     <service id="TyCode\Shared\Infrsatructure\Bus\Command\CommandNotRegisteredError" class="TyCode\Shared\Infrsatructure\Bus\Command\CommandNotRegisteredError" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Bus\Command\CommandNotRegisteredError&quot; to be defined in file &quot;D:\Study\vhosts-php\ecommerce\vendor\composer/../../src\Shared\Infrsatructure\Bus\Command\CommandNotRegisteredError.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Bus\Command\CommandNotRegisteredError&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Bus/Command/CommandNotRegisteredError.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
     </service>
     <service id="TyCode\Shared\Infrsatructure\Bus\Command\SymfonyMessageCommandBus" class="TyCode\Shared\Infrsatructure\Bus\Command\SymfonyMessageCommandBus" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Bus\Command\SymfonyMessageCommandBus&quot; to be defined in file &quot;D:\Study\vhosts-php\ecommerce\vendor\composer/../../src\Shared\Infrsatructure\Bus\Command\SymfonyMessageCommandBus.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Bus\Command\SymfonyMessageCommandBus&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Bus/Command/SymfonyMessageCommandBus.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
+    <service id="TyCode\Shared\Infrsatructure\Bus\Event\EventJsonDeserializer" class="TyCode\Shared\Infrsatructure\Bus\Event\EventJsonDeserializer" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Bus\Event\EventJsonDeserializer&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Bus/Event/EventJsonDeserializer.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
+    <service id="TyCode\Shared\Infrsatructure\Bus\Event\EventJsonSerializer" class="TyCode\Shared\Infrsatructure\Bus\Event\EventJsonSerializer" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Bus\Event\EventJsonSerializer&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Bus/Event/EventJsonSerializer.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
+    <service id="TyCode\Shared\Infrsatructure\Bus\Event\EventMapping" class="TyCode\Shared\Infrsatructure\Bus\Event\EventMapping" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Bus\Event\EventMapping&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Bus/Event/EventMapping.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
+    <service id="TyCode\Shared\Infrsatructure\Bus\Event\EventSubscriberLocator" class="TyCode\Shared\Infrsatructure\Bus\Event\EventSubscriberLocator" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Bus\Event\EventSubscriberLocator&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Bus/Event/EventSubscriberLocator.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
+    <service id="TyCode\Shared\Infrsatructure\Bus\Event\RabbitMq\RabbitMqConfigurer" class="TyCode\Shared\Infrsatructure\Bus\Event\RabbitMq\RabbitMqConfigurer" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Bus\Event\RabbitMq\RabbitMqConfigurer&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Bus/Event/RabbitMq/RabbitMqConfigurer.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
+    <service id="TyCode\Shared\Infrsatructure\Bus\Event\RabbitMq\RabbitMqConnection" class="TyCode\Shared\Infrsatructure\Bus\Event\RabbitMq\RabbitMqConnection" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Bus\Event\RabbitMq\RabbitMqConnection&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Bus/Event/RabbitMq/RabbitMqConnection.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
+    <service id="TyCode\Shared\Infrsatructure\Bus\Event\RabbitMq\RabbitMqEventBus" class="TyCode\Shared\Infrsatructure\Bus\Event\RabbitMq\RabbitMqEventBus" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Bus\Event\RabbitMq\RabbitMqEventBus&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Bus/Event/RabbitMq/RabbitMqEventBus.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
+    <service id="TyCode\Shared\Infrsatructure\Bus\Event\RabbitMq\RabbitMqEventsConsumer" class="TyCode\Shared\Infrsatructure\Bus\Event\RabbitMq\RabbitMqEventsConsumer" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Bus\Event\RabbitMq\RabbitMqEventsConsumer&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Bus/Event/RabbitMq/RabbitMqEventsConsumer.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
+    <service id="TyCode\Shared\Infrsatructure\Bus\Event\RabbitMq\RabbitMqExchangeNameFormatter" class="TyCode\Shared\Infrsatructure\Bus\Event\RabbitMq\RabbitMqExchangeNameFormatter" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Bus\Event\RabbitMq\RabbitMqExchangeNameFormatter&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Bus/Event/RabbitMq/RabbitMqExchangeNameFormatter.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
+    <service id="TyCode\Shared\Infrsatructure\Bus\Event\RabbitMq\RabbitMqQueueNameFormatter" class="TyCode\Shared\Infrsatructure\Bus\Event\RabbitMq\RabbitMqQueueNameFormatter" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Bus\Event\RabbitMq\RabbitMqQueueNameFormatter&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Bus/Event/RabbitMq/RabbitMqQueueNameFormatter.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
     </service>
     <service id="TyCode\Shared\Infrsatructure\Bus\Query\QueryNotRegisteredError" class="TyCode\Shared\Infrsatructure\Bus\Query\QueryNotRegisteredError" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Bus\Query\QueryNotRegisteredError&quot; to be defined in file &quot;D:\Study\vhosts-php\ecommerce\vendor\composer/../../src\Shared\Infrsatructure\Bus\Query\QueryNotRegisteredError.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Bus\Query\QueryNotRegisteredError&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Bus/Query/QueryNotRegisteredError.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
     </service>
     <service id="TyCode\Shared\Infrsatructure\Bus\Query\SymfonyMessageQueryBus" class="TyCode\Shared\Infrsatructure\Bus\Query\SymfonyMessageQueryBus" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Bus\Query\SymfonyMessageQueryBus&quot; to be defined in file &quot;D:\Study\vhosts-php\ecommerce\vendor\composer/../../src\Shared\Infrsatructure\Bus\Query\SymfonyMessageQueryBus.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Bus\Query\SymfonyMessageQueryBus&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Bus/Query/SymfonyMessageQueryBus.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
     </service>
     <service id="TyCode\Shared\Infrsatructure\Doctrine\DatabaseConnections" class="TyCode\Shared\Infrsatructure\Doctrine\DatabaseConnections" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Doctrine\DatabaseConnections&quot; to be defined in file &quot;D:\Study\vhosts-php\ecommerce\vendor\composer/../../src\Shared\Infrsatructure\Doctrine\DatabaseConnections.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Doctrine\DatabaseConnections&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Doctrine/DatabaseConnections.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
     </service>
     <service id="TyCode\Shared\Infrsatructure\Doctrine\Dbal\DbalCustomTypesRegistrar" class="TyCode\Shared\Infrsatructure\Doctrine\Dbal\DbalCustomTypesRegistrar" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Doctrine\Dbal\DbalCustomTypesRegistrar&quot; to be defined in file &quot;D:\Study\vhosts-php\ecommerce\vendor\composer/../../src\Shared\Infrsatructure\Doctrine\Dbal\DbalCustomTypesRegistrar.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Doctrine\Dbal\DbalCustomTypesRegistrar&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Doctrine/Dbal/DbalCustomTypesRegistrar.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
     </service>
     <service id="TyCode\Shared\Infrsatructure\Doctrine\Dbal\DoctrineCustomType" class="TyCode\Shared\Infrsatructure\Doctrine\Dbal\DoctrineCustomType" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Doctrine\Dbal\DoctrineCustomType&quot; to be defined in file &quot;D:\Study\vhosts-php\ecommerce\vendor\composer/../../src\Shared\Infrsatructure\Doctrine\Dbal\DoctrineCustomType.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Doctrine\Dbal\DoctrineCustomType&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Doctrine/Dbal/DoctrineCustomType.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
     </service>
     <service id="TyCode\Shared\Infrsatructure\Doctrine\DoctrineEntityManagerFactory" class="TyCode\Shared\Infrsatructure\Doctrine\DoctrineEntityManagerFactory" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Doctrine\DoctrineEntityManagerFactory&quot; to be defined in file &quot;D:\Study\vhosts-php\ecommerce\vendor\composer/../../src\Shared\Infrsatructure\Doctrine\DoctrineEntityManagerFactory.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Doctrine\DoctrineEntityManagerFactory&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Doctrine/DoctrineEntityManagerFactory.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
     </service>
     <service id="TyCode\Shared\Infrsatructure\Doctrine\DoctrineTools" class="TyCode\Shared\Infrsatructure\Doctrine\DoctrineTools" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Doctrine\DoctrineTools&quot; to be defined in file &quot;D:\Study\vhosts-php\ecommerce\vendor\composer/../../src\Shared\Infrsatructure\Doctrine\DoctrineTools.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Doctrine\DoctrineTools&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Doctrine/DoctrineTools.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
     </service>
     <service id="TyCode\Shared\Infrsatructure\HttpQuery\QueryCriteriaConverter" class="TyCode\Shared\Infrsatructure\HttpQuery\QueryCriteriaConverter" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\HttpQuery\QueryCriteriaConverter&quot; to be defined in file &quot;D:\Study\vhosts-php\ecommerce\vendor\composer/../../src\Shared\Infrsatructure\HttpQuery\QueryCriteriaConverter.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\HttpQuery\QueryCriteriaConverter&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/HttpQuery/QueryCriteriaConverter.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
     </service>
     <service id="TyCode\Shared\Infrsatructure\Persistence\Doctrine\DoctrineCriteriaConverter" class="TyCode\Shared\Infrsatructure\Persistence\Doctrine\DoctrineCriteriaConverter" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Persistence\Doctrine\DoctrineCriteriaConverter&quot; to be defined in file &quot;D:\Study\vhosts-php\ecommerce\vendor\composer/../../src\Shared\Infrsatructure\Persistence\Doctrine\DoctrineCriteriaConverter.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Persistence\Doctrine\DoctrineCriteriaConverter&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Persistence/Doctrine/DoctrineCriteriaConverter.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
     </service>
     <service id="TyCode\Shared\Infrsatructure\Persistence\Doctrine\DoctrineRepository" class="TyCode\Shared\Infrsatructure\Persistence\Doctrine\DoctrineRepository" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Persistence\Doctrine\DoctrineRepository&quot; to be defined in file &quot;D:\Study\vhosts-php\ecommerce\vendor\composer/../../src\Shared\Infrsatructure\Persistence\Doctrine\DoctrineRepository.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Persistence\Doctrine\DoctrineRepository&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Persistence/Doctrine/DoctrineRepository.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
     </service>
     <service id="TyCode\Shared\Infrsatructure\Persistence\Doctrine\JsonCustomType" class="TyCode\Shared\Infrsatructure\Persistence\Doctrine\JsonCustomType" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Persistence\Doctrine\JsonCustomType&quot; to be defined in file &quot;D:\Study\vhosts-php\ecommerce\vendor\composer/../../src\Shared\Infrsatructure\Persistence\Doctrine\JsonCustomType.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Persistence\Doctrine\JsonCustomType&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Persistence/Doctrine/JsonCustomType.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
     </service>
     <service id="TyCode\Shared\Infrsatructure\Persistence\Doctrine\UuidType" class="TyCode\Shared\Infrsatructure\Persistence\Doctrine\UuidType" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Persistence\Doctrine\UuidType&quot; to be defined in file &quot;D:\Study\vhosts-php\ecommerce\vendor\composer/../../src\Shared\Infrsatructure\Persistence\Doctrine\UuidType.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shared\Infrsatructure\Persistence\Doctrine\UuidType&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shared/Infrsatructure/Persistence/Doctrine/UuidType.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    </service>
+    <service id="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConfigurer" class="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConfigurer" autowire="true" autoconfigure="true">
+      <argument type="service" id="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConnection"/>
+    </service>
+    <service id="TyCode\Shared\Infrastructure\Bus\Event\EventJsonDeserializer" class="TyCode\Shared\Infrastructure\Bus\Event\EventJsonDeserializer" autowire="true" autoconfigure="true">
+      <argument type="service" id="TyCode\Shared\Infrastructure\Bus\Event\EventMapping"/>
     </service>
     <service id="TyCode\Shared\Infrastructure\Bus\Command\SymfonyMessageCommandBus" class="TyCode\Shared\Infrastructure\Bus\Command\SymfonyMessageCommandBus" autowire="true" autoconfigure="true">
       <argument type="tagged_iterator" tag="tycode.command_handler"/>
     </service>
     <service id="TyCode\Shared\Infrastructure\Bus\Query\SymfonyMessageQueryBus" class="TyCode\Shared\Infrastructure\Bus\Query\SymfonyMessageQueryBus" autowire="true" autoconfigure="true">
       <argument type="tagged_iterator" tag="tycode.query_handler"/>
+    </service>
+    <service id="TyCode\Shared\Infrastructure\Bus\Event\EventMapping" class="TyCode\Shared\Infrastructure\Bus\Event\EventMapping" autowire="true" autoconfigure="true">
+      <argument type="tagged_iterator" tag="shop.event_subscriber"/>
+    </service>
+    <service id="TyCode\Shared\Infrastructure\Bus\Event\EventSubscriberLocator" class="TyCode\Shared\Infrastructure\Bus\Event\EventSubscriberLocator" autowire="true" autoconfigure="true">
+      <argument type="tagged_iterator" tag="shop.event_subscriber"/>
+    </service>
+    <service id="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConnection" class="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConnection" autowire="true" autoconfigure="true">
+      <argument type="collection">
+        <argument key="host">%env(RABBITMQ_HOST)%</argument>
+        <argument key="port">%env(RABBITMQ_PORT)%</argument>
+        <argument key="login">%env(RABBITMQ_LOGIN)%</argument>
+        <argument key="password">%env(RABBITMQ_PASSWORD)%</argument>
+        <argument key="read_timeout">2</argument>
+        <argument key="write_timeout">2</argument>
+        <argument key="connect_timeout">5</argument>
+      </argument>
+    </service>
+    <service id="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventBus" class="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventBus" autowire="true" autoconfigure="true">
+      <argument type="service" id="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConnection"/>
+      <argument>%env(RABBITMQ_EXCHANGE)%</argument>
+    </service>
+    <service id="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventsConsumer" class="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventsConsumer" autowire="true" autoconfigure="true">
+      <argument type="service" id="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConnection"/>
+      <argument type="service" id="TyCode\Shared\Infrastructure\Bus\Event\EventJsonDeserializer"/>
+      <argument>%env(RABBITMQ_EXCHANGE)%</argument>
+      <argument>%env(RABBITMQ_MAX_RETRIES)%</argument>
     </service>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
     <service id="argument_resolver.backed_enum_resolver" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\BackedEnumValueResolver">
@@ -348,7 +455,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.SS4YCfj"/>
+      <argument type="service" id=".service_locator.VPLxAWb"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -429,7 +536,7 @@
       </argument>
     </service>
     <service id="http_cache.store" class="Symfony\Component\HttpKernel\HttpCache\Store">
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/http_cache</argument>
+      <argument>/mnt/d/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/http_cache</argument>
     </service>
     <service id="url_helper" class="Symfony\Component\HttpFoundation\UrlHelper">
       <argument type="service" id="request_stack"/>
@@ -439,7 +546,7 @@
       <tag name="container.no_preload"/>
       <argument type="tagged_iterator" tag="kernel.cache_warmer"/>
       <argument>true</argument>
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/TyCode_ms_Shop_ShopKernelDevDebugContainerDeprecations.log</argument>
+      <argument>/mnt/d/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/TyCode_ms_Shop_ShopKernelDevDebugContainerDeprecations.log</argument>
     </service>
     <service id="cache_clearer" class="Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer">
       <argument type="tagged_iterator" tag="kernel.cache_clearer"/>
@@ -588,7 +695,7 @@
       </argument>
       <argument>UTF-8</argument>
       <argument type="service" id="debug.file_link_formatter" on-invalid="null"/>
-      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop</argument>
+      <argument>/mnt/d/Study/vhosts-php/ecommerce/ms/Shop</argument>
       <argument type="service">
         <service>
           <argument type="service" id="request_stack"/>
@@ -624,7 +731,7 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument type="service" id="filesystem"/>
-      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop</argument>
+      <argument>/mnt/d/Study/vhosts-php/ecommerce/ms/Shop</argument>
       <call method="setName">
         <argument>assets:install</argument>
       </call>
@@ -792,7 +899,7 @@
       <tag name="console.command"/>
       <tag name="container.no_preload"/>
       <argument>dev</argument>
-      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop</argument>
+      <argument>/mnt/d/Study/vhosts-php/ecommerce/ms/Shop</argument>
       <call method="setName">
         <argument>debug:dotenv</argument>
       </call>
@@ -1019,9 +1126,9 @@
     <service id="cache.app" class="Symfony\Component\Cache\Adapter\FilesystemAdapter" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>5-BmoUcYie</argument>
+      <argument>d1Tbewgj02</argument>
       <argument>0</argument>
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/app</argument>
+      <argument>/mnt/d/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1034,59 +1141,59 @@
     <service id="cache.system" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>WvGrRDR1Mx</argument>
+      <argument>5rRqFXyfXd</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
+      <argument>/mnt/d/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.validator" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>YawXUAUzoY</argument>
+      <argument>6UbxBQLDHK</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
+      <argument>/mnt/d/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.serializer" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>FcHFDs17ZQ</argument>
+      <argument>jt29L2Bpg9</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
+      <argument>/mnt/d/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.annotations" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>RRu6rNuY51</argument>
+      <argument>ftECgpm3zt</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
+      <argument>/mnt/d/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.property_info" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>JSe7lgcgHa</argument>
+      <argument>5xhSJm3PS1</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
+      <argument>/mnt/d/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.messenger.restart_workers_signal" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <tag name="cache.pool"/>
       <tag name="kernel.reset" method="reset"/>
-      <argument>rHIhqUEtnq</argument>
+      <argument>qrTech5qJs</argument>
       <argument>0</argument>
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/app</argument>
+      <argument>/mnt/d/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1098,7 +1205,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
+      <argument>/mnt/d/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/system</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1117,7 +1224,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/app</argument>
+      <argument>/mnt/d/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/pools/app</argument>
       <argument type="service" id="cache.default_marshaller" on-invalid="ignore"/>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
@@ -1453,6 +1560,14 @@
         <argument>200</argument>
       </call>
       <call method="addListener">
+        <argument>Symfony\Component\Messenger\Event\WorkerRunningEvent</argument>
+        <argument type="collection">
+          <argument type="service_closure" id="messenger.listener.dispatch_pcntl_signal_listener"/>
+          <argument>onWorkerRunning</argument>
+        </argument>
+        <argument>100</argument>
+      </call>
+      <call method="addListener">
         <argument>Symfony\Component\Messenger\Event\WorkerStartedEvent</argument>
         <argument type="collection">
           <argument type="service_closure" id="messenger.listener.stop_worker_on_restart_signal_listener"/>
@@ -1514,7 +1629,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.SS4YCfj"/>
+      <argument type="service" id=".service_locator.VPLxAWb"/>
     </service>
     <service id="routing.resolver" class="Symfony\Component\Config\Loader\LoaderResolver">
       <call method="addLoader">
@@ -1609,7 +1724,7 @@
       <argument type="service" id=".service_locator.PvoQzFT.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev</argument>
+        <argument key="cache_dir">/mnt/d/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\CompiledUrlGenerator</argument>
         <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper</argument>
@@ -1647,7 +1762,7 @@
       <argument type="service" id="request_stack"/>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="logger" on-invalid="ignore"/>
-      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop</argument>
+      <argument>/mnt/d/Study/vhosts-php/ecommerce/ms/Shop</argument>
       <argument>true</argument>
     </service>
     <service id="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" public="true">
@@ -1668,7 +1783,7 @@
     </service>
     <service id="secrets.vault" class="Symfony\Bundle\FrameworkBundle\Secrets\SodiumVault">
       <tag name="container.env_var_loader"/>
-      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
+      <argument>/mnt/d/Study/vhosts-php/ecommerce/ms/Shop/config/secrets/%env(default:kernel.environment:APP_RUNTIME_ENV)%</argument>
       <argument type="service" id="secrets.decryption_key" on-invalid="ignore"/>
     </service>
     <service id="secrets.decryption_key" class="Symfony\Component\String\LazyString" constructor="fromCallable">
@@ -1676,7 +1791,7 @@
       <argument>base64:default::SYMFONY_DECRYPTION_SECRET</argument>
     </service>
     <service id="secrets.local_vault" class="Symfony\Bundle\FrameworkBundle\Secrets\DotenvVault">
-      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop/.env.dev.local</argument>
+      <argument>/mnt/d/Study/vhosts-php/ecommerce/ms/Shop/.env.dev.local</argument>
     </service>
     <service id=".cache_connection.GD_MSZC" class="Symfony\Component\Cache\Adapter\AbstractAdapter" constructor="createConnection">
       <argument>redis://localhost</argument>
@@ -1720,7 +1835,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.factory.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorageFactory">
-      <argument>D:/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/sessions</argument>
+      <argument>/mnt/d/Study/vhosts-php/ecommerce/ms/Shop/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service">
         <service class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag">
@@ -1870,7 +1985,7 @@
       <argument type="service" id="filesystem"/>
       <argument type="service" id="maker.autoloader_util"/>
       <argument type="service" id="maker.file_link_formatter"/>
-      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop</argument>
+      <argument>/mnt/d/Study/vhosts-php/ecommerce/ms/Shop</argument>
       <argument>null</argument>
     </service>
     <service id="maker.autoloader_finder" class="Symfony\Bundle\MakerBundle\Util\ComposerAutoloaderFinder">
@@ -2033,7 +2148,7 @@
     </service>
     <service id="maker.maker.make_migration" class="Symfony\Bundle\MakerBundle\Maker\MakeMigration">
       <tag name="maker.command"/>
-      <argument>D:\Study\vhosts-php\ecommerce\ms\Shop</argument>
+      <argument>/mnt/d/Study/vhosts-php/ecommerce/ms/Shop</argument>
       <argument type="service" id="maker.file_link_formatter"/>
     </service>
     <service id="maker.maker.make_stimulus_controller" class="Symfony\Bundle\MakerBundle\Maker\MakeStimulusController">
@@ -2049,6 +2164,16 @@
     <service id=".abstract.instanceof.TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommandHandler" class="TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommandHandler" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.TyCode\Shared\Domain\Bus\Query\QueryHandler.0.TyCode\Shop\Product\Application\CQRS\FindByCriteria\FindProductByCriteriaQueryHandler" class="TyCode\Shop\Product\Application\CQRS\FindByCriteria\FindProductByCriteriaQueryHandler" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.TyCode\Shop\Product\Application\CQRS\FindByCriteria\FindProductByCriteriaQueryHandler" class="TyCode\Shop\Product\Application\CQRS\FindByCriteria\FindProductByCriteriaQueryHandler" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.TyCode\Shared\Domain\Bus\Command\CommandHandler.0.TyCode\Shop\Review\Application\CQRS\Create\CreateReviewCommandHandler" class="TyCode\Shop\Review\Application\CQRS\Create\CreateReviewCommandHandler" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.TyCode\Shop\Review\Application\CQRS\Create\CreateReviewCommandHandler" class="TyCode\Shop\Review\Application\CQRS\Create\CreateReviewCommandHandler" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.TyCode\Shared\Domain\Bus\Event\EventSubscriber.0.TyCode\Shop\Review\Application\Subscriber\CreateReviewOn" class="TyCode\Shop\Review\Application\Subscriber\CreateReviewOn" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.TyCode\Shop\Review\Application\Subscriber\CreateReviewOn" class="TyCode\Shop\Review\Application\Subscriber\CreateReviewOn" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Console\Command\Command.0.TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand" class="TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand" class="TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Console\Command\Command.0.TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand" class="TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand" class="TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Console\Command\Command.0.TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" class="TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" class="TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.w7.f4fT" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -2474,7 +2599,7 @@
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
-    <service id=".service_locator.SS4YCfj" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.VPLxAWb" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProduct::__invoke" type="service_closure" id=".service_locator.Fibiztl"/>
@@ -2483,6 +2608,7 @@
         <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProducts::__invoke" type="service_closure" id=".service_locator.Vw4xC8x"/>
         <argument key="TyCode\Shop\Product\Infrastructure\Web\PostProductCreate::__invoke" type="service_closure" id=".service_locator.6Q6Yeh_"/>
         <argument key="TyCode\Shop\Product\Infrastructure\Web\PostProductCreateCQRS::__invoke" type="service_closure" id=".service_locator.lwNoDbx"/>
+        <argument key="TyCode\Shop\Review\Infrastructure\Web\PostReviewCreate::__invoke" type="service_closure" id=".service_locator.lwNoDbx"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProduct:__invoke" type="service_closure" id=".service_locator.Fibiztl"/>
@@ -2497,6 +2623,8 @@
         <argument key="TyCode\Shop\Product\Infrastructure\Web\PostProductCreate" type="service_closure" id=".service_locator.6Q6Yeh_"/>
         <argument key="TyCode\Shop\Product\Infrastructure\Web\PostProductCreateCQRS:__invoke" type="service_closure" id=".service_locator.lwNoDbx"/>
         <argument key="TyCode\Shop\Product\Infrastructure\Web\PostProductCreateCQRS" type="service_closure" id=".service_locator.lwNoDbx"/>
+        <argument key="TyCode\Shop\Review\Infrastructure\Web\PostReviewCreate:__invoke" type="service_closure" id=".service_locator.lwNoDbx"/>
+        <argument key="TyCode\Shop\Review\Infrastructure\Web\PostReviewCreate" type="service_closure" id=".service_locator.lwNoDbx"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
       </argument>
@@ -3096,8 +3224,11 @@
     </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
-      <argument type="service" id=".service_locator.meo6Qg9"/>
+      <argument type="service" id=".service_locator.MIC5Kx9"/>
       <argument type="collection">
+        <argument key="ecm:rabbitmq:configure">TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand</argument>
+        <argument key="ecm:rabbitmq:events:consume">TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand</argument>
+        <argument key="ecm:rabbitmq:events:generate-supervisor-files">TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand</argument>
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
         <argument key="cache:clear">console.command.cache_clear</argument>
@@ -3157,9 +3288,12 @@
         <argument key="make:security:form-login">maker.auto_command.make_security_form_login</argument>
       </argument>
     </service>
-    <service id=".service_locator.meo6Qg9" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.MIC5Kx9" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand" type="service_closure" id="TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand"/>
+        <argument key="TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand" type="service_closure" id="TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand"/>
+        <argument key="TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" type="service_closure" id="TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand"/>
         <argument key="console.command.about" type="service_closure" id=".console.command.about.lazy"/>
         <argument key="console.command.assets_install" type="service_closure" id=".console.command.assets_install.lazy"/>
         <argument key="console.command.cache_clear" type="service_closure" id=".console.command.cache_clear.lazy"/>
@@ -3220,8 +3354,8 @@
     <service id="TyCode\Shop\Review\Domain\ReviewRepository" alias="TyCode\Shop\Review\Infrastructure\Persistence\DoctrineProductReviewRepository"/>
     <service id="TyCode\Shared\Domain\Bus\Command\CommandBus" alias="TyCode\Shared\Infrastructure\Bus\Command\SymfonyMessageCommandBus"/>
     <service id="TyCode\Shared\Domain\Bus\Query\QueryBus" alias="TyCode\Shared\Infrastructure\Bus\Query\SymfonyMessageQueryBus"/>
-    <service id="TyCode\Shared\Domain\Bus\Command\Command" alias="TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommand"/>
-    <service id="TyCode\Shared\Domain\Bus\Command\CommandHandler" alias="TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommandHandler"/>
+    <service id="TyCode\Shared\Domain\Bus\Event\EventBus" alias="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventBus"/>
+    <service id="TyCode\Shared\Domain\Bus\Event\EventSubscriber" alias="TyCode\Shop\Review\Application\Subscriber\CreateReviewOn"/>
     <service id="TyCode\Shared\Domain\Bus\Query\Query" alias="TyCode\Shop\Product\Application\CQRS\FindByCriteria\FindProductByCriteriaQuery"/>
     <service id="TyCode\Shared\Domain\Bus\Query\QueryHandler" alias="TyCode\Shop\Product\Application\CQRS\FindByCriteria\FindProductByCriteriaQueryHandler"/>
     <service id="TyCode\Shared\Domain\Bus\Query\Response" alias="TyCode\Shop\Product\Application\CQRS\FindByCriteria\ProductsResponse"/>
@@ -3284,11 +3418,11 @@
     <service id="messenger.default_bus" alias="messenger.bus.default" public="true"/>
     <service id="Symfony\Component\Messenger\MessageBusInterface" alias="messenger.bus.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.w7.f4fT" public="true"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.SS4YCfj"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.VPLxAWb"/>
     <service id="Psr\Log\LoggerInterface" alias="logger"/>
     <service id=".service_locator.Xbsa8iG" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.bJ.4HC5" alias=".service_locator.w7.f4fT"/>
-    <service id=".service_locator.YwZ3y33" alias=".service_locator.SS4YCfj"/>
+    <service id=".service_locator.7GGcvs_" alias=".service_locator.VPLxAWb"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>
     <service id="controller_resolver" alias="debug.controller_resolver"/>
     <service id="argument_resolver" alias="debug.argument_resolver"/>

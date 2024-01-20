@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerEFtvUef;
+namespace ContainerG25fl5C;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -42,6 +42,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
             'TyCode\\Shop\\Product\\Infrastructure\\Web\\PostProductCreateCQRS' => 'getPostProductCreateCQRSService',
             'TyCode\\Shop\\Product\\Infrastructure\\Web\\ProductResponse' => 'getProductResponseService',
             'TyCode\\Shop\\Review\\Infrastructure\\Web\\HealthCheckGetController' => 'getHealthCheckGetController2Service',
+            'TyCode\\Shop\\Review\\Infrastructure\\Web\\PostReviewCreate' => 'getPostReviewCreateService',
             'TyCode\\Shop\\Review\\Infrastructure\\Web\\ReviewResponse' => 'getReviewResponseService',
             'cache.app' => 'getCache_AppService',
             'cache.app_clearer' => 'getCache_AppClearerService',
@@ -67,70 +68,70 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
         $this->aliases = [];
 
         $this->privates['service_container'] = static function ($container) {
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'EventListener'.\DIRECTORY_SEPARATOR.'ResponseListener.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'EventListener'.\DIRECTORY_SEPARATOR.'LocaleListener.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'EventListener'.\DIRECTORY_SEPARATOR.'ValidateRequestListener.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'EventListener'.\DIRECTORY_SEPARATOR.'DisallowRobotsIndexingListener.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'EventListener'.\DIRECTORY_SEPARATOR.'ErrorListener.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'EventListener'.\DIRECTORY_SEPARATOR.'CacheAttributeListener.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'runtime'.\DIRECTORY_SEPARATOR.'RunnerInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'runtime'.\DIRECTORY_SEPARATOR.'Runner'.\DIRECTORY_SEPARATOR.'Symfony'.\DIRECTORY_SEPARATOR.'HttpKernelRunner.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'runtime'.\DIRECTORY_SEPARATOR.'Runner'.\DIRECTORY_SEPARATOR.'Symfony'.\DIRECTORY_SEPARATOR.'ResponseRunner.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'runtime'.\DIRECTORY_SEPARATOR.'RuntimeInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'runtime'.\DIRECTORY_SEPARATOR.'GenericRuntime.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'runtime'.\DIRECTORY_SEPARATOR.'SymfonyRuntime.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'HttpKernelInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'TerminableInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'HttpKernel.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ControllerResolverInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'TraceableControllerResolver.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ControllerResolver.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ContainerControllerResolver.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ControllerResolver.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolverInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'TraceableArgumentResolver.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolver.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'ControllerMetadata'.\DIRECTORY_SEPARATOR.'ArgumentMetadataFactoryInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'ControllerMetadata'.\DIRECTORY_SEPARATOR.'ArgumentMetadataFactory.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'psr'.\DIRECTORY_SEPARATOR.'container'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'ContainerInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'service-contracts'.\DIRECTORY_SEPARATOR.'ServiceProviderInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'service-contracts'.\DIRECTORY_SEPARATOR.'ServiceLocatorTrait.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'dependency-injection'.\DIRECTORY_SEPARATOR.'ServiceLocator.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-foundation'.\DIRECTORY_SEPARATOR.'RequestStack.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'EventListener'.\DIRECTORY_SEPARATOR.'DebugHandlersListener.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'service-contracts'.\DIRECTORY_SEPARATOR.'ResetInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'stopwatch'.\DIRECTORY_SEPARATOR.'Stopwatch.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'routing'.\DIRECTORY_SEPARATOR.'RequestContext.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'EventListener'.\DIRECTORY_SEPARATOR.'RouterListener.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'EventListener'.\DIRECTORY_SEPARATOR.'AbstractSessionListener.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'EventListener'.\DIRECTORY_SEPARATOR.'SessionListener.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'psr'.\DIRECTORY_SEPARATOR.'log'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'LoggerInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'psr'.\DIRECTORY_SEPARATOR.'log'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'LoggerTrait.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'psr'.\DIRECTORY_SEPARATOR.'log'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'AbstractLogger.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Log'.\DIRECTORY_SEPARATOR.'DebugLoggerInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Log'.\DIRECTORY_SEPARATOR.'Logger.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'routing'.\DIRECTORY_SEPARATOR.'RequestContextAwareInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'routing'.\DIRECTORY_SEPARATOR.'Matcher'.\DIRECTORY_SEPARATOR.'UrlMatcherInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'routing'.\DIRECTORY_SEPARATOR.'Generator'.\DIRECTORY_SEPARATOR.'UrlGeneratorInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'routing'.\DIRECTORY_SEPARATOR.'RouterInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'routing'.\DIRECTORY_SEPARATOR.'Matcher'.\DIRECTORY_SEPARATOR.'RequestMatcherInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'routing'.\DIRECTORY_SEPARATOR.'Router.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'CacheWarmer'.\DIRECTORY_SEPARATOR.'WarmableInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'service-contracts'.\DIRECTORY_SEPARATOR.'ServiceSubscriberInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Routing'.\DIRECTORY_SEPARATOR.'Router.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'dependency-injection'.\DIRECTORY_SEPARATOR.'ParameterBag'.\DIRECTORY_SEPARATOR.'ParameterBagInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'dependency-injection'.\DIRECTORY_SEPARATOR.'ParameterBag'.\DIRECTORY_SEPARATOR.'ParameterBag.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'dependency-injection'.\DIRECTORY_SEPARATOR.'ParameterBag'.\DIRECTORY_SEPARATOR.'FrozenParameterBag.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'dependency-injection'.\DIRECTORY_SEPARATOR.'ParameterBag'.\DIRECTORY_SEPARATOR.'ContainerBagInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'dependency-injection'.\DIRECTORY_SEPARATOR.'ParameterBag'.\DIRECTORY_SEPARATOR.'ContainerBag.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'config'.\DIRECTORY_SEPARATOR.'ConfigCacheFactoryInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'config'.\DIRECTORY_SEPARATOR.'ResourceCheckerConfigCacheFactory.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'psr'.\DIRECTORY_SEPARATOR.'event-dispatcher'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'EventDispatcherInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'event-dispatcher-contracts'.\DIRECTORY_SEPARATOR.'EventDispatcherInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'event-dispatcher'.\DIRECTORY_SEPARATOR.'EventDispatcherInterface.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'event-dispatcher'.\DIRECTORY_SEPARATOR.'Debug'.\DIRECTORY_SEPARATOR.'TraceableEventDispatcher.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Debug'.\DIRECTORY_SEPARATOR.'TraceableEventDispatcher.php';
-            include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'event-dispatcher'.\DIRECTORY_SEPARATOR.'EventDispatcher.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/EventListener/ResponseListener.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/EventListener/LocaleListener.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/EventListener/ValidateRequestListener.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/EventListener/DisallowRobotsIndexingListener.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/EventListener/ErrorListener.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/EventListener/CacheAttributeListener.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/runtime/RunnerInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/runtime/Runner/Symfony/HttpKernelRunner.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/runtime/Runner/Symfony/ResponseRunner.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/runtime/RuntimeInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/runtime/GenericRuntime.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/runtime/SymfonyRuntime.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/HttpKernelInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/TerminableInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/HttpKernel.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ControllerResolverInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/TraceableControllerResolver.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ControllerResolver.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ContainerControllerResolver.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Controller/ControllerResolver.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolverInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/TraceableArgumentResolver.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolver.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/ControllerMetadata/ArgumentMetadataFactoryInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/ControllerMetadata/ArgumentMetadataFactory.php';
+            include_once \dirname(__DIR__, 6).'/vendor/psr/container/src/ContainerInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/service-contracts/ServiceProviderInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/service-contracts/ServiceLocatorTrait.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/dependency-injection/ServiceLocator.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-foundation/RequestStack.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/EventListener/DebugHandlersListener.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/service-contracts/ResetInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/stopwatch/Stopwatch.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/routing/RequestContext.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/EventListener/RouterListener.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/EventListener/AbstractSessionListener.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/EventListener/SessionListener.php';
+            include_once \dirname(__DIR__, 6).'/vendor/psr/log/src/LoggerInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/psr/log/src/LoggerTrait.php';
+            include_once \dirname(__DIR__, 6).'/vendor/psr/log/src/AbstractLogger.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Log/DebugLoggerInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Log/Logger.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/routing/RequestContextAwareInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/routing/Matcher/UrlMatcherInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/routing/Generator/UrlGeneratorInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/routing/RouterInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/routing/Matcher/RequestMatcherInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/routing/Router.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/CacheWarmer/WarmableInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/service-contracts/ServiceSubscriberInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Routing/Router.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/dependency-injection/ParameterBag/ParameterBagInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/dependency-injection/ParameterBag/ParameterBag.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/dependency-injection/ParameterBag/FrozenParameterBag.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/dependency-injection/ParameterBag/ContainerBagInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/dependency-injection/ParameterBag/ContainerBag.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/config/ConfigCacheFactoryInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/config/ResourceCheckerConfigCacheFactory.php';
+            include_once \dirname(__DIR__, 6).'/vendor/psr/event-dispatcher/src/EventDispatcherInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/event-dispatcher-contracts/EventDispatcherInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/event-dispatcher/EventDispatcherInterface.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/event-dispatcher/Debug/TraceableEventDispatcher.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Debug/TraceableEventDispatcher.php';
+            include_once \dirname(__DIR__, 6).'/vendor/symfony/event-dispatcher/EventDispatcher.php';
             include_once __DIR__.'/proxy-classes.php';
         };
     }
@@ -162,10 +163,10 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getEntityManagerService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'doctrine'.\DIRECTORY_SEPARATOR.'persistence'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Persistence'.\DIRECTORY_SEPARATOR.'ObjectManager.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'doctrine'.\DIRECTORY_SEPARATOR.'orm'.\DIRECTORY_SEPARATOR.'lib'.\DIRECTORY_SEPARATOR.'Doctrine'.\DIRECTORY_SEPARATOR.'ORM'.\DIRECTORY_SEPARATOR.'EntityManagerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'doctrine'.\DIRECTORY_SEPARATOR.'orm'.\DIRECTORY_SEPARATOR.'lib'.\DIRECTORY_SEPARATOR.'Doctrine'.\DIRECTORY_SEPARATOR.'ORM'.\DIRECTORY_SEPARATOR.'EntityManager.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shop'.\DIRECTORY_SEPARATOR.'Shared'.\DIRECTORY_SEPARATOR.'Infrastructure'.\DIRECTORY_SEPARATOR.'Doctrine'.\DIRECTORY_SEPARATOR.'ShopEntityManagerFactory.php';
+        include_once \dirname(__DIR__, 6).'/vendor/doctrine/persistence/src/Persistence/ObjectManager.php';
+        include_once \dirname(__DIR__, 6).'/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManagerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Shared/Infrastructure/Doctrine/ShopEntityManagerFactory.php';
 
         return $container->services['Doctrine\\ORM\\EntityManager'] = \TyCode\Shop\Shared\Infrastructure\Doctrine\ShopEntityManagerFactory::create(['driver' => $container->getEnv('SHOP_DATABASE_DRIVER'), 'host' => $container->getEnv('SHOP_DATABASE_HOST'), 'port' => $container->getEnv('SHOP_DATABASE_PORT'), 'dbname' => $container->getEnv('SHOP_DATABASE_NAME'), 'user' => $container->getEnv('SHOP_DATABASE_USER'), 'password' => $container->getEnv('SHOP_DATABASE_PASSWORD')], $container->getEnv('APP_ENV'));
     }
@@ -177,7 +178,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getRedirectControllerService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'RedirectController.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Controller/RedirectController.php';
 
         $a = ($container->privates['router.request_context'] ?? self::getRouter_RequestContextService($container));
 
@@ -191,7 +192,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getTemplateControllerService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'TemplateController.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Controller/TemplateController.php';
 
         return $container->services['Symfony\\Bundle\\FrameworkBundle\\Controller\\TemplateController'] = new \Symfony\Bundle\FrameworkBundle\Controller\TemplateController(NULL);
     }
@@ -203,7 +204,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getGetProductService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shop'.\DIRECTORY_SEPARATOR.'Product'.\DIRECTORY_SEPARATOR.'Infrastructure'.\DIRECTORY_SEPARATOR.'Web'.\DIRECTORY_SEPARATOR.'GetProduct.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Product/Infrastructure/Web/GetProduct.php';
 
         return $container->services['TyCode\\Shop\\Product\\Infrastructure\\Web\\GetProduct'] = new \TyCode\Shop\Product\Infrastructure\Web\GetProduct();
     }
@@ -215,7 +216,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getGetProductByCriteriaService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shop'.\DIRECTORY_SEPARATOR.'Product'.\DIRECTORY_SEPARATOR.'Infrastructure'.\DIRECTORY_SEPARATOR.'Web'.\DIRECTORY_SEPARATOR.'GetProductByCriteria.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Product/Infrastructure/Web/GetProductByCriteria.php';
 
         return $container->services['TyCode\\Shop\\Product\\Infrastructure\\Web\\GetProductByCriteria'] = new \TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteria();
     }
@@ -227,7 +228,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getGetProductByCriteriaCQRSService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shop'.\DIRECTORY_SEPARATOR.'Product'.\DIRECTORY_SEPARATOR.'Infrastructure'.\DIRECTORY_SEPARATOR.'Web'.\DIRECTORY_SEPARATOR.'GetProductByCriteriaCQRS.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Product/Infrastructure/Web/GetProductByCriteriaCQRS.php';
 
         return $container->services['TyCode\\Shop\\Product\\Infrastructure\\Web\\GetProductByCriteriaCQRS'] = new \TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteriaCQRS();
     }
@@ -239,7 +240,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getGetProductsService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shop'.\DIRECTORY_SEPARATOR.'Product'.\DIRECTORY_SEPARATOR.'Infrastructure'.\DIRECTORY_SEPARATOR.'Web'.\DIRECTORY_SEPARATOR.'GetProducts.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Product/Infrastructure/Web/GetProducts.php';
 
         return $container->services['TyCode\\Shop\\Product\\Infrastructure\\Web\\GetProducts'] = new \TyCode\Shop\Product\Infrastructure\Web\GetProducts();
     }
@@ -251,7 +252,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getHealthCheckGetControllerService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shop'.\DIRECTORY_SEPARATOR.'Product'.\DIRECTORY_SEPARATOR.'Infrastructure'.\DIRECTORY_SEPARATOR.'Web'.\DIRECTORY_SEPARATOR.'HealthCheckGetController.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Product/Infrastructure/Web/HealthCheckGetController.php';
 
         return $container->services['TyCode\\Shop\\Product\\Infrastructure\\Web\\HealthCheckGetController'] = new \TyCode\Shop\Product\Infrastructure\Web\HealthCheckGetController();
     }
@@ -263,7 +264,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getPostProductCreateService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shop'.\DIRECTORY_SEPARATOR.'Product'.\DIRECTORY_SEPARATOR.'Infrastructure'.\DIRECTORY_SEPARATOR.'Web'.\DIRECTORY_SEPARATOR.'PostProductCreate.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Product/Infrastructure/Web/PostProductCreate.php';
 
         return $container->services['TyCode\\Shop\\Product\\Infrastructure\\Web\\PostProductCreate'] = new \TyCode\Shop\Product\Infrastructure\Web\PostProductCreate();
     }
@@ -275,7 +276,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getPostProductCreateCQRSService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shop'.\DIRECTORY_SEPARATOR.'Product'.\DIRECTORY_SEPARATOR.'Infrastructure'.\DIRECTORY_SEPARATOR.'Web'.\DIRECTORY_SEPARATOR.'PostProductCreateCQRS.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Product/Infrastructure/Web/PostProductCreateCQRS.php';
 
         return $container->services['TyCode\\Shop\\Product\\Infrastructure\\Web\\PostProductCreateCQRS'] = new \TyCode\Shop\Product\Infrastructure\Web\PostProductCreateCQRS();
     }
@@ -287,7 +288,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getProductResponseService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shop'.\DIRECTORY_SEPARATOR.'Product'.\DIRECTORY_SEPARATOR.'Infrastructure'.\DIRECTORY_SEPARATOR.'Web'.\DIRECTORY_SEPARATOR.'ProductResponse.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Product/Infrastructure/Web/ProductResponse.php';
 
         return $container->services['TyCode\\Shop\\Product\\Infrastructure\\Web\\ProductResponse'] = new \TyCode\Shop\Product\Infrastructure\Web\ProductResponse();
     }
@@ -299,9 +300,21 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getHealthCheckGetController2Service($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shop'.\DIRECTORY_SEPARATOR.'Review'.\DIRECTORY_SEPARATOR.'Infrastructure'.\DIRECTORY_SEPARATOR.'Web'.\DIRECTORY_SEPARATOR.'HealthCheckGetController.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Review/Infrastructure/Web/HealthCheckGetController.php';
 
         return $container->services['TyCode\\Shop\\Review\\Infrastructure\\Web\\HealthCheckGetController'] = new \TyCode\Shop\Review\Infrastructure\Web\HealthCheckGetController();
+    }
+
+    /**
+     * Gets the public 'TyCode\Shop\Review\Infrastructure\Web\PostReviewCreate' shared autowired service.
+     *
+     * @return \TyCode\Shop\Review\Infrastructure\Web\PostReviewCreate
+     */
+    protected static function getPostReviewCreateService($container)
+    {
+        include_once \dirname(__DIR__, 6).'/src/Shop/Review/Infrastructure/Web/PostReviewCreate.php';
+
+        return $container->services['TyCode\\Shop\\Review\\Infrastructure\\Web\\PostReviewCreate'] = new \TyCode\Shop\Review\Infrastructure\Web\PostReviewCreate();
     }
 
     /**
@@ -311,7 +324,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getReviewResponseService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shop'.\DIRECTORY_SEPARATOR.'Review'.\DIRECTORY_SEPARATOR.'Infrastructure'.\DIRECTORY_SEPARATOR.'Web'.\DIRECTORY_SEPARATOR.'ReviewResponse.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Review/Infrastructure/Web/ReviewResponse.php';
 
         return $container->services['TyCode\\Shop\\Review\\Infrastructure\\Web\\ReviewResponse'] = new \TyCode\Shop\Review\Infrastructure\Web\ReviewResponse();
     }
@@ -323,24 +336,24 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getCache_AppService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'psr'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'CacheItemPoolInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Adapter'.\DIRECTORY_SEPARATOR.'AdapterInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache-contracts'.\DIRECTORY_SEPARATOR.'CacheInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'psr'.\DIRECTORY_SEPARATOR.'log'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'LoggerAwareInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'ResettableInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'psr'.\DIRECTORY_SEPARATOR.'log'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'LoggerAwareTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Traits'.\DIRECTORY_SEPARATOR.'AbstractAdapterTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache-contracts'.\DIRECTORY_SEPARATOR.'CacheTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Traits'.\DIRECTORY_SEPARATOR.'ContractsTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Adapter'.\DIRECTORY_SEPARATOR.'AbstractAdapter.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'PruneableInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Traits'.\DIRECTORY_SEPARATOR.'FilesystemCommonTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Traits'.\DIRECTORY_SEPARATOR.'FilesystemTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Adapter'.\DIRECTORY_SEPARATOR.'FilesystemAdapter.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Marshaller'.\DIRECTORY_SEPARATOR.'MarshallerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Marshaller'.\DIRECTORY_SEPARATOR.'DefaultMarshaller.php';
+        include_once \dirname(__DIR__, 6).'/vendor/psr/cache/src/CacheItemPoolInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Adapter/AdapterInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache-contracts/CacheInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/psr/log/src/LoggerAwareInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/ResettableInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/psr/log/src/LoggerAwareTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Traits/AbstractAdapterTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache-contracts/CacheTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Traits/ContractsTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Adapter/AbstractAdapter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/PruneableInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Traits/FilesystemCommonTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Traits/FilesystemTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Adapter/FilesystemAdapter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Marshaller/MarshallerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Marshaller/DefaultMarshaller.php';
 
-        $container->services['cache.app'] = $instance = new \Symfony\Component\Cache\Adapter\FilesystemAdapter('5-BmoUcYie', 0, ($container->targetDir.''.'/pools/app'), ($container->privates['cache.default_marshaller'] ??= new \Symfony\Component\Cache\Marshaller\DefaultMarshaller(NULL, true)));
+        $container->services['cache.app'] = $instance = new \Symfony\Component\Cache\Adapter\FilesystemAdapter('d1Tbewgj02', 0, ($container->targetDir.''.'/pools/app'), ($container->privates['cache.default_marshaller'] ??= new \Symfony\Component\Cache\Marshaller\DefaultMarshaller(NULL, true)));
 
         $instance->setLogger(($container->privates['logger'] ?? self::getLoggerService($container)));
 
@@ -354,8 +367,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getCache_AppClearerService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'CacheClearer'.\DIRECTORY_SEPARATOR.'CacheClearerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'CacheClearer'.\DIRECTORY_SEPARATOR.'Psr6CacheClearer.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/CacheClearer/CacheClearerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/CacheClearer/Psr6CacheClearer.php';
 
         return $container->services['cache.app_clearer'] = new \Symfony\Component\HttpKernel\CacheClearer\Psr6CacheClearer(['cache.app' => ($container->services['cache.app'] ?? self::getCache_AppService($container)), 'cache.messenger.restart_workers_signal' => ($container->privates['cache.messenger.restart_workers_signal'] ?? self::getCache_Messenger_RestartWorkersSignalService($container))]);
     }
@@ -367,8 +380,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getCache_GlobalClearerService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'CacheClearer'.\DIRECTORY_SEPARATOR.'CacheClearerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'CacheClearer'.\DIRECTORY_SEPARATOR.'Psr6CacheClearer.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/CacheClearer/CacheClearerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/CacheClearer/Psr6CacheClearer.php';
 
         return $container->services['cache.global_clearer'] = new \Symfony\Component\HttpKernel\CacheClearer\Psr6CacheClearer(['cache.app' => ($container->services['cache.app'] ?? self::getCache_AppService($container)), 'cache.system' => ($container->services['cache.system'] ?? self::getCache_SystemService($container)), 'cache.messenger.restart_workers_signal' => ($container->privates['cache.messenger.restart_workers_signal'] ?? self::getCache_Messenger_RestartWorkersSignalService($container))]);
     }
@@ -380,18 +393,18 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getCache_SystemService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'psr'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'CacheItemPoolInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Adapter'.\DIRECTORY_SEPARATOR.'AdapterInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache-contracts'.\DIRECTORY_SEPARATOR.'CacheInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'psr'.\DIRECTORY_SEPARATOR.'log'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'LoggerAwareInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'ResettableInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'psr'.\DIRECTORY_SEPARATOR.'log'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'LoggerAwareTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Traits'.\DIRECTORY_SEPARATOR.'AbstractAdapterTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache-contracts'.\DIRECTORY_SEPARATOR.'CacheTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Traits'.\DIRECTORY_SEPARATOR.'ContractsTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Adapter'.\DIRECTORY_SEPARATOR.'AbstractAdapter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/psr/cache/src/CacheItemPoolInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Adapter/AdapterInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache-contracts/CacheInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/psr/log/src/LoggerAwareInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/ResettableInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/psr/log/src/LoggerAwareTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Traits/AbstractAdapterTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache-contracts/CacheTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Traits/ContractsTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Adapter/AbstractAdapter.php';
 
-        return $container->services['cache.system'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('WvGrRDR1Mx', 0, $container->getParameter('container.build_id'), ($container->targetDir.''.'/pools/system'), ($container->privates['logger'] ?? self::getLoggerService($container)));
+        return $container->services['cache.system'] = \Symfony\Component\Cache\Adapter\AbstractAdapter::createSystemCache('5rRqFXyfXd', 0, $container->getParameter('container.build_id'), ($container->targetDir.''.'/pools/system'), ($container->privates['logger'] ?? self::getLoggerService($container)));
     }
 
     /**
@@ -401,8 +414,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getCache_SystemClearerService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'CacheClearer'.\DIRECTORY_SEPARATOR.'CacheClearerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'CacheClearer'.\DIRECTORY_SEPARATOR.'Psr6CacheClearer.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/CacheClearer/CacheClearerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/CacheClearer/Psr6CacheClearer.php';
 
         return $container->services['cache.system_clearer'] = new \Symfony\Component\HttpKernel\CacheClearer\Psr6CacheClearer(['cache.system' => ($container->services['cache.system'] ?? self::getCache_SystemService($container))]);
     }
@@ -414,8 +427,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getCacheWarmerService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'CacheWarmer'.\DIRECTORY_SEPARATOR.'CacheWarmerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'CacheWarmer'.\DIRECTORY_SEPARATOR.'CacheWarmerAggregate.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerAggregate.php';
 
         return $container->services['cache_warmer'] = new \Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate(new RewindableGenerator(function () use ($container) {
             yield 0 => ($container->privates['config_builder.warmer'] ?? self::getConfigBuilder_WarmerService($container));
@@ -430,10 +443,13 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_CommandLoaderService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'CommandLoader'.\DIRECTORY_SEPARATOR.'CommandLoaderInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'CommandLoader'.\DIRECTORY_SEPARATOR.'ContainerCommandLoader.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/CommandLoader/CommandLoaderInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/CommandLoader/ContainerCommandLoader.php';
 
         return $container->services['console.command_loader'] = new \Symfony\Component\Console\CommandLoader\ContainerCommandLoader(new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($container->getService ??= $container->getService(...), [
+            'TyCode\\Shop\\Review\\Infrastructure\\Cli\\RabbitMq\\ConfigureRabbitMqCommand' => ['privates', 'TyCode\\Shop\\Review\\Infrastructure\\Cli\\RabbitMq\\ConfigureRabbitMqCommand', 'getConfigureRabbitMqCommandService', false],
+            'TyCode\\Shop\\Review\\Infrastructure\\Cli\\RabbitMq\\ConsumeRabbitMqEventsCommand' => ['privates', 'TyCode\\Shop\\Review\\Infrastructure\\Cli\\RabbitMq\\ConsumeRabbitMqEventsCommand', 'getConsumeRabbitMqEventsCommandService', false],
+            'TyCode\\Shop\\Review\\Infrastructure\\Cli\\RabbitMq\\GenerateSupervisorRabbitMqConsumerFilesCommand' => ['privates', 'TyCode\\Shop\\Review\\Infrastructure\\Cli\\RabbitMq\\GenerateSupervisorRabbitMqConsumerFilesCommand', 'getGenerateSupervisorRabbitMqConsumerFilesCommandService', false],
             'console.command.about' => ['privates', '.console.command.about.lazy', 'get_Console_Command_About_LazyService', false],
             'console.command.assets_install' => ['privates', '.console.command.assets_install.lazy', 'get_Console_Command_AssetsInstall_LazyService', false],
             'console.command.cache_clear' => ['privates', '.console.command.cache_clear.lazy', 'get_Console_Command_CacheClear_LazyService', false],
@@ -489,6 +505,9 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
             'maker.auto_command.make_stimulus_controller' => ['privates', '.maker.auto_command.make_stimulus_controller.lazy', 'get_Maker_AutoCommand_MakeStimulusController_LazyService', false],
             'maker.auto_command.make_security_form_login' => ['privates', '.maker.auto_command.make_security_form_login.lazy', 'get_Maker_AutoCommand_MakeSecurityFormLogin_LazyService', false],
         ], [
+            'TyCode\\Shop\\Review\\Infrastructure\\Cli\\RabbitMq\\ConfigureRabbitMqCommand' => 'TyCode\\Shop\\Review\\Infrastructure\\Cli\\RabbitMq\\ConfigureRabbitMqCommand',
+            'TyCode\\Shop\\Review\\Infrastructure\\Cli\\RabbitMq\\ConsumeRabbitMqEventsCommand' => 'TyCode\\Shop\\Review\\Infrastructure\\Cli\\RabbitMq\\ConsumeRabbitMqEventsCommand',
+            'TyCode\\Shop\\Review\\Infrastructure\\Cli\\RabbitMq\\GenerateSupervisorRabbitMqConsumerFilesCommand' => 'TyCode\\Shop\\Review\\Infrastructure\\Cli\\RabbitMq\\GenerateSupervisorRabbitMqConsumerFilesCommand',
             'console.command.about' => '?',
             'console.command.assets_install' => '?',
             'console.command.cache_clear' => '?',
@@ -543,7 +562,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
             'maker.auto_command.make_migration' => '?',
             'maker.auto_command.make_stimulus_controller' => '?',
             'maker.auto_command.make_security_form_login' => '?',
-        ]), ['about' => 'console.command.about', 'assets:install' => 'console.command.assets_install', 'cache:clear' => 'console.command.cache_clear', 'cache:pool:clear' => 'console.command.cache_pool_clear', 'cache:pool:prune' => 'console.command.cache_pool_prune', 'cache:pool:invalidate-tags' => 'console.command.cache_pool_invalidate_tags', 'cache:pool:delete' => 'console.command.cache_pool_delete', 'cache:pool:list' => 'console.command.cache_pool_list', 'cache:warmup' => 'console.command.cache_warmup', 'debug:config' => 'console.command.config_debug', 'config:dump-reference' => 'console.command.config_dump_reference', 'debug:container' => 'console.command.container_debug', 'lint:container' => 'console.command.container_lint', 'debug:autowiring' => 'console.command.debug_autowiring', 'debug:dotenv' => 'console.command.dotenv_debug', 'debug:event-dispatcher' => 'console.command.event_dispatcher_debug', 'messenger:consume' => 'console.command.messenger_consume_messages', 'messenger:setup-transports' => 'console.command.messenger_setup_transports', 'debug:messenger' => 'console.command.messenger_debug', 'messenger:stop-workers' => 'console.command.messenger_stop_workers', 'messenger:stats' => 'console.command.messenger_stats', 'debug:router' => 'console.command.router_debug', 'router:match' => 'console.command.router_match', 'lint:yaml' => 'console.command.yaml_lint', 'secrets:set' => 'console.command.secrets_set', 'secrets:remove' => 'console.command.secrets_remove', 'secrets:generate-keys' => 'console.command.secrets_generate_key', 'secrets:list' => 'console.command.secrets_list', 'secrets:decrypt-to-local' => 'console.command.secrets_decrypt_to_local', 'secrets:encrypt-from-local' => 'console.command.secrets_encrypt_from_local', 'make:auth' => 'maker.auto_command.make_auth', 'make:command' => 'maker.auto_command.make_command', 'make:twig-component' => 'maker.auto_command.make_twig_component', 'make:controller' => 'maker.auto_command.make_controller', 'make:crud' => 'maker.auto_command.make_crud', 'make:docker:database' => 'maker.auto_command.make_docker_database', 'make:entity' => 'maker.auto_command.make_entity', 'make:fixtures' => 'maker.auto_command.make_fixtures', 'make:form' => 'maker.auto_command.make_form', 'make:listener' => 'maker.auto_command.make_listener', 'make:subscriber' => 'maker.auto_command.make_listener', 'make:message' => 'maker.auto_command.make_message', 'make:messenger-middleware' => 'maker.auto_command.make_messenger_middleware', 'make:registration-form' => 'maker.auto_command.make_registration_form', 'make:reset-password' => 'maker.auto_command.make_reset_password', 'make:serializer:encoder' => 'maker.auto_command.make_serializer_encoder', 'make:serializer:normalizer' => 'maker.auto_command.make_serializer_normalizer', 'make:twig-extension' => 'maker.auto_command.make_twig_extension', 'make:test' => 'maker.auto_command.make_test', 'make:unit-test' => 'maker.auto_command.make_test', 'make:functional-test' => 'maker.auto_command.make_test', 'make:validator' => 'maker.auto_command.make_validator', 'make:voter' => 'maker.auto_command.make_voter', 'make:user' => 'maker.auto_command.make_user', 'make:migration' => 'maker.auto_command.make_migration', 'make:stimulus-controller' => 'maker.auto_command.make_stimulus_controller', 'make:security:form-login' => 'maker.auto_command.make_security_form_login']);
+        ]), ['ecm:rabbitmq:configure' => 'TyCode\\Shop\\Review\\Infrastructure\\Cli\\RabbitMq\\ConfigureRabbitMqCommand', 'ecm:rabbitmq:events:consume' => 'TyCode\\Shop\\Review\\Infrastructure\\Cli\\RabbitMq\\ConsumeRabbitMqEventsCommand', 'ecm:rabbitmq:events:generate-supervisor-files' => 'TyCode\\Shop\\Review\\Infrastructure\\Cli\\RabbitMq\\GenerateSupervisorRabbitMqConsumerFilesCommand', 'about' => 'console.command.about', 'assets:install' => 'console.command.assets_install', 'cache:clear' => 'console.command.cache_clear', 'cache:pool:clear' => 'console.command.cache_pool_clear', 'cache:pool:prune' => 'console.command.cache_pool_prune', 'cache:pool:invalidate-tags' => 'console.command.cache_pool_invalidate_tags', 'cache:pool:delete' => 'console.command.cache_pool_delete', 'cache:pool:list' => 'console.command.cache_pool_list', 'cache:warmup' => 'console.command.cache_warmup', 'debug:config' => 'console.command.config_debug', 'config:dump-reference' => 'console.command.config_dump_reference', 'debug:container' => 'console.command.container_debug', 'lint:container' => 'console.command.container_lint', 'debug:autowiring' => 'console.command.debug_autowiring', 'debug:dotenv' => 'console.command.dotenv_debug', 'debug:event-dispatcher' => 'console.command.event_dispatcher_debug', 'messenger:consume' => 'console.command.messenger_consume_messages', 'messenger:setup-transports' => 'console.command.messenger_setup_transports', 'debug:messenger' => 'console.command.messenger_debug', 'messenger:stop-workers' => 'console.command.messenger_stop_workers', 'messenger:stats' => 'console.command.messenger_stats', 'debug:router' => 'console.command.router_debug', 'router:match' => 'console.command.router_match', 'lint:yaml' => 'console.command.yaml_lint', 'secrets:set' => 'console.command.secrets_set', 'secrets:remove' => 'console.command.secrets_remove', 'secrets:generate-keys' => 'console.command.secrets_generate_key', 'secrets:list' => 'console.command.secrets_list', 'secrets:decrypt-to-local' => 'console.command.secrets_decrypt_to_local', 'secrets:encrypt-from-local' => 'console.command.secrets_encrypt_from_local', 'make:auth' => 'maker.auto_command.make_auth', 'make:command' => 'maker.auto_command.make_command', 'make:twig-component' => 'maker.auto_command.make_twig_component', 'make:controller' => 'maker.auto_command.make_controller', 'make:crud' => 'maker.auto_command.make_crud', 'make:docker:database' => 'maker.auto_command.make_docker_database', 'make:entity' => 'maker.auto_command.make_entity', 'make:fixtures' => 'maker.auto_command.make_fixtures', 'make:form' => 'maker.auto_command.make_form', 'make:listener' => 'maker.auto_command.make_listener', 'make:subscriber' => 'maker.auto_command.make_listener', 'make:message' => 'maker.auto_command.make_message', 'make:messenger-middleware' => 'maker.auto_command.make_messenger_middleware', 'make:registration-form' => 'maker.auto_command.make_registration_form', 'make:reset-password' => 'maker.auto_command.make_reset_password', 'make:serializer:encoder' => 'maker.auto_command.make_serializer_encoder', 'make:serializer:normalizer' => 'maker.auto_command.make_serializer_normalizer', 'make:twig-extension' => 'maker.auto_command.make_twig_extension', 'make:test' => 'maker.auto_command.make_test', 'make:unit-test' => 'maker.auto_command.make_test', 'make:functional-test' => 'maker.auto_command.make_test', 'make:validator' => 'maker.auto_command.make_validator', 'make:voter' => 'maker.auto_command.make_voter', 'make:user' => 'maker.auto_command.make_user', 'make:migration' => 'maker.auto_command.make_migration', 'make:stimulus-controller' => 'maker.auto_command.make_stimulus_controller', 'make:security:form-login' => 'maker.auto_command.make_security_form_login']);
     }
 
     /**
@@ -615,7 +634,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getDebug_ErrorHandlerConfiguratorService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Debug'.\DIRECTORY_SEPARATOR.'ErrorHandlerConfigurator.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Debug/ErrorHandlerConfigurator.php';
 
         return $container->services['debug.error_handler_configurator'] = new \Symfony\Component\HttpKernel\Debug\ErrorHandlerConfigurator(($container->privates['logger'] ?? self::getLoggerService($container)), NULL, -1, true, true, NULL);
     }
@@ -637,10 +656,10 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getErrorControllerService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ErrorController.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'error-handler'.\DIRECTORY_SEPARATOR.'ErrorRenderer'.\DIRECTORY_SEPARATOR.'ErrorRendererInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'error-handler'.\DIRECTORY_SEPARATOR.'ErrorRenderer'.\DIRECTORY_SEPARATOR.'HtmlErrorRenderer.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'error-handler'.\DIRECTORY_SEPARATOR.'ErrorRenderer'.\DIRECTORY_SEPARATOR.'FileLinkFormatter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ErrorController.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/error-handler/ErrorRenderer/ErrorRendererInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/error-handler/ErrorRenderer/HtmlErrorRenderer.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/error-handler/ErrorRenderer/FileLinkFormatter.php';
 
         $a = ($container->services['request_stack'] ??= new \Symfony\Component\HttpFoundation\RequestStack());
 
@@ -680,6 +699,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
         $instance->addListener('kernel.response', [#[\Closure(name: 'session_listener', class: 'Symfony\\Component\\HttpKernel\\EventListener\\SessionListener')] fn () => ($container->privates['session_listener'] ?? self::getSessionListenerService($container)), 'onKernelResponse'], -1000);
         $instance->addListener('Symfony\\Component\\Messenger\\Event\\WorkerMessageFailedEvent', [#[\Closure(name: 'messenger.retry.send_failed_message_for_retry_listener', class: 'Symfony\\Component\\Messenger\\EventListener\\SendFailedMessageForRetryListener')] fn () => ($container->privates['messenger.retry.send_failed_message_for_retry_listener'] ?? self::getMessenger_Retry_SendFailedMessageForRetryListenerService($container)), 'onMessageFailed'], 100);
         $instance->addListener('Symfony\\Component\\Messenger\\Event\\WorkerMessageFailedEvent', [#[\Closure(name: 'messenger.failure.add_error_details_stamp_listener', class: 'Symfony\\Component\\Messenger\\EventListener\\AddErrorDetailsStampListener')] fn () => ($container->privates['messenger.failure.add_error_details_stamp_listener'] ??= new \Symfony\Component\Messenger\EventListener\AddErrorDetailsStampListener()), 'onMessageFailed'], 200);
+        $instance->addListener('Symfony\\Component\\Messenger\\Event\\WorkerRunningEvent', [#[\Closure(name: 'messenger.listener.dispatch_pcntl_signal_listener', class: 'Symfony\\Component\\Messenger\\EventListener\\DispatchPcntlSignalListener')] fn () => ($container->privates['messenger.listener.dispatch_pcntl_signal_listener'] ??= new \Symfony\Component\Messenger\EventListener\DispatchPcntlSignalListener()), 'onWorkerRunning'], 100);
         $instance->addListener('Symfony\\Component\\Messenger\\Event\\WorkerStartedEvent', [#[\Closure(name: 'messenger.listener.stop_worker_on_restart_signal_listener', class: 'Symfony\\Component\\Messenger\\EventListener\\StopWorkerOnRestartSignalListener')] fn () => ($container->privates['messenger.listener.stop_worker_on_restart_signal_listener'] ?? self::getMessenger_Listener_StopWorkerOnRestartSignalListenerService($container)), 'onWorkerStarted'], 0);
         $instance->addListener('Symfony\\Component\\Messenger\\Event\\WorkerRunningEvent', [#[\Closure(name: 'messenger.listener.stop_worker_on_restart_signal_listener', class: 'Symfony\\Component\\Messenger\\EventListener\\StopWorkerOnRestartSignalListener')] fn () => ($container->privates['messenger.listener.stop_worker_on_restart_signal_listener'] ?? self::getMessenger_Listener_StopWorkerOnRestartSignalListenerService($container)), 'onWorkerRunning'], 0);
         $instance->addListener('Symfony\\Component\\Messenger\\Event\\WorkerMessageFailedEvent', [#[\Closure(name: 'messenger.listener.stop_worker_on_stop_exception_listener', class: 'Symfony\\Component\\Messenger\\EventListener\\StopWorkerOnCustomStopExceptionListener')] fn () => ($container->privates['messenger.listener.stop_worker_on_stop_exception_listener'] ??= new \Symfony\Component\Messenger\EventListener\StopWorkerOnCustomStopExceptionListener()), 'onMessageFailed'], 0);
@@ -745,8 +765,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMessenger_DefaultBusService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'MessageBusInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'MessageBus.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/MessageBusInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/MessageBus.php';
 
         return $container->services['messenger.default_bus'] = new \Symfony\Component\Messenger\MessageBus(new RewindableGenerator(function () use ($container) {
             yield 0 => ($container->privates['messenger.bus.default.middleware.traceable'] ?? self::getMessenger_Bus_Default_Middleware_TraceableService($container));
@@ -797,32 +817,32 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getRouting_LoaderService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'config'.\DIRECTORY_SEPARATOR.'Loader'.\DIRECTORY_SEPARATOR.'LoaderInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'config'.\DIRECTORY_SEPARATOR.'Loader'.\DIRECTORY_SEPARATOR.'Loader.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'config'.\DIRECTORY_SEPARATOR.'Loader'.\DIRECTORY_SEPARATOR.'DelegatingLoader.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Routing'.\DIRECTORY_SEPARATOR.'DelegatingLoader.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'config'.\DIRECTORY_SEPARATOR.'Loader'.\DIRECTORY_SEPARATOR.'LoaderResolverInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'config'.\DIRECTORY_SEPARATOR.'Loader'.\DIRECTORY_SEPARATOR.'LoaderResolver.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'config'.\DIRECTORY_SEPARATOR.'Loader'.\DIRECTORY_SEPARATOR.'FileLoader.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'routing'.\DIRECTORY_SEPARATOR.'Loader'.\DIRECTORY_SEPARATOR.'Configurator'.\DIRECTORY_SEPARATOR.'Traits'.\DIRECTORY_SEPARATOR.'HostTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'routing'.\DIRECTORY_SEPARATOR.'Loader'.\DIRECTORY_SEPARATOR.'Configurator'.\DIRECTORY_SEPARATOR.'Traits'.\DIRECTORY_SEPARATOR.'LocalizedRouteTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'routing'.\DIRECTORY_SEPARATOR.'Loader'.\DIRECTORY_SEPARATOR.'Configurator'.\DIRECTORY_SEPARATOR.'Traits'.\DIRECTORY_SEPARATOR.'PrefixTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'routing'.\DIRECTORY_SEPARATOR.'Loader'.\DIRECTORY_SEPARATOR.'XmlFileLoader.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'config'.\DIRECTORY_SEPARATOR.'FileLocatorInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'config'.\DIRECTORY_SEPARATOR.'FileLocator.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Config'.\DIRECTORY_SEPARATOR.'FileLocator.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'routing'.\DIRECTORY_SEPARATOR.'Loader'.\DIRECTORY_SEPARATOR.'YamlFileLoader.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'routing'.\DIRECTORY_SEPARATOR.'Loader'.\DIRECTORY_SEPARATOR.'PhpFileLoader.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'routing'.\DIRECTORY_SEPARATOR.'Loader'.\DIRECTORY_SEPARATOR.'GlobFileLoader.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'routing'.\DIRECTORY_SEPARATOR.'Loader'.\DIRECTORY_SEPARATOR.'DirectoryLoader.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'routing'.\DIRECTORY_SEPARATOR.'Loader'.\DIRECTORY_SEPARATOR.'ObjectLoader.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'routing'.\DIRECTORY_SEPARATOR.'Loader'.\DIRECTORY_SEPARATOR.'ContainerLoader.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'routing'.\DIRECTORY_SEPARATOR.'Loader'.\DIRECTORY_SEPARATOR.'AttributeClassLoader.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Routing'.\DIRECTORY_SEPARATOR.'AttributeRouteControllerLoader.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'routing'.\DIRECTORY_SEPARATOR.'Loader'.\DIRECTORY_SEPARATOR.'AttributeFileLoader.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'routing'.\DIRECTORY_SEPARATOR.'Loader'.\DIRECTORY_SEPARATOR.'AttributeDirectoryLoader.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'config'.\DIRECTORY_SEPARATOR.'Loader'.\DIRECTORY_SEPARATOR.'DirectoryAwareLoaderInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'routing'.\DIRECTORY_SEPARATOR.'Loader'.\DIRECTORY_SEPARATOR.'Psr4DirectoryLoader.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/config/Loader/LoaderInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/config/Loader/Loader.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/config/Loader/DelegatingLoader.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Routing/DelegatingLoader.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/config/Loader/LoaderResolverInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/config/Loader/LoaderResolver.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/config/Loader/FileLoader.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/routing/Loader/Configurator/Traits/HostTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/routing/Loader/Configurator/Traits/LocalizedRouteTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/routing/Loader/Configurator/Traits/PrefixTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/routing/Loader/XmlFileLoader.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/config/FileLocatorInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/config/FileLocator.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Config/FileLocator.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/routing/Loader/YamlFileLoader.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/routing/Loader/PhpFileLoader.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/routing/Loader/GlobFileLoader.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/routing/Loader/DirectoryLoader.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/routing/Loader/ObjectLoader.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/routing/Loader/ContainerLoader.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/routing/Loader/AttributeClassLoader.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Routing/AttributeRouteControllerLoader.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/routing/Loader/AttributeFileLoader.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/routing/Loader/AttributeDirectoryLoader.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/config/Loader/DirectoryAwareLoaderInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/routing/Loader/Psr4DirectoryLoader.php';
 
         $a = new \Symfony\Component\Config\Loader\LoaderResolver();
 
@@ -854,7 +874,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getServicesResetterService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'DependencyInjection'.\DIRECTORY_SEPARATOR.'ServicesResetter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/DependencyInjection/ServicesResetter.php';
 
         return $container->services['services_resetter'] = new \Symfony\Component\HttpKernel\DependencyInjection\ServicesResetter(new RewindableGenerator(function () use ($container) {
             if (isset($container->services['cache.app'])) {
@@ -900,8 +920,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_About_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.about.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('about', [], 'Display information about the current project', false, #[\Closure(name: 'console.command.about', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\AboutCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\AboutCommand => ($container->privates['console.command.about'] ?? self::getConsole_Command_AboutService($container)));
     }
@@ -913,8 +933,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_AssetsInstall_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.assets_install.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('assets:install', [], 'Install bundle\'s web assets under a public directory', false, #[\Closure(name: 'console.command.assets_install', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\AssetsInstallCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\AssetsInstallCommand => ($container->privates['console.command.assets_install'] ?? self::getConsole_Command_AssetsInstallService($container)));
     }
@@ -926,8 +946,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_CacheClear_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.cache_clear.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('cache:clear', [], 'Clear the cache', false, #[\Closure(name: 'console.command.cache_clear', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\CacheClearCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\CacheClearCommand => ($container->privates['console.command.cache_clear'] ?? self::getConsole_Command_CacheClearService($container)));
     }
@@ -939,8 +959,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_CachePoolClear_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.cache_pool_clear.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('cache:pool:clear', [], 'Clear cache pools', false, #[\Closure(name: 'console.command.cache_pool_clear', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\CachePoolClearCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\CachePoolClearCommand => ($container->privates['console.command.cache_pool_clear'] ?? self::getConsole_Command_CachePoolClearService($container)));
     }
@@ -952,8 +972,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_CachePoolDelete_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.cache_pool_delete.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('cache:pool:delete', [], 'Delete an item from a cache pool', false, #[\Closure(name: 'console.command.cache_pool_delete', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\CachePoolDeleteCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\CachePoolDeleteCommand => ($container->privates['console.command.cache_pool_delete'] ?? self::getConsole_Command_CachePoolDeleteService($container)));
     }
@@ -965,8 +985,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_CachePoolInvalidateTags_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.cache_pool_invalidate_tags.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('cache:pool:invalidate-tags', [], 'Invalidate cache tags for all or a specific pool', false, #[\Closure(name: 'console.command.cache_pool_invalidate_tags', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\CachePoolInvalidateTagsCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\CachePoolInvalidateTagsCommand => ($container->privates['console.command.cache_pool_invalidate_tags'] ?? self::getConsole_Command_CachePoolInvalidateTagsService($container)));
     }
@@ -978,8 +998,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_CachePoolList_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.cache_pool_list.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('cache:pool:list', [], 'List available cache pools', false, #[\Closure(name: 'console.command.cache_pool_list', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\CachePoolListCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\CachePoolListCommand => ($container->privates['console.command.cache_pool_list'] ?? self::getConsole_Command_CachePoolListService($container)));
     }
@@ -991,8 +1011,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_CachePoolPrune_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.cache_pool_prune.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('cache:pool:prune', [], 'Prune cache pools', false, #[\Closure(name: 'console.command.cache_pool_prune', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\CachePoolPruneCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\CachePoolPruneCommand => ($container->privates['console.command.cache_pool_prune'] ?? self::getConsole_Command_CachePoolPruneService($container)));
     }
@@ -1004,8 +1024,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_CacheWarmup_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.cache_warmup.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('cache:warmup', [], 'Warm up an empty cache', false, #[\Closure(name: 'console.command.cache_warmup', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\CacheWarmupCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\CacheWarmupCommand => ($container->privates['console.command.cache_warmup'] ?? self::getConsole_Command_CacheWarmupService($container)));
     }
@@ -1017,8 +1037,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_ConfigDebug_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.config_debug.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('debug:config', [], 'Dump the current configuration for an extension', false, #[\Closure(name: 'console.command.config_debug', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\ConfigDebugCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\ConfigDebugCommand => ($container->privates['console.command.config_debug'] ?? self::getConsole_Command_ConfigDebugService($container)));
     }
@@ -1030,8 +1050,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_ConfigDumpReference_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.config_dump_reference.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('config:dump-reference', [], 'Dump the default configuration for an extension', false, #[\Closure(name: 'console.command.config_dump_reference', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\ConfigDumpReferenceCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\ConfigDumpReferenceCommand => ($container->privates['console.command.config_dump_reference'] ?? self::getConsole_Command_ConfigDumpReferenceService($container)));
     }
@@ -1043,8 +1063,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_ContainerDebug_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.container_debug.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('debug:container', [], 'Display current services for an application', false, #[\Closure(name: 'console.command.container_debug', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\ContainerDebugCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\ContainerDebugCommand => ($container->privates['console.command.container_debug'] ?? self::getConsole_Command_ContainerDebugService($container)));
     }
@@ -1056,8 +1076,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_ContainerLint_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.container_lint.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('lint:container', [], 'Ensure that arguments injected into services match type declarations', false, #[\Closure(name: 'console.command.container_lint', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\ContainerLintCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\ContainerLintCommand => ($container->privates['console.command.container_lint'] ?? self::getConsole_Command_ContainerLintService($container)));
     }
@@ -1069,8 +1089,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_DebugAutowiring_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.debug_autowiring.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('debug:autowiring', [], 'List classes/interfaces you can use for autowiring', false, #[\Closure(name: 'console.command.debug_autowiring', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\DebugAutowiringCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\DebugAutowiringCommand => ($container->privates['console.command.debug_autowiring'] ?? self::getConsole_Command_DebugAutowiringService($container)));
     }
@@ -1082,8 +1102,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_DotenvDebug_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.dotenv_debug.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('debug:dotenv', [], 'List all dotenv files with variables and values', false, #[\Closure(name: 'console.command.dotenv_debug', class: 'Symfony\\Component\\Dotenv\\Command\\DebugCommand')] fn (): \Symfony\Component\Dotenv\Command\DebugCommand => ($container->privates['console.command.dotenv_debug'] ?? self::getConsole_Command_DotenvDebugService($container)));
     }
@@ -1095,8 +1115,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_EventDispatcherDebug_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.event_dispatcher_debug.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('debug:event-dispatcher', [], 'Display configured listeners for an application', false, #[\Closure(name: 'console.command.event_dispatcher_debug', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\EventDispatcherDebugCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\EventDispatcherDebugCommand => ($container->privates['console.command.event_dispatcher_debug'] ?? self::getConsole_Command_EventDispatcherDebugService($container)));
     }
@@ -1108,8 +1128,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_MessengerConsumeMessages_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.messenger_consume_messages.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('messenger:consume', [], 'Consume messages', false, #[\Closure(name: 'console.command.messenger_consume_messages', class: 'Symfony\\Component\\Messenger\\Command\\ConsumeMessagesCommand')] fn (): \Symfony\Component\Messenger\Command\ConsumeMessagesCommand => ($container->privates['console.command.messenger_consume_messages'] ?? self::getConsole_Command_MessengerConsumeMessagesService($container)));
     }
@@ -1121,8 +1141,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_MessengerDebug_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.messenger_debug.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('debug:messenger', [], 'List messages you can dispatch using the message buses', false, #[\Closure(name: 'console.command.messenger_debug', class: 'Symfony\\Component\\Messenger\\Command\\DebugCommand')] fn (): \Symfony\Component\Messenger\Command\DebugCommand => ($container->privates['console.command.messenger_debug'] ?? self::getConsole_Command_MessengerDebugService($container)));
     }
@@ -1134,8 +1154,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_MessengerSetupTransports_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.messenger_setup_transports.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('messenger:setup-transports', [], 'Prepare the required infrastructure for the transport', false, #[\Closure(name: 'console.command.messenger_setup_transports', class: 'Symfony\\Component\\Messenger\\Command\\SetupTransportsCommand')] fn (): \Symfony\Component\Messenger\Command\SetupTransportsCommand => ($container->privates['console.command.messenger_setup_transports'] ?? self::getConsole_Command_MessengerSetupTransportsService($container)));
     }
@@ -1147,8 +1167,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_MessengerStats_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.messenger_stats.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('messenger:stats', [], 'Show the message count for one or more transports', false, #[\Closure(name: 'console.command.messenger_stats', class: 'Symfony\\Component\\Messenger\\Command\\StatsCommand')] fn (): \Symfony\Component\Messenger\Command\StatsCommand => ($container->privates['console.command.messenger_stats'] ?? self::getConsole_Command_MessengerStatsService($container)));
     }
@@ -1160,8 +1180,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_MessengerStopWorkers_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.messenger_stop_workers.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('messenger:stop-workers', [], 'Stop workers after their current message', false, #[\Closure(name: 'console.command.messenger_stop_workers', class: 'Symfony\\Component\\Messenger\\Command\\StopWorkersCommand')] fn (): \Symfony\Component\Messenger\Command\StopWorkersCommand => ($container->privates['console.command.messenger_stop_workers'] ?? self::getConsole_Command_MessengerStopWorkersService($container)));
     }
@@ -1173,8 +1193,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_RouterDebug_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.router_debug.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('debug:router', [], 'Display current routes for an application', false, #[\Closure(name: 'console.command.router_debug', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\RouterDebugCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\RouterDebugCommand => ($container->privates['console.command.router_debug'] ?? self::getConsole_Command_RouterDebugService($container)));
     }
@@ -1186,8 +1206,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_RouterMatch_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.router_match.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('router:match', [], 'Help debug routes by simulating a path info match', false, #[\Closure(name: 'console.command.router_match', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\RouterMatchCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\RouterMatchCommand => ($container->privates['console.command.router_match'] ?? self::getConsole_Command_RouterMatchService($container)));
     }
@@ -1199,8 +1219,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_SecretsDecryptToLocal_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.secrets_decrypt_to_local.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('secrets:decrypt-to-local', [], 'Decrypt all secrets and stores them in the local vault', false, #[\Closure(name: 'console.command.secrets_decrypt_to_local', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\SecretsDecryptToLocalCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\SecretsDecryptToLocalCommand => ($container->privates['console.command.secrets_decrypt_to_local'] ?? self::getConsole_Command_SecretsDecryptToLocalService($container)));
     }
@@ -1212,8 +1232,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_SecretsEncryptFromLocal_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.secrets_encrypt_from_local.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('secrets:encrypt-from-local', [], 'Encrypt all local secrets to the vault', false, #[\Closure(name: 'console.command.secrets_encrypt_from_local', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\SecretsEncryptFromLocalCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\SecretsEncryptFromLocalCommand => ($container->privates['console.command.secrets_encrypt_from_local'] ?? self::getConsole_Command_SecretsEncryptFromLocalService($container)));
     }
@@ -1225,8 +1245,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_SecretsGenerateKey_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.secrets_generate_key.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('secrets:generate-keys', [], 'Generate new encryption keys', false, #[\Closure(name: 'console.command.secrets_generate_key', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\SecretsGenerateKeysCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\SecretsGenerateKeysCommand => ($container->privates['console.command.secrets_generate_key'] ?? self::getConsole_Command_SecretsGenerateKeyService($container)));
     }
@@ -1238,8 +1258,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_SecretsList_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.secrets_list.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('secrets:list', [], 'List all secrets', false, #[\Closure(name: 'console.command.secrets_list', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\SecretsListCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\SecretsListCommand => ($container->privates['console.command.secrets_list'] ?? self::getConsole_Command_SecretsListService($container)));
     }
@@ -1251,8 +1271,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_SecretsRemove_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.secrets_remove.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('secrets:remove', [], 'Remove a secret from the vault', false, #[\Closure(name: 'console.command.secrets_remove', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\SecretsRemoveCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\SecretsRemoveCommand => ($container->privates['console.command.secrets_remove'] ?? self::getConsole_Command_SecretsRemoveService($container)));
     }
@@ -1264,8 +1284,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_SecretsSet_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.secrets_set.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('secrets:set', [], 'Set a secret in the vault', false, #[\Closure(name: 'console.command.secrets_set', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\SecretsSetCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\SecretsSetCommand => ($container->privates['console.command.secrets_set'] ?? self::getConsole_Command_SecretsSetService($container)));
     }
@@ -1277,8 +1297,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Console_Command_YamlLint_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.console.command.yaml_lint.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('lint:yaml', [], 'Lint a YAML file and outputs encountered errors', false, #[\Closure(name: 'console.command.yaml_lint', class: 'Symfony\\Bundle\\FrameworkBundle\\Command\\YamlLintCommand')] fn (): \Symfony\Bundle\FrameworkBundle\Command\YamlLintCommand => ($container->privates['console.command.yaml_lint'] ?? self::getConsole_Command_YamlLintService($container)));
     }
@@ -1290,9 +1310,9 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Debug_ValueResolver_ArgumentResolver_BackedEnumResolverService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentValueResolverInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolver'.\DIRECTORY_SEPARATOR.'TraceableValueResolver.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolver'.\DIRECTORY_SEPARATOR.'BackedEnumValueResolver.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentValueResolverInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/BackedEnumValueResolver.php';
 
         return $container->privates['.debug.value_resolver.argument_resolver.backed_enum_resolver'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\BackedEnumValueResolver(), ($container->services['debug.stopwatch'] ??= new \Symfony\Component\Stopwatch\Stopwatch(true)));
     }
@@ -1304,12 +1324,12 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Debug_ValueResolver_ArgumentResolver_DatetimeService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentValueResolverInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolver'.\DIRECTORY_SEPARATOR.'TraceableValueResolver.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolver'.\DIRECTORY_SEPARATOR.'DateTimeValueResolver.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'psr'.\DIRECTORY_SEPARATOR.'clock'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'ClockInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'clock'.\DIRECTORY_SEPARATOR.'ClockInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'clock'.\DIRECTORY_SEPARATOR.'Clock.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentValueResolverInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/DateTimeValueResolver.php';
+        include_once \dirname(__DIR__, 6).'/vendor/psr/clock/src/ClockInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/clock/ClockInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/clock/Clock.php';
 
         return $container->privates['.debug.value_resolver.argument_resolver.datetime'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\DateTimeValueResolver(new \Symfony\Component\Clock\Clock()), ($container->services['debug.stopwatch'] ??= new \Symfony\Component\Stopwatch\Stopwatch(true)));
     }
@@ -1321,9 +1341,9 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Debug_ValueResolver_ArgumentResolver_DefaultService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentValueResolverInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolver'.\DIRECTORY_SEPARATOR.'TraceableValueResolver.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolver'.\DIRECTORY_SEPARATOR.'DefaultValueResolver.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentValueResolverInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/DefaultValueResolver.php';
 
         return $container->privates['.debug.value_resolver.argument_resolver.default'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver(), ($container->services['debug.stopwatch'] ??= new \Symfony\Component\Stopwatch\Stopwatch(true)));
     }
@@ -1335,11 +1355,11 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Debug_ValueResolver_ArgumentResolver_NotTaggedControllerService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentValueResolverInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolver'.\DIRECTORY_SEPARATOR.'TraceableValueResolver.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolver'.\DIRECTORY_SEPARATOR.'NotTaggedControllerValueResolver.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentValueResolverInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/NotTaggedControllerValueResolver.php';
 
-        return $container->privates['.debug.value_resolver.argument_resolver.not_tagged_controller'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver(($container->privates['.service_locator.SS4YCfj'] ?? self::get_ServiceLocator_SS4YCfjService($container))), ($container->services['debug.stopwatch'] ??= new \Symfony\Component\Stopwatch\Stopwatch(true)));
+        return $container->privates['.debug.value_resolver.argument_resolver.not_tagged_controller'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver(($container->privates['.service_locator.VPLxAWb'] ?? self::get_ServiceLocator_VPLxAWbService($container))), ($container->services['debug.stopwatch'] ??= new \Symfony\Component\Stopwatch\Stopwatch(true)));
     }
 
     /**
@@ -1349,9 +1369,9 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Debug_ValueResolver_ArgumentResolver_QueryParameterValueResolverService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentValueResolverInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolver'.\DIRECTORY_SEPARATOR.'TraceableValueResolver.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolver'.\DIRECTORY_SEPARATOR.'QueryParameterValueResolver.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentValueResolverInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/QueryParameterValueResolver.php';
 
         return $container->privates['.debug.value_resolver.argument_resolver.query_parameter_value_resolver'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\QueryParameterValueResolver(), ($container->services['debug.stopwatch'] ??= new \Symfony\Component\Stopwatch\Stopwatch(true)));
     }
@@ -1363,9 +1383,9 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Debug_ValueResolver_ArgumentResolver_RequestService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentValueResolverInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolver'.\DIRECTORY_SEPARATOR.'TraceableValueResolver.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolver'.\DIRECTORY_SEPARATOR.'RequestValueResolver.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentValueResolverInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/RequestValueResolver.php';
 
         return $container->privates['.debug.value_resolver.argument_resolver.request'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\RequestValueResolver(), ($container->services['debug.stopwatch'] ??= new \Symfony\Component\Stopwatch\Stopwatch(true)));
     }
@@ -1377,9 +1397,9 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Debug_ValueResolver_ArgumentResolver_RequestAttributeService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentValueResolverInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolver'.\DIRECTORY_SEPARATOR.'TraceableValueResolver.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolver'.\DIRECTORY_SEPARATOR.'RequestAttributeValueResolver.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentValueResolverInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/RequestAttributeValueResolver.php';
 
         return $container->privates['.debug.value_resolver.argument_resolver.request_attribute'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\RequestAttributeValueResolver(), ($container->services['debug.stopwatch'] ??= new \Symfony\Component\Stopwatch\Stopwatch(true)));
     }
@@ -1391,8 +1411,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Debug_ValueResolver_ArgumentResolver_RequestPayloadService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentValueResolverInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolver'.\DIRECTORY_SEPARATOR.'TraceableValueResolver.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentValueResolverInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
 
         return $container->privates['.debug.value_resolver.argument_resolver.request_payload'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(throw new RuntimeException('You can neither use "#[MapRequestPayload]" nor "#[MapQueryString]" since the Serializer component is not installed. Try running "composer require symfony/serializer-pack".'), ($container->services['debug.stopwatch'] ??= new \Symfony\Component\Stopwatch\Stopwatch(true)));
     }
@@ -1404,11 +1424,11 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Debug_ValueResolver_ArgumentResolver_ServiceService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentValueResolverInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolver'.\DIRECTORY_SEPARATOR.'TraceableValueResolver.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolver'.\DIRECTORY_SEPARATOR.'ServiceValueResolver.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentValueResolverInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/ServiceValueResolver.php';
 
-        return $container->privates['.debug.value_resolver.argument_resolver.service'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver(($container->privates['.service_locator.SS4YCfj'] ?? self::get_ServiceLocator_SS4YCfjService($container))), ($container->services['debug.stopwatch'] ??= new \Symfony\Component\Stopwatch\Stopwatch(true)));
+        return $container->privates['.debug.value_resolver.argument_resolver.service'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver(($container->privates['.service_locator.VPLxAWb'] ?? self::get_ServiceLocator_VPLxAWbService($container))), ($container->services['debug.stopwatch'] ??= new \Symfony\Component\Stopwatch\Stopwatch(true)));
     }
 
     /**
@@ -1418,9 +1438,9 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Debug_ValueResolver_ArgumentResolver_SessionService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentValueResolverInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolver'.\DIRECTORY_SEPARATOR.'TraceableValueResolver.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolver'.\DIRECTORY_SEPARATOR.'SessionValueResolver.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentValueResolverInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/SessionValueResolver.php';
 
         return $container->privates['.debug.value_resolver.argument_resolver.session'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\SessionValueResolver(), ($container->services['debug.stopwatch'] ??= new \Symfony\Component\Stopwatch\Stopwatch(true)));
     }
@@ -1432,9 +1452,9 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Debug_ValueResolver_ArgumentResolver_VariadicService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentValueResolverInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolver'.\DIRECTORY_SEPARATOR.'TraceableValueResolver.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'Controller'.\DIRECTORY_SEPARATOR.'ArgumentResolver'.\DIRECTORY_SEPARATOR.'VariadicValueResolver.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentValueResolverInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/TraceableValueResolver.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/Controller/ArgumentResolver/VariadicValueResolver.php';
 
         return $container->privates['.debug.value_resolver.argument_resolver.variadic'] = new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\TraceableValueResolver(new \Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver(), ($container->services['debug.stopwatch'] ??= new \Symfony\Component\Stopwatch\Stopwatch(true)));
     }
@@ -1456,8 +1476,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeAuth_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_auth.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:auth', [], 'Create a Guard authenticator of different flavors', false, #[\Closure(name: 'maker.auto_command.make_auth', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_auth'] ?? self::getMaker_AutoCommand_MakeAuthService($container)));
     }
@@ -1469,8 +1489,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeCommand_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_command.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:command', [], 'Create a new console command class', false, #[\Closure(name: 'maker.auto_command.make_command', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_command'] ?? self::getMaker_AutoCommand_MakeCommandService($container)));
     }
@@ -1482,8 +1502,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeController_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_controller.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:controller', [], 'Create a new controller class', false, #[\Closure(name: 'maker.auto_command.make_controller', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_controller'] ?? self::getMaker_AutoCommand_MakeControllerService($container)));
     }
@@ -1495,8 +1515,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeCrud_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_crud.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:crud', [], 'Create CRUD for Doctrine entity class', false, #[\Closure(name: 'maker.auto_command.make_crud', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_crud'] ?? self::getMaker_AutoCommand_MakeCrudService($container)));
     }
@@ -1508,8 +1528,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeDockerDatabase_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_docker_database.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:docker:database', [], 'Add a database container to your docker-compose.yaml file', false, #[\Closure(name: 'maker.auto_command.make_docker_database', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_docker_database'] ?? self::getMaker_AutoCommand_MakeDockerDatabaseService($container)));
     }
@@ -1521,8 +1541,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeEntity_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_entity.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:entity', [], 'Create or update a Doctrine entity class, and optionally an API Platform resource', false, #[\Closure(name: 'maker.auto_command.make_entity', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_entity'] ?? self::getMaker_AutoCommand_MakeEntityService($container)));
     }
@@ -1534,8 +1554,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeFixtures_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_fixtures.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:fixtures', [], 'Create a new class to load Doctrine fixtures', false, #[\Closure(name: 'maker.auto_command.make_fixtures', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_fixtures'] ?? self::getMaker_AutoCommand_MakeFixturesService($container)));
     }
@@ -1547,8 +1567,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeForm_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_form.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:form', [], 'Create a new form class', false, #[\Closure(name: 'maker.auto_command.make_form', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_form'] ?? self::getMaker_AutoCommand_MakeFormService($container)));
     }
@@ -1560,8 +1580,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeListener_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_listener.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:listener', ['make:subscriber'], 'Creates a new event subscriber class or a new event listener class', false, #[\Closure(name: 'maker.auto_command.make_listener', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_listener'] ?? self::getMaker_AutoCommand_MakeListenerService($container)));
     }
@@ -1573,8 +1593,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeMessage_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_message.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:message', [], 'Create a new message and handler', false, #[\Closure(name: 'maker.auto_command.make_message', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_message'] ?? self::getMaker_AutoCommand_MakeMessageService($container)));
     }
@@ -1586,8 +1606,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeMessengerMiddleware_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_messenger_middleware.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:messenger-middleware', [], 'Create a new messenger middleware', false, #[\Closure(name: 'maker.auto_command.make_messenger_middleware', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_messenger_middleware'] ?? self::getMaker_AutoCommand_MakeMessengerMiddlewareService($container)));
     }
@@ -1599,8 +1619,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeMigration_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_migration.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:migration', [], 'Create a new migration based on database changes', false, #[\Closure(name: 'maker.auto_command.make_migration', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_migration'] ?? self::getMaker_AutoCommand_MakeMigrationService($container)));
     }
@@ -1612,8 +1632,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeRegistrationForm_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_registration_form.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:registration-form', [], 'Create a new registration form system', false, #[\Closure(name: 'maker.auto_command.make_registration_form', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_registration_form'] ?? self::getMaker_AutoCommand_MakeRegistrationFormService($container)));
     }
@@ -1625,8 +1645,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeResetPassword_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_reset_password.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:reset-password', [], 'Create controller, entity, and repositories for use with symfonycasts/reset-password-bundle', false, #[\Closure(name: 'maker.auto_command.make_reset_password', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_reset_password'] ?? self::getMaker_AutoCommand_MakeResetPasswordService($container)));
     }
@@ -1638,8 +1658,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeSecurityFormLogin_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_security_form_login.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:security:form-login', [], 'Generate the code needed for the form_login authenticator', false, #[\Closure(name: 'maker.auto_command.make_security_form_login', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_security_form_login'] ?? self::getMaker_AutoCommand_MakeSecurityFormLoginService($container)));
     }
@@ -1651,8 +1671,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeSerializerEncoder_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_serializer_encoder.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:serializer:encoder', [], 'Create a new serializer encoder class', false, #[\Closure(name: 'maker.auto_command.make_serializer_encoder', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_serializer_encoder'] ?? self::getMaker_AutoCommand_MakeSerializerEncoderService($container)));
     }
@@ -1664,8 +1684,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeSerializerNormalizer_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_serializer_normalizer.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:serializer:normalizer', [], 'Create a new serializer normalizer class', false, #[\Closure(name: 'maker.auto_command.make_serializer_normalizer', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_serializer_normalizer'] ?? self::getMaker_AutoCommand_MakeSerializerNormalizerService($container)));
     }
@@ -1677,8 +1697,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeStimulusController_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_stimulus_controller.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:stimulus-controller', [], 'Create a new Stimulus controller', false, #[\Closure(name: 'maker.auto_command.make_stimulus_controller', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_stimulus_controller'] ?? self::getMaker_AutoCommand_MakeStimulusControllerService($container)));
     }
@@ -1690,8 +1710,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeTest_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_test.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:test', ['make:unit-test', 'make:functional-test'], 'Create a new test class', false, #[\Closure(name: 'maker.auto_command.make_test', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_test'] ?? self::getMaker_AutoCommand_MakeTestService($container)));
     }
@@ -1703,8 +1723,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeTwigComponent_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_twig_component.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:twig-component', [], 'Create a twig (or live) component', false, #[\Closure(name: 'maker.auto_command.make_twig_component', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_twig_component'] ?? self::getMaker_AutoCommand_MakeTwigComponentService($container)));
     }
@@ -1716,8 +1736,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeTwigExtension_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_twig_extension.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:twig-extension', [], 'Create a new Twig extension with its runtime class', false, #[\Closure(name: 'maker.auto_command.make_twig_extension', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_twig_extension'] ?? self::getMaker_AutoCommand_MakeTwigExtensionService($container)));
     }
@@ -1729,8 +1749,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeUser_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_user.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:user', [], 'Create a new security user class', false, #[\Closure(name: 'maker.auto_command.make_user', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_user'] ?? self::getMaker_AutoCommand_MakeUserService($container)));
     }
@@ -1742,8 +1762,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeValidator_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_validator.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:validator', [], 'Create a new validator and constraint class', false, #[\Closure(name: 'maker.auto_command.make_validator', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_validator'] ?? self::getMaker_AutoCommand_MakeValidatorService($container)));
     }
@@ -1755,8 +1775,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Maker_AutoCommand_MakeVoter_LazyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LazyCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/LazyCommand.php';
 
         return $container->privates['.maker.auto_command.make_voter.lazy'] = new \Symfony\Component\Console\Command\LazyCommand('make:voter', [], 'Create a new security voter class', false, #[\Closure(name: 'maker.auto_command.make_voter', class: 'Symfony\\Bundle\\MakerBundle\\Command\\MakerCommand')] fn (): \Symfony\Bundle\MakerBundle\Command\MakerCommand => ($container->privates['maker.auto_command.make_voter'] ?? self::getMaker_AutoCommand_MakeVoterService($container)));
     }
@@ -1768,8 +1788,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Messenger_HandlerDescriptor_QXXNQ9dService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'Handler'.\DIRECTORY_SEPARATOR.'HandlerDescriptor.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'process'.\DIRECTORY_SEPARATOR.'Messenger'.\DIRECTORY_SEPARATOR.'RunProcessMessageHandler.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/Handler/HandlerDescriptor.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/process/Messenger/RunProcessMessageHandler.php';
 
         return $container->privates['.messenger.handler_descriptor.QXXNQ9d'] = new \Symfony\Component\Messenger\Handler\HandlerDescriptor(new \Symfony\Component\Process\Messenger\RunProcessMessageHandler(), []);
     }
@@ -1781,10 +1801,10 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Messenger_HandlerDescriptor_KEzMhfsService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'Handler'.\DIRECTORY_SEPARATOR.'HandlerDescriptor.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Messenger'.\DIRECTORY_SEPARATOR.'RunCommandMessageHandler.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Application.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Console'.\DIRECTORY_SEPARATOR.'Application.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/Handler/HandlerDescriptor.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Messenger/RunCommandMessageHandler.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Application.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Console/Application.php';
 
         $a = new \Symfony\Bundle\FrameworkBundle\Console\Application(($container->services['kernel'] ?? $container->get('kernel', 1)));
         $a->setAutoExit(false);
@@ -1799,8 +1819,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function get_Messenger_HandlerDescriptor_P4QvabmService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'Handler'.\DIRECTORY_SEPARATOR.'HandlerDescriptor.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'Handler'.\DIRECTORY_SEPARATOR.'RedispatchMessageHandler.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/Handler/HandlerDescriptor.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/Handler/RedispatchMessageHandler.php';
 
         $a = ($container->services['messenger.default_bus'] ?? self::getMessenger_DefaultBusService($container));
 
@@ -1854,19 +1874,20 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
     }
 
     /**
-     * Gets the private '.service_locator.SS4YCfj' shared service.
+     * Gets the private '.service_locator.VPLxAWb' shared service.
      *
      * @return \Symfony\Component\DependencyInjection\ServiceLocator
      */
-    protected static function get_ServiceLocator_SS4YCfjService($container)
+    protected static function get_ServiceLocator_VPLxAWbService($container)
     {
-        return $container->privates['.service_locator.SS4YCfj'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($container->getService ??= $container->getService(...), [
+        return $container->privates['.service_locator.VPLxAWb'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($container->getService ??= $container->getService(...), [
             'TyCode\\Shop\\Product\\Infrastructure\\Web\\GetProduct::__invoke' => ['privates', '.service_locator.Fibiztl', 'get_ServiceLocator_FibiztlService', false],
             'TyCode\\Shop\\Product\\Infrastructure\\Web\\GetProductByCriteria::__invoke' => ['privates', '.service_locator.aIPOfxe', 'get_ServiceLocator_AIPOfxeService', false],
             'TyCode\\Shop\\Product\\Infrastructure\\Web\\GetProductByCriteriaCQRS::__invoke' => ['privates', '.service_locator.EgMTexf', 'get_ServiceLocator_EgMTexfService', false],
             'TyCode\\Shop\\Product\\Infrastructure\\Web\\GetProducts::__invoke' => ['privates', '.service_locator.Vw4xC8x', 'get_ServiceLocator_Vw4xC8xService', false],
             'TyCode\\Shop\\Product\\Infrastructure\\Web\\PostProductCreate::__invoke' => ['privates', '.service_locator.6Q6Yeh_', 'get_ServiceLocator_6Q6YehService', false],
             'TyCode\\Shop\\Product\\Infrastructure\\Web\\PostProductCreateCQRS::__invoke' => ['privates', '.service_locator.lwNoDbx', 'get_ServiceLocator_LwNoDbxService', false],
+            'TyCode\\Shop\\Review\\Infrastructure\\Web\\PostReviewCreate::__invoke' => ['privates', '.service_locator.lwNoDbx', 'get_ServiceLocator_LwNoDbxService', false],
             'kernel::loadRoutes' => ['privates', '.service_locator.y4_Zrx.', 'get_ServiceLocator_Y4Zrx_Service', false],
             'kernel::registerContainerConfiguration' => ['privates', '.service_locator.y4_Zrx.', 'get_ServiceLocator_Y4Zrx_Service', false],
             'TyCode\\Shop\\Product\\Infrastructure\\Web\\GetProduct:__invoke' => ['privates', '.service_locator.Fibiztl', 'get_ServiceLocator_FibiztlService', false],
@@ -1881,6 +1902,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
             'TyCode\\Shop\\Product\\Infrastructure\\Web\\PostProductCreate' => ['privates', '.service_locator.6Q6Yeh_', 'get_ServiceLocator_6Q6YehService', false],
             'TyCode\\Shop\\Product\\Infrastructure\\Web\\PostProductCreateCQRS:__invoke' => ['privates', '.service_locator.lwNoDbx', 'get_ServiceLocator_LwNoDbxService', false],
             'TyCode\\Shop\\Product\\Infrastructure\\Web\\PostProductCreateCQRS' => ['privates', '.service_locator.lwNoDbx', 'get_ServiceLocator_LwNoDbxService', false],
+            'TyCode\\Shop\\Review\\Infrastructure\\Web\\PostReviewCreate:__invoke' => ['privates', '.service_locator.lwNoDbx', 'get_ServiceLocator_LwNoDbxService', false],
+            'TyCode\\Shop\\Review\\Infrastructure\\Web\\PostReviewCreate' => ['privates', '.service_locator.lwNoDbx', 'get_ServiceLocator_LwNoDbxService', false],
             'kernel:loadRoutes' => ['privates', '.service_locator.y4_Zrx.', 'get_ServiceLocator_Y4Zrx_Service', false],
             'kernel:registerContainerConfiguration' => ['privates', '.service_locator.y4_Zrx.', 'get_ServiceLocator_Y4Zrx_Service', false],
         ], [
@@ -1890,6 +1913,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
             'TyCode\\Shop\\Product\\Infrastructure\\Web\\GetProducts::__invoke' => '?',
             'TyCode\\Shop\\Product\\Infrastructure\\Web\\PostProductCreate::__invoke' => '?',
             'TyCode\\Shop\\Product\\Infrastructure\\Web\\PostProductCreateCQRS::__invoke' => '?',
+            'TyCode\\Shop\\Review\\Infrastructure\\Web\\PostReviewCreate::__invoke' => '?',
             'kernel::loadRoutes' => '?',
             'kernel::registerContainerConfiguration' => '?',
             'TyCode\\Shop\\Product\\Infrastructure\\Web\\GetProduct:__invoke' => '?',
@@ -1904,6 +1928,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
             'TyCode\\Shop\\Product\\Infrastructure\\Web\\PostProductCreate' => '?',
             'TyCode\\Shop\\Product\\Infrastructure\\Web\\PostProductCreateCQRS:__invoke' => '?',
             'TyCode\\Shop\\Product\\Infrastructure\\Web\\PostProductCreateCQRS' => '?',
+            'TyCode\\Shop\\Review\\Infrastructure\\Web\\PostReviewCreate:__invoke' => '?',
+            'TyCode\\Shop\\Review\\Infrastructure\\Web\\PostReviewCreate' => '?',
             'kernel:loadRoutes' => '?',
             'kernel:registerContainerConfiguration' => '?',
         ]);
@@ -1972,12 +1998,39 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getSymfonyMessageCommandBusService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shared'.\DIRECTORY_SEPARATOR.'Domain'.\DIRECTORY_SEPARATOR.'Bus'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'CommandBus.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shared'.\DIRECTORY_SEPARATOR.'Infrsatructure'.\DIRECTORY_SEPARATOR.'Bus'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'SymfonyMessageCommandBus.php';
+        include_once \dirname(__DIR__, 6).'/src/Shared/Domain/Bus/Command/CommandBus.php';
+        include_once \dirname(__DIR__, 6).'/src/Shared/Infrsatructure/Bus/Command/SymfonyMessageCommandBus.php';
 
         return $container->privates['TyCode\\Shared\\Infrastructure\\Bus\\Command\\SymfonyMessageCommandBus'] = new \TyCode\Shared\Infrastructure\Bus\Command\SymfonyMessageCommandBus(new RewindableGenerator(function () use ($container) {
             yield 0 => ($container->privates['TyCode\\Shop\\Product\\Application\\CQRS\\Create\\CreateProductCommandHandler'] ?? self::getCreateProductCommandHandlerService($container));
+            yield 1 => ($container->privates['TyCode\\Shop\\Review\\Application\\CQRS\\Create\\CreateReviewCommandHandler'] ?? self::getCreateReviewCommandHandlerService($container));
+        }, 2));
+    }
+
+    /**
+     * Gets the private 'TyCode\Shared\Infrastructure\Bus\Event\EventSubscriberLocator' shared autowired service.
+     *
+     * @return \TyCode\Shared\Infrastructure\Bus\Event\EventSubscriberLocator
+     */
+    protected static function getEventSubscriberLocatorService($container)
+    {
+        include_once \dirname(__DIR__, 6).'/src/Shared/Infrsatructure/Bus/Event/EventSubscriberLocator.php';
+
+        return $container->privates['TyCode\\Shared\\Infrastructure\\Bus\\Event\\EventSubscriberLocator'] = new \TyCode\Shared\Infrastructure\Bus\Event\EventSubscriberLocator(new RewindableGenerator(function () use ($container) {
+            yield 0 => ($container->privates['TyCode\\Shop\\Review\\Application\\Subscriber\\CreateReviewOn'] ??= new \TyCode\Shop\Review\Application\Subscriber\CreateReviewOn());
         }, 1));
+    }
+
+    /**
+     * Gets the private 'TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConnection' shared autowired service.
+     *
+     * @return \TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConnection
+     */
+    protected static function getRabbitMqConnectionService($container)
+    {
+        include_once \dirname(__DIR__, 6).'/src/Shared/Infrsatructure/Bus/Event/RabbitMq/RabbitMqConnection.php';
+
+        return $container->privates['TyCode\\Shared\\Infrastructure\\Bus\\Event\\RabbitMq\\RabbitMqConnection'] = new \TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConnection(['host' => $container->getEnv('RABBITMQ_HOST'), 'port' => $container->getEnv('RABBITMQ_PORT'), 'login' => $container->getEnv('RABBITMQ_LOGIN'), 'password' => $container->getEnv('RABBITMQ_PASSWORD'), 'read_timeout' => 2, 'write_timeout' => 2, 'connect_timeout' => 5]);
     }
 
     /**
@@ -1987,8 +2040,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getSymfonyMessageQueryBusService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shared'.\DIRECTORY_SEPARATOR.'Domain'.\DIRECTORY_SEPARATOR.'Bus'.\DIRECTORY_SEPARATOR.'Query'.\DIRECTORY_SEPARATOR.'QueryBus.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shared'.\DIRECTORY_SEPARATOR.'Infrsatructure'.\DIRECTORY_SEPARATOR.'Bus'.\DIRECTORY_SEPARATOR.'Query'.\DIRECTORY_SEPARATOR.'SymfonyMessageQueryBus.php';
+        include_once \dirname(__DIR__, 6).'/src/Shared/Domain/Bus/Query/QueryBus.php';
+        include_once \dirname(__DIR__, 6).'/src/Shared/Infrsatructure/Bus/Query/SymfonyMessageQueryBus.php';
 
         return $container->privates['TyCode\\Shared\\Infrastructure\\Bus\\Query\\SymfonyMessageQueryBus'] = new \TyCode\Shared\Infrastructure\Bus\Query\SymfonyMessageQueryBus(new RewindableGenerator(function () use ($container) {
             yield 0 => ($container->privates['TyCode\\Shop\\Product\\Application\\CQRS\\FindByCriteria\\FindProductByCriteriaQueryHandler'] ?? self::getFindProductByCriteriaQueryHandlerService($container));
@@ -2002,8 +2055,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getCreateProductCommandHandlerService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shared'.\DIRECTORY_SEPARATOR.'Domain'.\DIRECTORY_SEPARATOR.'Bus'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'CommandHandler.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shop'.\DIRECTORY_SEPARATOR.'Product'.\DIRECTORY_SEPARATOR.'Application'.\DIRECTORY_SEPARATOR.'CQRS'.\DIRECTORY_SEPARATOR.'Create'.\DIRECTORY_SEPARATOR.'CreateProductCommandHandler.php';
+        include_once \dirname(__DIR__, 6).'/src/Shared/Domain/Bus/Command/CommandHandler.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Product/Application/CQRS/Create/CreateProductCommandHandler.php';
 
         return $container->privates['TyCode\\Shop\\Product\\Application\\CQRS\\Create\\CreateProductCommandHandler'] = new \TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommandHandler(($container->privates['TyCode\\Shop\\Product\\Application\\Create\\ProductCreator'] ?? self::getProductCreatorService($container)));
     }
@@ -2015,8 +2068,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getFindProductByCriteriaQueryHandlerService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shared'.\DIRECTORY_SEPARATOR.'Domain'.\DIRECTORY_SEPARATOR.'Bus'.\DIRECTORY_SEPARATOR.'Query'.\DIRECTORY_SEPARATOR.'QueryHandler.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shop'.\DIRECTORY_SEPARATOR.'Product'.\DIRECTORY_SEPARATOR.'Application'.\DIRECTORY_SEPARATOR.'CQRS'.\DIRECTORY_SEPARATOR.'FindByCriteria'.\DIRECTORY_SEPARATOR.'FindProductByCriteriaQueryHandler.php';
+        include_once \dirname(__DIR__, 6).'/src/Shared/Domain/Bus/Query/QueryHandler.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Product/Application/CQRS/FindByCriteria/FindProductByCriteriaQueryHandler.php';
 
         return $container->privates['TyCode\\Shop\\Product\\Application\\CQRS\\FindByCriteria\\FindProductByCriteriaQueryHandler'] = new \TyCode\Shop\Product\Application\CQRS\FindByCriteria\FindProductByCriteriaQueryHandler(($container->privates['TyCode\\Shop\\Product\\Application\\Find\\ProductFinderByCriteria'] ?? self::getProductFinderByCriteriaService($container)));
     }
@@ -2028,7 +2081,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getProductCreatorService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shop'.\DIRECTORY_SEPARATOR.'Product'.\DIRECTORY_SEPARATOR.'Application'.\DIRECTORY_SEPARATOR.'Create'.\DIRECTORY_SEPARATOR.'ProductCreator.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Product/Application/Create/ProductCreator.php';
 
         return $container->privates['TyCode\\Shop\\Product\\Application\\Create\\ProductCreator'] = new \TyCode\Shop\Product\Application\Create\ProductCreator(($container->privates['TyCode\\Shop\\Product\\Infrastructure\\Persistence\\DoctrineProductRepository'] ?? self::getDoctrineProductRepositoryService($container)));
     }
@@ -2040,7 +2093,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getProductFinderAllService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shop'.\DIRECTORY_SEPARATOR.'Product'.\DIRECTORY_SEPARATOR.'Application'.\DIRECTORY_SEPARATOR.'Find'.\DIRECTORY_SEPARATOR.'ProductFinderAll.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Product/Application/Find/ProductFinderAll.php';
 
         return $container->privates['TyCode\\Shop\\Product\\Application\\Find\\ProductFinderAll'] = new \TyCode\Shop\Product\Application\Find\ProductFinderAll(($container->privates['TyCode\\Shop\\Product\\Infrastructure\\Persistence\\DoctrineProductRepository'] ?? self::getDoctrineProductRepositoryService($container)));
     }
@@ -2052,7 +2105,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getProductFinderByCriteriaService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shop'.\DIRECTORY_SEPARATOR.'Product'.\DIRECTORY_SEPARATOR.'Application'.\DIRECTORY_SEPARATOR.'Find'.\DIRECTORY_SEPARATOR.'ProductFinderByCriteria.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Product/Application/Find/ProductFinderByCriteria.php';
 
         return $container->privates['TyCode\\Shop\\Product\\Application\\Find\\ProductFinderByCriteria'] = new \TyCode\Shop\Product\Application\Find\ProductFinderByCriteria(($container->privates['TyCode\\Shop\\Product\\Infrastructure\\Persistence\\DoctrineProductRepository'] ?? self::getDoctrineProductRepositoryService($container)));
     }
@@ -2064,7 +2117,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getProductFinderIdService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shop'.\DIRECTORY_SEPARATOR.'Product'.\DIRECTORY_SEPARATOR.'Application'.\DIRECTORY_SEPARATOR.'Find'.\DIRECTORY_SEPARATOR.'ProductFinderId.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Product/Application/Find/ProductFinderId.php';
 
         return $container->privates['TyCode\\Shop\\Product\\Application\\Find\\ProductFinderId'] = new \TyCode\Shop\Product\Application\Find\ProductFinderId(($container->privates['TyCode\\Shop\\Product\\Infrastructure\\Persistence\\DoctrineProductRepository'] ?? self::getDoctrineProductRepositoryService($container)));
     }
@@ -2076,10 +2129,84 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getDoctrineProductRepositoryService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shop'.\DIRECTORY_SEPARATOR.'Product'.\DIRECTORY_SEPARATOR.'Domain'.\DIRECTORY_SEPARATOR.'ProductRepository.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Shop'.\DIRECTORY_SEPARATOR.'Product'.\DIRECTORY_SEPARATOR.'Infrastructure'.\DIRECTORY_SEPARATOR.'Persistence'.\DIRECTORY_SEPARATOR.'DoctrineProductRepository.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Product/Domain/ProductRepository.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Product/Infrastructure/Persistence/DoctrineProductRepository.php';
 
         return $container->privates['TyCode\\Shop\\Product\\Infrastructure\\Persistence\\DoctrineProductRepository'] = new \TyCode\Shop\Product\Infrastructure\Persistence\DoctrineProductRepository(($container->services['Doctrine\\ORM\\EntityManager'] ?? self::getEntityManagerService($container)));
+    }
+
+    /**
+     * Gets the private 'TyCode\Shop\Review\Application\CQRS\Create\CreateReviewCommandHandler' shared autowired service.
+     *
+     * @return \TyCode\Shop\Review\Application\CQRS\Create\CreateReviewCommandHandler
+     */
+    protected static function getCreateReviewCommandHandlerService($container)
+    {
+        include_once \dirname(__DIR__, 6).'/src/Shared/Domain/Bus/Command/CommandHandler.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Review/Application/CQRS/Create/CreateReviewCommandHandler.php';
+        include_once \dirname(__DIR__, 6).'/src/Shared/Domain/Bus/Event/EventBus.php';
+        include_once \dirname(__DIR__, 6).'/src/Shared/Infrsatructure/Bus/Event/RabbitMq/RabbitMqEventBus.php';
+
+        return $container->privates['TyCode\\Shop\\Review\\Application\\CQRS\\Create\\CreateReviewCommandHandler'] = new \TyCode\Shop\Review\Application\CQRS\Create\CreateReviewCommandHandler(new \TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventBus(($container->privates['TyCode\\Shared\\Infrastructure\\Bus\\Event\\RabbitMq\\RabbitMqConnection'] ?? self::getRabbitMqConnectionService($container)), $container->getEnv('RABBITMQ_EXCHANGE')));
+    }
+
+    /**
+     * Gets the private 'TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand' shared autowired service.
+     *
+     * @return \TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand
+     */
+    protected static function getConfigureRabbitMqCommandService($container)
+    {
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Review/Infrastructure/Cli/RabbitMq/ConfigureRabbitMqCommand.php';
+        include_once \dirname(__DIR__, 6).'/src/Shared/Infrsatructure/Bus/Event/RabbitMq/RabbitMqConfigurer.php';
+
+        $container->privates['TyCode\\Shop\\Review\\Infrastructure\\Cli\\RabbitMq\\ConfigureRabbitMqCommand'] = $instance = new \TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand(new \TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConfigurer(($container->privates['TyCode\\Shared\\Infrastructure\\Bus\\Event\\RabbitMq\\RabbitMqConnection'] ?? self::getRabbitMqConnectionService($container))), $container->getEnv('RABBITMQ_EXCHANGE'), new RewindableGenerator(function () use ($container) {
+            yield 0 => ($container->privates['TyCode\\Shop\\Review\\Application\\Subscriber\\CreateReviewOn'] ??= new \TyCode\Shop\Review\Application\Subscriber\CreateReviewOn());
+        }, 1));
+
+        $instance->setName('ecm:rabbitmq:configure');
+
+        return $instance;
+    }
+
+    /**
+     * Gets the private 'TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand' shared autowired service.
+     *
+     * @return \TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand
+     */
+    protected static function getConsumeRabbitMqEventsCommandService($container)
+    {
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Review/Infrastructure/Cli/RabbitMq/ConsumeRabbitMqEventsCommand.php';
+        include_once \dirname(__DIR__, 6).'/src/Shared/Infrsatructure/Bus/Event/RabbitMq/RabbitMqEventsConsumer.php';
+        include_once \dirname(__DIR__, 6).'/src/Shared/Infrsatructure/Bus/Event/EventJsonDeserializer.php';
+        include_once \dirname(__DIR__, 6).'/src/Shared/Infrsatructure/Bus/Event/EventMapping.php';
+
+        $container->privates['TyCode\\Shop\\Review\\Infrastructure\\Cli\\RabbitMq\\ConsumeRabbitMqEventsCommand'] = $instance = new \TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand(new \TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventsConsumer(($container->privates['TyCode\\Shared\\Infrastructure\\Bus\\Event\\RabbitMq\\RabbitMqConnection'] ?? self::getRabbitMqConnectionService($container)), new \TyCode\Shared\Infrastructure\Bus\Event\EventJsonDeserializer(new \TyCode\Shared\Infrastructure\Bus\Event\EventMapping(new RewindableGenerator(function () use ($container) {
+            yield 0 => ($container->privates['TyCode\\Shop\\Review\\Application\\Subscriber\\CreateReviewOn'] ??= new \TyCode\Shop\Review\Application\Subscriber\CreateReviewOn());
+        }, 1))), $container->getEnv('RABBITMQ_EXCHANGE'), $container->getEnv('RABBITMQ_MAX_RETRIES')), ($container->privates['TyCode\\Shared\\Infrastructure\\Bus\\Event\\EventSubscriberLocator'] ?? self::getEventSubscriberLocatorService($container)));
+
+        $instance->setName('ecm:rabbitmq:events:consume');
+
+        return $instance;
+    }
+
+    /**
+     * Gets the private 'TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand' shared autowired service.
+     *
+     * @return \TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand
+     */
+    protected static function getGenerateSupervisorRabbitMqConsumerFilesCommandService($container)
+    {
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/src/Shop/Review/Infrastructure/Cli/RabbitMq/GenerateSupervisorRabbitMqConsumerFilesCommand.php';
+
+        $container->privates['TyCode\\Shop\\Review\\Infrastructure\\Cli\\RabbitMq\\GenerateSupervisorRabbitMqConsumerFilesCommand'] = $instance = new \TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand(($container->privates['TyCode\\Shared\\Infrastructure\\Bus\\Event\\EventSubscriberLocator'] ?? self::getEventSubscriberLocatorService($container)));
+
+        $instance->setName('ecm:rabbitmq:events:generate-supervisor-files');
+
+        return $instance;
     }
 
     /**
@@ -2089,18 +2216,18 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getCache_App_TaggableService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'psr'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'CacheItemPoolInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Adapter'.\DIRECTORY_SEPARATOR.'AdapterInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Adapter'.\DIRECTORY_SEPARATOR.'TagAwareAdapterInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache-contracts'.\DIRECTORY_SEPARATOR.'CacheInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache-contracts'.\DIRECTORY_SEPARATOR.'TagAwareCacheInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'PruneableInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'ResettableInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'psr'.\DIRECTORY_SEPARATOR.'log'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'LoggerAwareInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache-contracts'.\DIRECTORY_SEPARATOR.'CacheTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Traits'.\DIRECTORY_SEPARATOR.'ContractsTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'psr'.\DIRECTORY_SEPARATOR.'log'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'LoggerAwareTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Adapter'.\DIRECTORY_SEPARATOR.'TagAwareAdapter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/psr/cache/src/CacheItemPoolInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Adapter/AdapterInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Adapter/TagAwareAdapterInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache-contracts/CacheInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache-contracts/TagAwareCacheInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/PruneableInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/ResettableInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/psr/log/src/LoggerAwareInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache-contracts/CacheTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Traits/ContractsTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/psr/log/src/LoggerAwareTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Adapter/TagAwareAdapter.php';
 
         return $container->privates['cache.app.taggable'] = new \Symfony\Component\Cache\Adapter\TagAwareAdapter(($container->services['cache.app'] ?? self::getCache_AppService($container)));
     }
@@ -2112,24 +2239,24 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getCache_Messenger_RestartWorkersSignalService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'psr'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'CacheItemPoolInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Adapter'.\DIRECTORY_SEPARATOR.'AdapterInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache-contracts'.\DIRECTORY_SEPARATOR.'CacheInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'psr'.\DIRECTORY_SEPARATOR.'log'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'LoggerAwareInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'ResettableInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'psr'.\DIRECTORY_SEPARATOR.'log'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'LoggerAwareTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Traits'.\DIRECTORY_SEPARATOR.'AbstractAdapterTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache-contracts'.\DIRECTORY_SEPARATOR.'CacheTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Traits'.\DIRECTORY_SEPARATOR.'ContractsTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Adapter'.\DIRECTORY_SEPARATOR.'AbstractAdapter.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'PruneableInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Traits'.\DIRECTORY_SEPARATOR.'FilesystemCommonTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Traits'.\DIRECTORY_SEPARATOR.'FilesystemTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Adapter'.\DIRECTORY_SEPARATOR.'FilesystemAdapter.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Marshaller'.\DIRECTORY_SEPARATOR.'MarshallerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'cache'.\DIRECTORY_SEPARATOR.'Marshaller'.\DIRECTORY_SEPARATOR.'DefaultMarshaller.php';
+        include_once \dirname(__DIR__, 6).'/vendor/psr/cache/src/CacheItemPoolInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Adapter/AdapterInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache-contracts/CacheInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/psr/log/src/LoggerAwareInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/ResettableInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/psr/log/src/LoggerAwareTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Traits/AbstractAdapterTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache-contracts/CacheTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Traits/ContractsTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Adapter/AbstractAdapter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/PruneableInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Traits/FilesystemCommonTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Traits/FilesystemTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Adapter/FilesystemAdapter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Marshaller/MarshallerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/cache/Marshaller/DefaultMarshaller.php';
 
-        $container->privates['cache.messenger.restart_workers_signal'] = $instance = new \Symfony\Component\Cache\Adapter\FilesystemAdapter('rHIhqUEtnq', 0, ($container->targetDir.''.'/pools/app'), ($container->privates['cache.default_marshaller'] ??= new \Symfony\Component\Cache\Marshaller\DefaultMarshaller(NULL, true)));
+        $container->privates['cache.messenger.restart_workers_signal'] = $instance = new \Symfony\Component\Cache\Adapter\FilesystemAdapter('qrTech5qJs', 0, ($container->targetDir.''.'/pools/app'), ($container->privates['cache.default_marshaller'] ??= new \Symfony\Component\Cache\Marshaller\DefaultMarshaller(NULL, true)));
 
         $instance->setLogger(($container->privates['logger'] ?? self::getLoggerService($container)));
 
@@ -2143,8 +2270,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConfigBuilder_WarmerService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'CacheWarmer'.\DIRECTORY_SEPARATOR.'CacheWarmerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'CacheWarmer'.\DIRECTORY_SEPARATOR.'ConfigBuilderCacheWarmer.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/CacheWarmer/ConfigBuilderCacheWarmer.php';
 
         return $container->privates['config_builder.warmer'] = new \Symfony\Bundle\FrameworkBundle\CacheWarmer\ConfigBuilderCacheWarmer(($container->services['kernel'] ?? $container->get('kernel', 1)), ($container->privates['logger'] ?? self::getLoggerService($container)));
     }
@@ -2156,8 +2283,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_AboutService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'AboutCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/AboutCommand.php';
 
         $container->privates['console.command.about'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\AboutCommand();
 
@@ -2174,9 +2301,9 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_AssetsInstallService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'AssetsInstallCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'filesystem'.\DIRECTORY_SEPARATOR.'Filesystem.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/AssetsInstallCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/filesystem/Filesystem.php';
 
         $container->privates['console.command.assets_install'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\AssetsInstallCommand(($container->privates['filesystem'] ??= new \Symfony\Component\Filesystem\Filesystem()), \dirname(__DIR__, 4));
 
@@ -2193,11 +2320,11 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_CacheClearService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'CacheClearCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'CacheClearer'.\DIRECTORY_SEPARATOR.'CacheClearerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'CacheClearer'.\DIRECTORY_SEPARATOR.'ChainCacheClearer.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'filesystem'.\DIRECTORY_SEPARATOR.'Filesystem.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/CacheClearCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/CacheClearer/CacheClearerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/CacheClearer/ChainCacheClearer.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/filesystem/Filesystem.php';
 
         $container->privates['console.command.cache_clear'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\CacheClearCommand(new \Symfony\Component\HttpKernel\CacheClearer\ChainCacheClearer(new RewindableGenerator(function () use ($container) {
             yield 0 => ($container->services['cache.system_clearer'] ?? self::getCache_SystemClearerService($container));
@@ -2216,8 +2343,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_CachePoolClearService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'CachePoolClearCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/CachePoolClearCommand.php';
 
         $container->privates['console.command.cache_pool_clear'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\CachePoolClearCommand(($container->services['cache.global_clearer'] ?? self::getCache_GlobalClearerService($container)), ['cache.app', 'cache.system', 'cache.validator', 'cache.serializer', 'cache.annotations', 'cache.property_info', 'cache.messenger.restart_workers_signal']);
 
@@ -2234,8 +2361,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_CachePoolDeleteService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'CachePoolDeleteCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/CachePoolDeleteCommand.php';
 
         $container->privates['console.command.cache_pool_delete'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\CachePoolDeleteCommand(($container->services['cache.global_clearer'] ?? self::getCache_GlobalClearerService($container)), ['cache.app', 'cache.system', 'cache.validator', 'cache.serializer', 'cache.annotations', 'cache.property_info', 'cache.messenger.restart_workers_signal']);
 
@@ -2252,8 +2379,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_CachePoolInvalidateTagsService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'CachePoolInvalidateTagsCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/CachePoolInvalidateTagsCommand.php';
 
         $container->privates['console.command.cache_pool_invalidate_tags'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\CachePoolInvalidateTagsCommand(new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($container->getService ??= $container->getService(...), [
             'cache.app' => ['privates', 'cache.app.taggable', 'getCache_App_TaggableService', false],
@@ -2274,8 +2401,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_CachePoolListService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'CachePoolListCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/CachePoolListCommand.php';
 
         $container->privates['console.command.cache_pool_list'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\CachePoolListCommand(['cache.app', 'cache.system', 'cache.validator', 'cache.serializer', 'cache.annotations', 'cache.property_info', 'cache.messenger.restart_workers_signal']);
 
@@ -2292,8 +2419,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_CachePoolPruneService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'CachePoolPruneCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/CachePoolPruneCommand.php';
 
         $container->privates['console.command.cache_pool_prune'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\CachePoolPruneCommand(new RewindableGenerator(function () use ($container) {
             yield 'cache.app' => ($container->services['cache.app'] ?? self::getCache_AppService($container));
@@ -2313,8 +2440,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_CacheWarmupService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'CacheWarmupCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/CacheWarmupCommand.php';
 
         $container->privates['console.command.cache_warmup'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\CacheWarmupCommand(($container->services['cache_warmer'] ?? self::getCacheWarmerService($container)));
 
@@ -2331,11 +2458,11 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_ConfigDebugService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'BuildDebugContainerTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'ContainerDebugCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'AbstractConfigCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'ConfigDebugCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/BuildDebugContainerTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/ContainerDebugCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/AbstractConfigCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/ConfigDebugCommand.php';
 
         $container->privates['console.command.config_debug'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\ConfigDebugCommand();
 
@@ -2352,11 +2479,11 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_ConfigDumpReferenceService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'BuildDebugContainerTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'ContainerDebugCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'AbstractConfigCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'ConfigDumpReferenceCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/BuildDebugContainerTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/ContainerDebugCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/AbstractConfigCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/ConfigDumpReferenceCommand.php';
 
         $container->privates['console.command.config_dump_reference'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\ConfigDumpReferenceCommand();
 
@@ -2373,9 +2500,9 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_ContainerDebugService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'BuildDebugContainerTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'ContainerDebugCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/BuildDebugContainerTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/ContainerDebugCommand.php';
 
         $container->privates['console.command.container_debug'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\ContainerDebugCommand();
 
@@ -2392,8 +2519,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_ContainerLintService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'ContainerLintCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/ContainerLintCommand.php';
 
         $container->privates['console.command.container_lint'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\ContainerLintCommand();
 
@@ -2410,11 +2537,11 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_DebugAutowiringService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'BuildDebugContainerTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'ContainerDebugCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'DebugAutowiringCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'error-handler'.\DIRECTORY_SEPARATOR.'ErrorRenderer'.\DIRECTORY_SEPARATOR.'FileLinkFormatter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/BuildDebugContainerTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/ContainerDebugCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/DebugAutowiringCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/error-handler/ErrorRenderer/FileLinkFormatter.php';
 
         $container->privates['console.command.debug_autowiring'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\DebugAutowiringCommand(NULL, ($container->privates['debug.file_link_formatter'] ??= new \Symfony\Component\ErrorHandler\ErrorRenderer\FileLinkFormatter($container->getEnv('default::SYMFONY_IDE'))));
 
@@ -2431,8 +2558,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_DotenvDebugService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'dotenv'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'DebugCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/dotenv/Command/DebugCommand.php';
 
         $container->privates['console.command.dotenv_debug'] = $instance = new \Symfony\Component\Dotenv\Command\DebugCommand('dev', \dirname(__DIR__, 4));
 
@@ -2449,8 +2576,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_EventDispatcherDebugService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'EventDispatcherDebugCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/EventDispatcherDebugCommand.php';
 
         $container->privates['console.command.event_dispatcher_debug'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\EventDispatcherDebugCommand(new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($container->getService ??= $container->getService(...), [
             'event_dispatcher' => ['services', 'event_dispatcher', 'getEventDispatcherService', false],
@@ -2471,12 +2598,12 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_MessengerConsumeMessagesService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'SignalableCommandInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'ConsumeMessagesCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'MessageBusInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'RoutableMessageBus.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'EventListener'.\DIRECTORY_SEPARATOR.'ResetServicesListener.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/SignalableCommandInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/Command/ConsumeMessagesCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/MessageBusInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/RoutableMessageBus.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/EventListener/ResetServicesListener.php';
 
         $container->privates['console.command.messenger_consume_messages'] = $instance = new \Symfony\Component\Messenger\Command\ConsumeMessagesCommand(new \Symfony\Component\Messenger\RoutableMessageBus(new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($container->getService ??= $container->getService(...), [
             'messenger.bus.default' => ['services', 'messenger.default_bus', 'getMessenger_DefaultBusService', false],
@@ -2497,8 +2624,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_MessengerDebugService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'DebugCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/Command/DebugCommand.php';
 
         $container->privates['console.command.messenger_debug'] = $instance = new \Symfony\Component\Messenger\Command\DebugCommand(['messenger.bus.default' => ['Symfony\\Component\\Process\\Messenger\\RunProcessMessage' => [['process.messenger.process_message_handler', []]], 'Symfony\\Component\\Console\\Messenger\\RunCommandMessage' => [['console.messenger.execute_command_handler', []]], 'Symfony\\Component\\Messenger\\Message\\RedispatchMessage' => [['messenger.redispatch_message_handler', []]]]]);
 
@@ -2515,8 +2642,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_MessengerSetupTransportsService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'SetupTransportsCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/Command/SetupTransportsCommand.php';
 
         $container->privates['console.command.messenger_setup_transports'] = $instance = new \Symfony\Component\Messenger\Command\SetupTransportsCommand(($container->privates['messenger.receiver_locator'] ??= new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($container->getService ??= $container->getService(...), [], [])), []);
 
@@ -2533,8 +2660,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_MessengerStatsService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'StatsCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/Command/StatsCommand.php';
 
         $container->privates['console.command.messenger_stats'] = $instance = new \Symfony\Component\Messenger\Command\StatsCommand(($container->privates['messenger.receiver_locator'] ??= new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($container->getService ??= $container->getService(...), [], [])), []);
 
@@ -2551,8 +2678,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_MessengerStopWorkersService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'StopWorkersCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/Command/StopWorkersCommand.php';
 
         $container->privates['console.command.messenger_stop_workers'] = $instance = new \Symfony\Component\Messenger\Command\StopWorkersCommand(($container->privates['cache.messenger.restart_workers_signal'] ?? self::getCache_Messenger_RestartWorkersSignalService($container)));
 
@@ -2569,10 +2696,10 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_RouterDebugService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'BuildDebugContainerTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'RouterDebugCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'error-handler'.\DIRECTORY_SEPARATOR.'ErrorRenderer'.\DIRECTORY_SEPARATOR.'FileLinkFormatter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/BuildDebugContainerTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/RouterDebugCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/error-handler/ErrorRenderer/FileLinkFormatter.php';
 
         $container->privates['console.command.router_debug'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\RouterDebugCommand(($container->services['router'] ?? self::getRouterService($container)), ($container->privates['debug.file_link_formatter'] ??= new \Symfony\Component\ErrorHandler\ErrorRenderer\FileLinkFormatter($container->getEnv('default::SYMFONY_IDE'))));
 
@@ -2589,8 +2716,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_RouterMatchService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'RouterMatchCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/RouterMatchCommand.php';
 
         $container->privates['console.command.router_match'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\RouterMatchCommand(($container->services['router'] ?? self::getRouterService($container)), new RewindableGenerator(fn () => new \EmptyIterator(), 0));
 
@@ -2607,10 +2734,10 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_SecretsDecryptToLocalService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'SecretsDecryptToLocalCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Secrets'.\DIRECTORY_SEPARATOR.'AbstractVault.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Secrets'.\DIRECTORY_SEPARATOR.'DotenvVault.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/SecretsDecryptToLocalCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Secrets/AbstractVault.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Secrets/DotenvVault.php';
 
         $container->privates['console.command.secrets_decrypt_to_local'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\SecretsDecryptToLocalCommand(($container->privates['secrets.vault'] ?? self::getSecrets_VaultService($container)), ($container->privates['secrets.local_vault'] ??= new \Symfony\Bundle\FrameworkBundle\Secrets\DotenvVault((\dirname(__DIR__, 4).'/.env.dev.local'))));
 
@@ -2627,10 +2754,10 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_SecretsEncryptFromLocalService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'SecretsEncryptFromLocalCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Secrets'.\DIRECTORY_SEPARATOR.'AbstractVault.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Secrets'.\DIRECTORY_SEPARATOR.'DotenvVault.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/SecretsEncryptFromLocalCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Secrets/AbstractVault.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Secrets/DotenvVault.php';
 
         $container->privates['console.command.secrets_encrypt_from_local'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\SecretsEncryptFromLocalCommand(($container->privates['secrets.vault'] ?? self::getSecrets_VaultService($container)), ($container->privates['secrets.local_vault'] ??= new \Symfony\Bundle\FrameworkBundle\Secrets\DotenvVault((\dirname(__DIR__, 4).'/.env.dev.local'))));
 
@@ -2647,10 +2774,10 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_SecretsGenerateKeyService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'SecretsGenerateKeysCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Secrets'.\DIRECTORY_SEPARATOR.'AbstractVault.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Secrets'.\DIRECTORY_SEPARATOR.'DotenvVault.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/SecretsGenerateKeysCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Secrets/AbstractVault.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Secrets/DotenvVault.php';
 
         $container->privates['console.command.secrets_generate_key'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\SecretsGenerateKeysCommand(($container->privates['secrets.vault'] ?? self::getSecrets_VaultService($container)), ($container->privates['secrets.local_vault'] ??= new \Symfony\Bundle\FrameworkBundle\Secrets\DotenvVault((\dirname(__DIR__, 4).'/.env.dev.local'))));
 
@@ -2667,10 +2794,10 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_SecretsListService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'SecretsListCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Secrets'.\DIRECTORY_SEPARATOR.'AbstractVault.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Secrets'.\DIRECTORY_SEPARATOR.'DotenvVault.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/SecretsListCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Secrets/AbstractVault.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Secrets/DotenvVault.php';
 
         $container->privates['console.command.secrets_list'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\SecretsListCommand(($container->privates['secrets.vault'] ?? self::getSecrets_VaultService($container)), ($container->privates['secrets.local_vault'] ??= new \Symfony\Bundle\FrameworkBundle\Secrets\DotenvVault((\dirname(__DIR__, 4).'/.env.dev.local'))));
 
@@ -2687,10 +2814,10 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_SecretsRemoveService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'SecretsRemoveCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Secrets'.\DIRECTORY_SEPARATOR.'AbstractVault.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Secrets'.\DIRECTORY_SEPARATOR.'DotenvVault.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/SecretsRemoveCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Secrets/AbstractVault.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Secrets/DotenvVault.php';
 
         $container->privates['console.command.secrets_remove'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\SecretsRemoveCommand(($container->privates['secrets.vault'] ?? self::getSecrets_VaultService($container)), ($container->privates['secrets.local_vault'] ??= new \Symfony\Bundle\FrameworkBundle\Secrets\DotenvVault((\dirname(__DIR__, 4).'/.env.dev.local'))));
 
@@ -2707,10 +2834,10 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_SecretsSetService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'SecretsSetCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Secrets'.\DIRECTORY_SEPARATOR.'AbstractVault.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Secrets'.\DIRECTORY_SEPARATOR.'DotenvVault.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/SecretsSetCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Secrets/AbstractVault.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Secrets/DotenvVault.php';
 
         $container->privates['console.command.secrets_set'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\SecretsSetCommand(($container->privates['secrets.vault'] ?? self::getSecrets_VaultService($container)), ($container->privates['secrets.local_vault'] ??= new \Symfony\Bundle\FrameworkBundle\Secrets\DotenvVault((\dirname(__DIR__, 4).'/.env.dev.local'))));
 
@@ -2727,9 +2854,9 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_Command_YamlLintService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'yaml'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'LintCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'YamlLintCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/yaml/Command/LintCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Command/YamlLintCommand.php';
 
         $container->privates['console.command.yaml_lint'] = $instance = new \Symfony\Bundle\FrameworkBundle\Command\YamlLintCommand();
 
@@ -2746,7 +2873,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getConsole_ErrorListenerService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'EventListener'.\DIRECTORY_SEPARATOR.'ErrorListener.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/EventListener/ErrorListener.php';
 
         return $container->privates['console.error_listener'] = new \Symfony\Component\Console\EventListener\ErrorListener(($container->privates['logger'] ?? self::getLoggerService($container)));
     }
@@ -2758,8 +2885,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getContainer_EnvVarProcessorService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'dependency-injection'.\DIRECTORY_SEPARATOR.'EnvVarProcessorInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'dependency-injection'.\DIRECTORY_SEPARATOR.'EnvVarProcessor.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/dependency-injection/EnvVarProcessorInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/dependency-injection/EnvVarProcessor.php';
 
         return $container->privates['container.env_var_processor'] = new \Symfony\Component\DependencyInjection\EnvVarProcessor($container, new RewindableGenerator(function () use ($container) {
             yield 0 => ($container->privates['secrets.vault'] ?? self::getSecrets_VaultService($container));
@@ -2803,15 +2930,15 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeAuthService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeAuthenticator.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Security'.\DIRECTORY_SEPARATOR.'SecurityConfigUpdater.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Doctrine'.\DIRECTORY_SEPARATOR.'DoctrineHelper.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Security'.\DIRECTORY_SEPARATOR.'SecurityControllerBuilder.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeAuthenticator.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Security/SecurityConfigUpdater.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Doctrine/DoctrineHelper.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Security/SecurityControllerBuilder.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $a = ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container));
         $b = ($container->privates['maker.generator'] ?? self::getMaker_GeneratorService($container));
@@ -2831,12 +2958,12 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeCommandService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $container->privates['maker.auto_command.make_command'] = $instance = new \Symfony\Bundle\MakerBundle\Command\MakerCommand(new \Symfony\Bundle\MakerBundle\Maker\MakeCommand(($container->privates['maker.php_compat_util'] ?? self::getMaker_PhpCompatUtilService($container))), ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container)), ($container->privates['maker.generator'] ?? self::getMaker_GeneratorService($container)), ($container->privates['maker.template_linter'] ??= new \Symfony\Bundle\MakerBundle\Util\TemplateLinter($container->getEnv('default::string:MAKER_PHP_CS_FIXER_BINARY_PATH'), $container->getEnv('default::string:MAKER_PHP_CS_FIXER_CONFIG_PATH'))));
 
@@ -2853,12 +2980,12 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeControllerService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeController.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeController.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $container->privates['maker.auto_command.make_controller'] = $instance = new \Symfony\Bundle\MakerBundle\Command\MakerCommand(new \Symfony\Bundle\MakerBundle\Maker\MakeController(($container->privates['maker.php_compat_util'] ?? self::getMaker_PhpCompatUtilService($container))), ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container)), ($container->privates['maker.generator'] ?? self::getMaker_GeneratorService($container)), ($container->privates['maker.template_linter'] ??= new \Symfony\Bundle\MakerBundle\Util\TemplateLinter($container->getEnv('default::string:MAKER_PHP_CS_FIXER_BINARY_PATH'), $container->getEnv('default::string:MAKER_PHP_CS_FIXER_CONFIG_PATH'))));
 
@@ -2875,13 +3002,13 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeCrudService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeCrud.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Doctrine'.\DIRECTORY_SEPARATOR.'DoctrineHelper.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeCrud.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Doctrine/DoctrineHelper.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $container->privates['maker.auto_command.make_crud'] = $instance = new \Symfony\Bundle\MakerBundle\Command\MakerCommand(new \Symfony\Bundle\MakerBundle\Maker\MakeCrud(($container->privates['maker.doctrine_helper'] ??= new \Symfony\Bundle\MakerBundle\Doctrine\DoctrineHelper('App\\Entity', NULL)), ($container->privates['maker.renderer.form_type_renderer'] ?? self::getMaker_Renderer_FormTypeRendererService($container))), ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container)), ($container->privates['maker.generator'] ?? self::getMaker_GeneratorService($container)), ($container->privates['maker.template_linter'] ??= new \Symfony\Bundle\MakerBundle\Util\TemplateLinter($container->getEnv('default::string:MAKER_PHP_CS_FIXER_BINARY_PATH'), $container->getEnv('default::string:MAKER_PHP_CS_FIXER_CONFIG_PATH'))));
 
@@ -2898,12 +3025,12 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeDockerDatabaseService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeDockerDatabase.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeDockerDatabase.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $a = ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container));
 
@@ -2922,14 +3049,14 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeEntityService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'InputAwareMakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeEntity.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Doctrine'.\DIRECTORY_SEPARATOR.'DoctrineHelper.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/InputAwareMakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeEntity.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Doctrine/DoctrineHelper.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $a = ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container));
         $b = ($container->privates['maker.generator'] ?? self::getMaker_GeneratorService($container));
@@ -2949,12 +3076,12 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeFixturesService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeFixtures.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeFixtures.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $container->privates['maker.auto_command.make_fixtures'] = $instance = new \Symfony\Bundle\MakerBundle\Command\MakerCommand(new \Symfony\Bundle\MakerBundle\Maker\MakeFixtures(), ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container)), ($container->privates['maker.generator'] ?? self::getMaker_GeneratorService($container)), ($container->privates['maker.template_linter'] ??= new \Symfony\Bundle\MakerBundle\Util\TemplateLinter($container->getEnv('default::string:MAKER_PHP_CS_FIXER_BINARY_PATH'), $container->getEnv('default::string:MAKER_PHP_CS_FIXER_CONFIG_PATH'))));
 
@@ -2971,13 +3098,13 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeFormService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeForm.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Doctrine'.\DIRECTORY_SEPARATOR.'DoctrineHelper.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeForm.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Doctrine/DoctrineHelper.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $container->privates['maker.auto_command.make_form'] = $instance = new \Symfony\Bundle\MakerBundle\Command\MakerCommand(new \Symfony\Bundle\MakerBundle\Maker\MakeForm(($container->privates['maker.doctrine_helper'] ??= new \Symfony\Bundle\MakerBundle\Doctrine\DoctrineHelper('App\\Entity', NULL)), ($container->privates['maker.renderer.form_type_renderer'] ?? self::getMaker_Renderer_FormTypeRendererService($container))), ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container)), ($container->privates['maker.generator'] ?? self::getMaker_GeneratorService($container)), ($container->privates['maker.template_linter'] ??= new \Symfony\Bundle\MakerBundle\Util\TemplateLinter($container->getEnv('default::string:MAKER_PHP_CS_FIXER_BINARY_PATH'), $container->getEnv('default::string:MAKER_PHP_CS_FIXER_CONFIG_PATH'))));
 
@@ -2994,13 +3121,13 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeListenerService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeListener.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'EventRegistry.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeListener.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/EventRegistry.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $container->privates['maker.auto_command.make_listener'] = $instance = new \Symfony\Bundle\MakerBundle\Command\MakerCommand(new \Symfony\Bundle\MakerBundle\Maker\MakeListener(new \Symfony\Bundle\MakerBundle\EventRegistry(($container->services['event_dispatcher'] ?? self::getEventDispatcherService($container)))), ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container)), ($container->privates['maker.generator'] ?? self::getMaker_GeneratorService($container)), ($container->privates['maker.template_linter'] ??= new \Symfony\Bundle\MakerBundle\Util\TemplateLinter($container->getEnv('default::string:MAKER_PHP_CS_FIXER_BINARY_PATH'), $container->getEnv('default::string:MAKER_PHP_CS_FIXER_CONFIG_PATH'))));
 
@@ -3018,12 +3145,12 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeMessageService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeMessage.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeMessage.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $a = ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container));
 
@@ -3042,12 +3169,12 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeMessengerMiddlewareService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeMessengerMiddleware.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeMessengerMiddleware.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $container->privates['maker.auto_command.make_messenger_middleware'] = $instance = new \Symfony\Bundle\MakerBundle\Command\MakerCommand(new \Symfony\Bundle\MakerBundle\Maker\MakeMessengerMiddleware(), ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container)), ($container->privates['maker.generator'] ?? self::getMaker_GeneratorService($container)), ($container->privates['maker.template_linter'] ??= new \Symfony\Bundle\MakerBundle\Util\TemplateLinter($container->getEnv('default::string:MAKER_PHP_CS_FIXER_BINARY_PATH'), $container->getEnv('default::string:MAKER_PHP_CS_FIXER_CONFIG_PATH'))));
 
@@ -3064,13 +3191,13 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeMigrationService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'ApplicationAwareMakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeMigration.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/ApplicationAwareMakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeMigration.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $container->privates['maker.auto_command.make_migration'] = $instance = new \Symfony\Bundle\MakerBundle\Command\MakerCommand(new \Symfony\Bundle\MakerBundle\Maker\MakeMigration(\dirname(__DIR__, 4), ($container->privates['maker.file_link_formatter'] ?? self::getMaker_FileLinkFormatterService($container))), ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container)), ($container->privates['maker.generator'] ?? self::getMaker_GeneratorService($container)), ($container->privates['maker.template_linter'] ??= new \Symfony\Bundle\MakerBundle\Util\TemplateLinter($container->getEnv('default::string:MAKER_PHP_CS_FIXER_BINARY_PATH'), $container->getEnv('default::string:MAKER_PHP_CS_FIXER_CONFIG_PATH'))));
 
@@ -3087,13 +3214,13 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeRegistrationFormService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeRegistrationForm.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Doctrine'.\DIRECTORY_SEPARATOR.'DoctrineHelper.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeRegistrationForm.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Doctrine/DoctrineHelper.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $a = ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container));
 
@@ -3112,13 +3239,13 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeResetPasswordService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeResetPassword.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Doctrine'.\DIRECTORY_SEPARATOR.'DoctrineHelper.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeResetPassword.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Doctrine/DoctrineHelper.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $a = ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container));
 
@@ -3137,14 +3264,14 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeSecurityFormLoginService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'Security'.\DIRECTORY_SEPARATOR.'MakeFormLogin.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Security'.\DIRECTORY_SEPARATOR.'SecurityConfigUpdater.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Security'.\DIRECTORY_SEPARATOR.'SecurityControllerBuilder.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/Security/MakeFormLogin.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Security/SecurityConfigUpdater.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Security/SecurityControllerBuilder.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $a = ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container));
 
@@ -3163,12 +3290,12 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeSerializerEncoderService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeSerializerEncoder.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeSerializerEncoder.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $container->privates['maker.auto_command.make_serializer_encoder'] = $instance = new \Symfony\Bundle\MakerBundle\Command\MakerCommand(new \Symfony\Bundle\MakerBundle\Maker\MakeSerializerEncoder(), ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container)), ($container->privates['maker.generator'] ?? self::getMaker_GeneratorService($container)), ($container->privates['maker.template_linter'] ??= new \Symfony\Bundle\MakerBundle\Util\TemplateLinter($container->getEnv('default::string:MAKER_PHP_CS_FIXER_BINARY_PATH'), $container->getEnv('default::string:MAKER_PHP_CS_FIXER_CONFIG_PATH'))));
 
@@ -3185,12 +3312,12 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeSerializerNormalizerService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeSerializerNormalizer.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeSerializerNormalizer.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $container->privates['maker.auto_command.make_serializer_normalizer'] = $instance = new \Symfony\Bundle\MakerBundle\Command\MakerCommand(new \Symfony\Bundle\MakerBundle\Maker\MakeSerializerNormalizer(), ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container)), ($container->privates['maker.generator'] ?? self::getMaker_GeneratorService($container)), ($container->privates['maker.template_linter'] ??= new \Symfony\Bundle\MakerBundle\Util\TemplateLinter($container->getEnv('default::string:MAKER_PHP_CS_FIXER_BINARY_PATH'), $container->getEnv('default::string:MAKER_PHP_CS_FIXER_CONFIG_PATH'))));
 
@@ -3207,12 +3334,12 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeStimulusControllerService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeStimulusController.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeStimulusController.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $container->privates['maker.auto_command.make_stimulus_controller'] = $instance = new \Symfony\Bundle\MakerBundle\Command\MakerCommand(new \Symfony\Bundle\MakerBundle\Maker\MakeStimulusController(), ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container)), ($container->privates['maker.generator'] ?? self::getMaker_GeneratorService($container)), ($container->privates['maker.template_linter'] ??= new \Symfony\Bundle\MakerBundle\Util\TemplateLinter($container->getEnv('default::string:MAKER_PHP_CS_FIXER_BINARY_PATH'), $container->getEnv('default::string:MAKER_PHP_CS_FIXER_CONFIG_PATH'))));
 
@@ -3229,13 +3356,13 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeTestService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'InputAwareMakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeTest.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/InputAwareMakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeTest.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $container->privates['maker.auto_command.make_test'] = $instance = new \Symfony\Bundle\MakerBundle\Command\MakerCommand(new \Symfony\Bundle\MakerBundle\Maker\MakeTest(), ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container)), ($container->privates['maker.generator'] ?? self::getMaker_GeneratorService($container)), ($container->privates['maker.template_linter'] ??= new \Symfony\Bundle\MakerBundle\Util\TemplateLinter($container->getEnv('default::string:MAKER_PHP_CS_FIXER_BINARY_PATH'), $container->getEnv('default::string:MAKER_PHP_CS_FIXER_CONFIG_PATH'))));
 
@@ -3253,12 +3380,12 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeTwigComponentService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeTwigComponent.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeTwigComponent.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $container->privates['maker.auto_command.make_twig_component'] = $instance = new \Symfony\Bundle\MakerBundle\Command\MakerCommand(new \Symfony\Bundle\MakerBundle\Maker\MakeTwigComponent(), ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container)), ($container->privates['maker.generator'] ?? self::getMaker_GeneratorService($container)), ($container->privates['maker.template_linter'] ??= new \Symfony\Bundle\MakerBundle\Util\TemplateLinter($container->getEnv('default::string:MAKER_PHP_CS_FIXER_BINARY_PATH'), $container->getEnv('default::string:MAKER_PHP_CS_FIXER_CONFIG_PATH'))));
 
@@ -3275,12 +3402,12 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeTwigExtensionService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeTwigExtension.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeTwigExtension.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $container->privates['maker.auto_command.make_twig_extension'] = $instance = new \Symfony\Bundle\MakerBundle\Command\MakerCommand(new \Symfony\Bundle\MakerBundle\Maker\MakeTwigExtension(), ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container)), ($container->privates['maker.generator'] ?? self::getMaker_GeneratorService($container)), ($container->privates['maker.template_linter'] ??= new \Symfony\Bundle\MakerBundle\Util\TemplateLinter($container->getEnv('default::string:MAKER_PHP_CS_FIXER_BINARY_PATH'), $container->getEnv('default::string:MAKER_PHP_CS_FIXER_CONFIG_PATH'))));
 
@@ -3297,15 +3424,15 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeUserService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeUser.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Security'.\DIRECTORY_SEPARATOR.'UserClassBuilder.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Security'.\DIRECTORY_SEPARATOR.'SecurityConfigUpdater.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Doctrine'.\DIRECTORY_SEPARATOR.'DoctrineHelper.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeUser.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Security/UserClassBuilder.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Security/SecurityConfigUpdater.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Doctrine/DoctrineHelper.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $a = ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container));
 
@@ -3324,12 +3451,12 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeValidatorService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeValidator.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeValidator.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $container->privates['maker.auto_command.make_validator'] = $instance = new \Symfony\Bundle\MakerBundle\Command\MakerCommand(new \Symfony\Bundle\MakerBundle\Maker\MakeValidator(), ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container)), ($container->privates['maker.generator'] ?? self::getMaker_GeneratorService($container)), ($container->privates['maker.template_linter'] ??= new \Symfony\Bundle\MakerBundle\Util\TemplateLinter($container->getEnv('default::string:MAKER_PHP_CS_FIXER_BINARY_PATH'), $container->getEnv('default::string:MAKER_PHP_CS_FIXER_CONFIG_PATH'))));
 
@@ -3346,12 +3473,12 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_AutoCommand_MakeVoterService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'console'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'Command.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Command'.\DIRECTORY_SEPARATOR.'MakerCommand.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'MakerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'AbstractMaker.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Maker'.\DIRECTORY_SEPARATOR.'MakeVoter.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateLinter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/console/Command/Command.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Command/MakerCommand.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/MakerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/AbstractMaker.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Maker/MakeVoter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateLinter.php';
 
         $container->privates['maker.auto_command.make_voter'] = $instance = new \Symfony\Bundle\MakerBundle\Command\MakerCommand(new \Symfony\Bundle\MakerBundle\Maker\MakeVoter(), ($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container)), ($container->privates['maker.generator'] ?? self::getMaker_GeneratorService($container)), ($container->privates['maker.template_linter'] ??= new \Symfony\Bundle\MakerBundle\Util\TemplateLinter($container->getEnv('default::string:MAKER_PHP_CS_FIXER_BINARY_PATH'), $container->getEnv('default::string:MAKER_PHP_CS_FIXER_CONFIG_PATH'))));
 
@@ -3368,8 +3495,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_EntityClassGeneratorService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Doctrine'.\DIRECTORY_SEPARATOR.'EntityClassGenerator.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Doctrine'.\DIRECTORY_SEPARATOR.'DoctrineHelper.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Doctrine/EntityClassGenerator.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Doctrine/DoctrineHelper.php';
 
         return $container->privates['maker.entity_class_generator'] = new \Symfony\Bundle\MakerBundle\Doctrine\EntityClassGenerator(($container->privates['maker.generator'] ?? self::getMaker_GeneratorService($container)), ($container->privates['maker.doctrine_helper'] ??= new \Symfony\Bundle\MakerBundle\Doctrine\DoctrineHelper('App\\Entity', NULL)));
     }
@@ -3381,8 +3508,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_FileLinkFormatterService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'MakerFileLinkFormatter.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'error-handler'.\DIRECTORY_SEPARATOR.'ErrorRenderer'.\DIRECTORY_SEPARATOR.'FileLinkFormatter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/MakerFileLinkFormatter.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/error-handler/ErrorRenderer/FileLinkFormatter.php';
 
         return $container->privates['maker.file_link_formatter'] = new \Symfony\Bundle\MakerBundle\Util\MakerFileLinkFormatter(($container->privates['debug.file_link_formatter'] ??= new \Symfony\Component\ErrorHandler\ErrorRenderer\FileLinkFormatter($container->getEnv('default::SYMFONY_IDE'))));
     }
@@ -3394,10 +3521,10 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_FileManagerService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'FileManager.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'AutoloaderUtil.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'ComposerAutoloaderFinder.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'filesystem'.\DIRECTORY_SEPARATOR.'Filesystem.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/FileManager.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/AutoloaderUtil.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/ComposerAutoloaderFinder.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/filesystem/Filesystem.php';
 
         return $container->privates['maker.file_manager'] = new \Symfony\Bundle\MakerBundle\FileManager(($container->privates['filesystem'] ??= new \Symfony\Component\Filesystem\Filesystem()), new \Symfony\Bundle\MakerBundle\Util\AutoloaderUtil(new \Symfony\Bundle\MakerBundle\Util\ComposerAutoloaderFinder('App')), ($container->privates['maker.file_link_formatter'] ?? self::getMaker_FileLinkFormatterService($container)), \dirname(__DIR__, 4), NULL);
     }
@@ -3409,8 +3536,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_GeneratorService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Generator.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'TemplateComponentGenerator.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Generator.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/TemplateComponentGenerator.php';
 
         return $container->privates['maker.generator'] = new \Symfony\Bundle\MakerBundle\Generator(($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container)), 'App', NULL, new \Symfony\Bundle\MakerBundle\Util\TemplateComponentGenerator());
     }
@@ -3422,7 +3549,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_PhpCompatUtilService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Util'.\DIRECTORY_SEPARATOR.'PhpCompatUtil.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Util/PhpCompatUtil.php';
 
         return $container->privates['maker.php_compat_util'] = new \Symfony\Bundle\MakerBundle\Util\PhpCompatUtil(($container->privates['maker.file_manager'] ?? self::getMaker_FileManagerService($container)));
     }
@@ -3434,7 +3561,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMaker_Renderer_FormTypeRendererService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'Renderer'.\DIRECTORY_SEPARATOR.'FormTypeRenderer.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src/Renderer/FormTypeRenderer.php';
 
         return $container->privates['maker.renderer.form_type_renderer'] = new \Symfony\Bundle\MakerBundle\Renderer\FormTypeRenderer(($container->privates['maker.generator'] ?? self::getMaker_GeneratorService($container)));
     }
@@ -3446,11 +3573,11 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMessenger_Bus_Default_Middleware_HandleMessageService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'Middleware'.\DIRECTORY_SEPARATOR.'MiddlewareInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'psr'.\DIRECTORY_SEPARATOR.'log'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'LoggerAwareTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'Middleware'.\DIRECTORY_SEPARATOR.'HandleMessageMiddleware.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'Handler'.\DIRECTORY_SEPARATOR.'HandlersLocatorInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'Handler'.\DIRECTORY_SEPARATOR.'HandlersLocator.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/Middleware/MiddlewareInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/psr/log/src/LoggerAwareTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/Middleware/HandleMessageMiddleware.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/Handler/HandlersLocatorInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/Handler/HandlersLocator.php';
 
         $container->privates['messenger.bus.default.middleware.handle_message'] = $instance = new \Symfony\Component\Messenger\Middleware\HandleMessageMiddleware(new \Symfony\Component\Messenger\Handler\HandlersLocator(['Symfony\\Component\\Process\\Messenger\\RunProcessMessage' => new RewindableGenerator(function () use ($container) {
             yield 0 => ($container->privates['.messenger.handler_descriptor.QXXNQ9d'] ?? self::get_Messenger_HandlerDescriptor_QXXNQ9dService($container));
@@ -3472,11 +3599,11 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMessenger_Bus_Default_Middleware_SendMessageService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'Middleware'.\DIRECTORY_SEPARATOR.'MiddlewareInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'psr'.\DIRECTORY_SEPARATOR.'log'.\DIRECTORY_SEPARATOR.'src'.\DIRECTORY_SEPARATOR.'LoggerAwareTrait.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'Middleware'.\DIRECTORY_SEPARATOR.'SendMessageMiddleware.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'Transport'.\DIRECTORY_SEPARATOR.'Sender'.\DIRECTORY_SEPARATOR.'SendersLocatorInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'Transport'.\DIRECTORY_SEPARATOR.'Sender'.\DIRECTORY_SEPARATOR.'SendersLocator.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/Middleware/MiddlewareInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/psr/log/src/LoggerAwareTrait.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/Middleware/SendMessageMiddleware.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/Transport/Sender/SendersLocatorInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/Transport/Sender/SendersLocator.php';
 
         $container->privates['messenger.bus.default.middleware.send_message'] = $instance = new \Symfony\Component\Messenger\Middleware\SendMessageMiddleware(new \Symfony\Component\Messenger\Transport\Sender\SendersLocator([], ($container->privates['messenger.retry_strategy_locator'] ??= new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($container->getService ??= $container->getService(...), [], []))), ($container->services['event_dispatcher'] ?? self::getEventDispatcherService($container)), true);
 
@@ -3492,8 +3619,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMessenger_Bus_Default_Middleware_TraceableService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'Middleware'.\DIRECTORY_SEPARATOR.'MiddlewareInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'Middleware'.\DIRECTORY_SEPARATOR.'TraceableMiddleware.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/Middleware/MiddlewareInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/Middleware/TraceableMiddleware.php';
 
         return $container->privates['messenger.bus.default.middleware.traceable'] = new \Symfony\Component\Messenger\Middleware\TraceableMiddleware(($container->services['debug.stopwatch'] ??= new \Symfony\Component\Stopwatch\Stopwatch(true)), 'messenger.bus.default');
     }
@@ -3505,7 +3632,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMessenger_Listener_StopWorkerOnRestartSignalListenerService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'EventListener'.\DIRECTORY_SEPARATOR.'StopWorkerOnRestartSignalListener.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/EventListener/StopWorkerOnRestartSignalListener.php';
 
         return $container->privates['messenger.listener.stop_worker_on_restart_signal_listener'] = new \Symfony\Component\Messenger\EventListener\StopWorkerOnRestartSignalListener(($container->privates['cache.messenger.restart_workers_signal'] ?? self::getCache_Messenger_RestartWorkersSignalService($container)), ($container->privates['logger'] ?? self::getLoggerService($container)));
     }
@@ -3517,7 +3644,7 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getMessenger_Retry_SendFailedMessageForRetryListenerService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'messenger'.\DIRECTORY_SEPARATOR.'EventListener'.\DIRECTORY_SEPARATOR.'SendFailedMessageForRetryListener.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/messenger/EventListener/SendFailedMessageForRetryListener.php';
 
         $a = ($container->services['event_dispatcher'] ?? self::getEventDispatcherService($container));
 
@@ -3536,8 +3663,8 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getRouter_CacheWarmerService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-kernel'.\DIRECTORY_SEPARATOR.'CacheWarmer'.\DIRECTORY_SEPARATOR.'CacheWarmerInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'CacheWarmer'.\DIRECTORY_SEPARATOR.'RouterCacheWarmer.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-kernel/CacheWarmer/CacheWarmerInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/CacheWarmer/RouterCacheWarmer.php';
 
         return $container->privates['router.cache_warmer'] = new \Symfony\Bundle\FrameworkBundle\CacheWarmer\RouterCacheWarmer((new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($container->getService ??= $container->getService(...), [
             'router' => ['services', 'router', 'getRouterService', false],
@@ -3573,10 +3700,10 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getSecrets_VaultService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Secrets'.\DIRECTORY_SEPARATOR.'AbstractVault.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'dependency-injection'.\DIRECTORY_SEPARATOR.'EnvVarLoaderInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'.\DIRECTORY_SEPARATOR.'Secrets'.\DIRECTORY_SEPARATOR.'SodiumVault.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'string'.\DIRECTORY_SEPARATOR.'LazyString.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Secrets/AbstractVault.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/dependency-injection/EnvVarLoaderInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/framework-bundle/Secrets/SodiumVault.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/string/LazyString.php';
 
         return $container->privates['secrets.vault'] = new \Symfony\Bundle\FrameworkBundle\Secrets\SodiumVault((\dirname(__DIR__, 4).'/config/secrets/'.$container->getEnv('string:default:kernel.environment:APP_RUNTIME_ENV')), \Symfony\Component\String\LazyString::fromCallable($container->getEnv(...), 'base64:default::SYMFONY_DECRYPTION_SECRET'));
     }
@@ -3588,14 +3715,14 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
      */
     protected static function getSession_FactoryService($container)
     {
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-foundation'.\DIRECTORY_SEPARATOR.'Session'.\DIRECTORY_SEPARATOR.'SessionFactoryInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-foundation'.\DIRECTORY_SEPARATOR.'Session'.\DIRECTORY_SEPARATOR.'SessionFactory.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-foundation'.\DIRECTORY_SEPARATOR.'Session'.\DIRECTORY_SEPARATOR.'Storage'.\DIRECTORY_SEPARATOR.'SessionStorageFactoryInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-foundation'.\DIRECTORY_SEPARATOR.'Session'.\DIRECTORY_SEPARATOR.'Storage'.\DIRECTORY_SEPARATOR.'NativeSessionStorageFactory.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-foundation'.\DIRECTORY_SEPARATOR.'Session'.\DIRECTORY_SEPARATOR.'Storage'.\DIRECTORY_SEPARATOR.'Handler'.\DIRECTORY_SEPARATOR.'AbstractSessionHandler.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-foundation'.\DIRECTORY_SEPARATOR.'Session'.\DIRECTORY_SEPARATOR.'Storage'.\DIRECTORY_SEPARATOR.'Handler'.\DIRECTORY_SEPARATOR.'StrictSessionHandler.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-foundation'.\DIRECTORY_SEPARATOR.'Session'.\DIRECTORY_SEPARATOR.'SessionBagInterface.php';
-        include_once \dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'http-foundation'.\DIRECTORY_SEPARATOR.'Session'.\DIRECTORY_SEPARATOR.'Storage'.\DIRECTORY_SEPARATOR.'MetadataBag.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-foundation/Session/SessionFactoryInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-foundation/Session/SessionFactory.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-foundation/Session/Storage/SessionStorageFactoryInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-foundation/Session/Storage/NativeSessionStorageFactory.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-foundation/Session/Storage/Handler/AbstractSessionHandler.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-foundation/Session/Storage/Handler/StrictSessionHandler.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-foundation/Session/SessionBagInterface.php';
+        include_once \dirname(__DIR__, 6).'/vendor/symfony/http-foundation/Session/Storage/MetadataBag.php';
 
         $a = ($container->privates['session_listener'] ?? self::getSessionListenerService($container));
 
@@ -3711,18 +3838,18 @@ class TyCode_ms_Shop_ShopKernelDevDebugContainer extends Container
             'kernel.project_dir' => \dirname(__DIR__, 4),
             'kernel.environment' => 'dev',
             'kernel.debug' => true,
-            'kernel.logs_dir' => (\dirname(__DIR__, 3).''.\DIRECTORY_SEPARATOR.'log'),
+            'kernel.logs_dir' => (\dirname(__DIR__, 3).'/log'),
             'kernel.bundles' => [
                 'FrameworkBundle' => 'Symfony\\Bundle\\FrameworkBundle\\FrameworkBundle',
                 'MakerBundle' => 'Symfony\\Bundle\\MakerBundle\\MakerBundle',
             ],
             'kernel.bundles_metadata' => [
                 'FrameworkBundle' => [
-                    'path' => (\dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'framework-bundle'),
+                    'path' => (\dirname(__DIR__, 6).'/vendor/symfony/framework-bundle'),
                     'namespace' => 'Symfony\\Bundle\\FrameworkBundle',
                 ],
                 'MakerBundle' => [
-                    'path' => (\dirname(__DIR__, 6).''.\DIRECTORY_SEPARATOR.'vendor'.\DIRECTORY_SEPARATOR.'symfony'.\DIRECTORY_SEPARATOR.'maker-bundle'.\DIRECTORY_SEPARATOR.'src'),
+                    'path' => (\dirname(__DIR__, 6).'/vendor/symfony/maker-bundle/src'),
                     'namespace' => 'Symfony\\Bundle\\MakerBundle',
                 ],
             ],
