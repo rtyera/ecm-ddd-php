@@ -4,22 +4,22 @@ declare(strict_types=1);
 
 namespace TyCode\Shared\Domain\Aggregate;
 
-use TyCode\Shared\Domain\Bus\Event\DomainEvent;
+use TyCode\Shared\Domain\Bus\Event\Event;
 
 abstract class AggregateRoot
 {
-    private array $domainEvents = [];
+    private array $events = [];
 
-    final public function pullDomainEvents(): array
+    final public function pullEvents(): array
     {
-        $domainEvents       = $this->domainEvents;
-        $this->domainEvents = [];
+        $events       = $this->events;
+        $this->events = [];
 
-        return $domainEvents;
+        return $events;
     }
 
-    final protected function record(DomainEvent $domainEvent): void
+    final protected function record(Event $event): void
     {
-        $this->domainEvents[] = $domainEvent;
+        $this->events[] = $event;
     }
 }

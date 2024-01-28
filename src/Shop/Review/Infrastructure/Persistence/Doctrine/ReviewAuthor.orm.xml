@@ -4,7 +4,7 @@
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                           https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-    <embeddable name="TyCode\Shop\ProductReview\Domain\ReviewAuthor">
+    <embeddable name="TyCode\Shop\Review\Domain\ReviewAuthor">
         <field name="value" type="string" column="author" />
     </embeddable>
 

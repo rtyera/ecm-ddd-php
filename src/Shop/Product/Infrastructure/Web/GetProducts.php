@@ -7,17 +7,19 @@ namespace TyCode\Shop\Product\Infrastructure\Web;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use TyCode\Shop\Product\Application\Find\ProductFinderAll;
-use TyCode\Shop\Product\Infrastructure\Web\ProductResponse;
+use TyCode\Shop\Product\Application\ProductsResponse;
+use TyCode\Shared\Domain\Bus\Query\QueryBus;
+use TyCode\Shop\Product\Application\FindAll\FindProductsQuery;
 
 final class GetProducts
 {
-    public function __invoke(Request $request, ProductFinderAll $productFinderAll): JsonResponse
+    public function __invoke(Request $request, QueryBus $queryBus): JsonResponse
     {
-        $products = $productFinderAll->__invoke();
+        /** @var ProductsResponse $response */
+        $response = $queryBus->ask(new FindProductsQuery());
 
         return new JsonResponse([
-                'data' => ProductResponse::productsToArray($products)
+                'data' => ProductResponseMapper::productsToArray($response->products())
             ],
             Response::HTTP_OK
         );

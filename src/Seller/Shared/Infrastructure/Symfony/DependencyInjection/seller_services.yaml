@@ -1,0 +1,22 @@
+services:
+  # Databases
+  Doctrine\ORM\EntityManager:
+    factory: [ 'TyCode\Seller\Shared\Infrastructure\Doctrine\SellerEntityManagerFactory', 'create' ]
+    arguments:
+      - driver: '%env(SELLER_DATABASE_DRIVER)%'
+        host: '%env(SELLER_DATABASE_HOST)%'
+        port: '%env(SELLER_DATABASE_PORT)%'
+        dbname: '%env(SELLER_DATABASE_NAME)%'
+        user: '%env(SELLER_DATABASE_USER)%'
+        password: '%env(SELLER_DATABASE_PASSWORD)%'
+      - '%env(APP_ENV)%'
+    tags:
+      - { name: tycode.database_connection }
+    public: true
+
+
+  # Product
+  TyCode\SellerProduct\Domain\ProductRepository: '@TyCode\Seller\Product\Infrastructure\Persistence\DoctrineProductRepository'
+
+  # Review
+  # TyCode\Seller\Review\Domain\ReviewRepository: '@TyCode\Seller\Review\Infrastructure\Persistence\DoctrineProductReviewRepository'

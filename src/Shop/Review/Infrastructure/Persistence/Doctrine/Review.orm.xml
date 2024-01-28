@@ -4,12 +4,15 @@
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                           https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-    <entity name="TyCode\Shop\ProductReview\Domain\Review" table="review">
+    <entity name="TyCode\Shop\Review\Domain\Review" table="review">
         <id name="id" type="review_id" column="id" length="36" />
+        <field name="productId" type="product_id" column="product" length="36"/>
+        <field name="deliver" type="boolean" column="deliver" nullable="true"/>
+        <field name="checker" type="boolean" column="checker" nullable="true"/>
 
-        <embedded name="author" class="TyCode\Shop\ProductReview\Domain\Review" use-column-prefix="false" />
-        <embedded name="message" class="TyCode\Shop\ProductReview\Domain\Review" use-column-prefix="false" />
-        <embedded name="createOn" class="TyCode\Shop\ProductReview\Domain\Review" use-column-prefix="false" />
+        <embedded name="author" class="TyCode\Shop\Review\Domain\ReviewAuthor" use-column-prefix="false" />
+        <embedded name="message" class="TyCode\Shop\Review\Domain\ReviewMessage" use-column-prefix="false" />
+        <embedded name="createOn" class="TyCode\Shop\Review\Domain\ReviewCreateOn" use-column-prefix="false" />
     </entity>
 
 </doctrine-mapping>

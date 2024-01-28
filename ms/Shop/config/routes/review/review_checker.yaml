@@ -1,0 +1,4 @@
+review_checker_put:
+  path: /review/{product_id}
+  controller: TyCode\Shop\Review\Infrastructure\Web\PutCheckerReview
+  methods:  [PUT]

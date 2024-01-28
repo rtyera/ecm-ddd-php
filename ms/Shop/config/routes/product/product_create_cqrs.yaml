@@ -1,4 +1,0 @@
-product_create_cqrs_post:
-  path: /product-cqrs
-  controller: TyCode\Shop\Product\Infrastructure\Web\PostProductCreateCQRS
-  methods:  [POST]

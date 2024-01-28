@@ -7,7 +7,6 @@
     "prefer-stable": true,
     "require": {
         "ext-amqp": "*",
-        "ext-apcu": "*",
         "php": ">=8.1",
         "ext-ctype": "*",
         "ext-iconv": "*",
@@ -38,6 +37,7 @@
         "psr-4": {
             "TyCode\\ms\\Oauth\\": "ms/Oauth/src",
             "TyCode\\ms\\Shop\\": "ms/Shop/src",
+            "TyCode\\ms\\Seller\\": "ms/Seller/src",
             "TyCode\\": ["src"]
         }
     },

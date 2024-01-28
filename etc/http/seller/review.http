@@ -1,0 +1,13 @@
+###
+GET http://172.28.5.98:8000/review-health-check
+
+###
+POST http://172.28.5.98:8000/review
+Content-Type: application/json
+
+{
+    "id": "540d07b5-0608-4803-b6c6-61e2fb12bb16",
+    "productId": "1b69c430-6de2-48ed-9e59-15900a5356cd",
+    "author": "@tyera",
+    "message": "I love this phone!"
+}

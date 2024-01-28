@@ -6,13 +6,13 @@
 
     <entity name="TyCode\Shop\Product\Domain\Product" table="product">
         <id name="id" type="product_id" column="id" length="36" />
-        <id name="reviews" type="product_reviews" column="reviews" nullable="true"/>
+        <!-- <id name="reviews" type="product_reviews" column="reviews" nullable="true"/> -->
 
         <embedded name="name" class="TyCode\Shop\Product\Domain\ProductName" use-column-prefix="false" />
         <embedded name="price" class="TyCode\Shop\Product\Domain\ProductPrice" use-column-prefix="false" />
         <embedded name="images" class="TyCode\Shop\Product\Domain\ProductImages" use-column-prefix="false" />
         <embedded name="stockQuantity" class="TyCode\Shop\Product\Domain\ProductStockQuantity" use-column-prefix="false" />
-        <embedded name="rating" class="TyCode\Shop\Product\Domain\ProductRating" use-column-prefix="false" />
+        <!-- <embedded name="rating" class="TyCode\Shop\Product\Domain\ProductRating" use-column-prefix="true" /> -->
     </entity>
 
 </doctrine-mapping>

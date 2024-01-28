@@ -1,0 +1,14 @@
+###
+GET http://172.28.5.98:8000/product-health-check
+
+###
+GET http://172.28.5.98:8000/product/1eb6d1e2-1806-4812-ae88-d351cca8a6cb
+
+###
+GET http://172.28.5.98:8000/products
+
+###
+http://172.28.5.98:8000/product-by-criteria?operator[lt]=price:400.0&operator[not_in]=name:Samsumg A13
+
+###
+http://172.28.5.98:8000/product-by-criteria?id=1eb6d1e2-1806-4812-ae88-d351cca8a6cb

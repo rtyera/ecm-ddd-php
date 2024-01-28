@@ -4,12 +4,11 @@
 
 return [
     'product_create_post' => [[], ['_controller' => 'TyCode\\Shop\\Product\\Infrastructure\\Web\\PostProductCreate'], [], [['text', '/product']], [], [], []],
-    'product_create_cqrs_post' => [[], ['_controller' => 'TyCode\\Shop\\Product\\Infrastructure\\Web\\PostProductCreateCQRS'], [], [['text', '/product-cqrs']], [], [], []],
     'product_health_check_get' => [[], ['_controller' => 'TyCode\\Shop\\Product\\Infrastructure\\Web\\HealthCheckGetController'], [], [['text', '/product-health-check']], [], [], []],
     'product_search_get' => [['id'], ['_controller' => 'TyCode\\Shop\\Product\\Infrastructure\\Web\\GetProduct'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/product']], [], [], []],
     'product_search_all_get' => [[], ['_controller' => 'TyCode\\Shop\\Product\\Infrastructure\\Web\\GetProducts'], [], [['text', '/products']], [], [], []],
     'product_search_by_criteria_get' => [[], ['_controller' => 'TyCode\\Shop\\Product\\Infrastructure\\Web\\GetProductByCriteria'], [], [['text', '/product-by-criteria']], [], [], []],
-    'product_search_by_criteria_cqrs_get' => [[], ['_controller' => 'TyCode\\Shop\\Product\\Infrastructure\\Web\\GetProductByCriteriaCQRS'], [], [['text', '/product-by-criteria-cqrs']], [], [], []],
-    'review_create_post' => [[], ['_controller' => 'TyCode\\Shop\\Review\\Infrastructure\\Web\\PostReviewCreate'], [], [['text', '/review']], [], [], []],
+    'review_checker_put' => [['product_id'], ['_controller' => 'TyCode\\Shop\\Review\\Infrastructure\\Web\\PutCheckerReview'], [], [['variable', '/', '[^/]++', 'product_id', true], ['text', '/review']], [], [], []],
     'review_health_check_get' => [[], ['_controller' => 'TyCode\\Shop\\Review\\Infrastructure\\Web\\HealthCheckGetController'], [], [['text', '/review-health-check']], [], [], []],
+    'review_search_get' => [['product_id'], ['_controller' => 'TyCode\\Shop\\Review\\Infrastructure\\Web\\GetReviewByProductId'], [], [['variable', '/', '[^/]++', 'product_id', true], ['text', '/review']], [], [], []],
 ];

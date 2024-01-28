@@ -102,34 +102,53 @@
     <service id="TyCode\Shop\Review\Domain\Reviews" class="TyCode\Shop\Review\Domain\Reviews" abstract="true">
       <tag name="container.excluded" source="in &quot;config/services.yaml&quot;"/>
     </service>
-    <service id="TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommand" class="TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommand" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommand&quot;: argument &quot;$id&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
+    <service id="TyCode\Shop\Product\Application\Create\CreateProductCommand" class="TyCode\Shop\Product\Application\Create\CreateProductCommand" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Product\Application\Create\CreateProductCommand&quot;: argument &quot;$id&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
     </service>
-    <service id="TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommandHandler" class="TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommandHandler" autowire="true" autoconfigure="true">
+    <service id="TyCode\Shop\Product\Application\Create\CreateProductCommandHandler" class="TyCode\Shop\Product\Application\Create\CreateProductCommandHandler" autowire="true" autoconfigure="true">
       <tag name="tycode.command_handler"/>
       <argument type="service" id="TyCode\Shop\Product\Application\Create\ProductCreator"/>
     </service>
-    <service id="TyCode\Shop\Product\Application\CQRS\FindByCriteria\FindProductByCriteriaQuery" class="TyCode\Shop\Product\Application\CQRS\FindByCriteria\FindProductByCriteriaQuery" autowire="true" autoconfigure="true">
-      <argument type="service" id="TyCode\Shared\Domain\Criteria\Criteria"/>
-    </service>
-    <service id="TyCode\Shop\Product\Application\CQRS\FindByCriteria\FindProductByCriteriaQueryHandler" class="TyCode\Shop\Product\Application\CQRS\FindByCriteria\FindProductByCriteriaQueryHandler" autowire="true" autoconfigure="true">
-      <tag name="tycode.query_handler"/>
-      <argument type="service" id="TyCode\Shop\Product\Application\Find\ProductFinderByCriteria"/>
-    </service>
-    <service id="TyCode\Shop\Product\Application\CQRS\FindByCriteria\ProductsResponse" class="TyCode\Shop\Product\Application\CQRS\FindByCriteria\ProductsResponse" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Product\Application\CQRS\FindByCriteria\ProductsResponse&quot;: argument &quot;$products&quot; of method &quot;__construct()&quot; needs an instance of &quot;TyCode\Shop\Product\Domain\Products&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
-    </service>
     <service id="TyCode\Shop\Product\Application\Create\ProductCreator" class="TyCode\Shop\Product\Application\Create\ProductCreator" autowire="true" autoconfigure="true">
       <argument type="service" id="TyCode\Shop\Product\Infrastructure\Persistence\DoctrineProductRepository"/>
+      <argument type="service" id="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventBus"/>
     </service>
-    <service id="TyCode\Shop\Product\Application\Find\ProductFinderAll" class="TyCode\Shop\Product\Application\Find\ProductFinderAll" autowire="true" autoconfigure="true">
+    <service id="TyCode\Shop\Product\Application\FindAll\FindProductsQuery" class="TyCode\Shop\Product\Application\FindAll\FindProductsQuery" autowire="true" autoconfigure="true"/>
+    <service id="TyCode\Shop\Product\Application\FindAll\FindProductsQueryHandler" class="TyCode\Shop\Product\Application\FindAll\FindProductsQueryHandler" autowire="true" autoconfigure="true">
+      <tag name="tycode.query_handler"/>
+      <argument type="service" id="TyCode\Shop\Product\Application\FindAll\ProductFinderAll"/>
+    </service>
+    <service id="TyCode\Shop\Product\Application\FindAll\ProductFinderAll" class="TyCode\Shop\Product\Application\FindAll\ProductFinderAll" autowire="true" autoconfigure="true">
       <argument type="service" id="TyCode\Shop\Product\Infrastructure\Persistence\DoctrineProductRepository"/>
     </service>
-    <service id="TyCode\Shop\Product\Application\Find\ProductFinderByCriteria" class="TyCode\Shop\Product\Application\Find\ProductFinderByCriteria" autowire="true" autoconfigure="true">
+    <service id="TyCode\Shop\Product\Application\FindByCriteria\FindProductByCriteriaQuery" class="TyCode\Shop\Product\Application\FindByCriteria\FindProductByCriteriaQuery" autowire="true" autoconfigure="true">
+      <argument type="service" id="TyCode\Shared\Domain\Criteria\Criteria"/>
+    </service>
+    <service id="TyCode\Shop\Product\Application\FindByCriteria\FindProductByCriteriaQueryHandler" class="TyCode\Shop\Product\Application\FindByCriteria\FindProductByCriteriaQueryHandler" autowire="true" autoconfigure="true">
+      <tag name="tycode.query_handler"/>
+      <argument type="service" id="TyCode\Shop\Product\Application\FindByCriteria\ProductFinderByCriteria"/>
+    </service>
+    <service id="TyCode\Shop\Product\Application\FindByCriteria\ProductFinderByCriteria" class="TyCode\Shop\Product\Application\FindByCriteria\ProductFinderByCriteria" autowire="true" autoconfigure="true">
       <argument type="service" id="TyCode\Shop\Product\Infrastructure\Persistence\DoctrineProductRepository"/>
     </service>
-    <service id="TyCode\Shop\Product\Application\Find\ProductFinderId" class="TyCode\Shop\Product\Application\Find\ProductFinderId" autowire="true" autoconfigure="true">
+    <service id="TyCode\Shop\Product\Application\FindById\FindProductQuery" class="TyCode\Shop\Product\Application\FindById\FindProductQuery" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Product\Application\FindById\FindProductQuery&quot;: argument &quot;$id&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
+    </service>
+    <service id="TyCode\Shop\Product\Application\FindById\FindProductQueryHandler" class="TyCode\Shop\Product\Application\FindById\FindProductQueryHandler" autowire="true" autoconfigure="true">
+      <tag name="tycode.query_handler"/>
+      <argument type="service" id="TyCode\Shop\Product\Application\FindById\ProductFinderId"/>
+    </service>
+    <service id="TyCode\Shop\Product\Application\FindById\ProductFinderId" class="TyCode\Shop\Product\Application\FindById\ProductFinderId" autowire="true" autoconfigure="true">
       <argument type="service" id="TyCode\Shop\Product\Infrastructure\Persistence\DoctrineProductRepository"/>
+    </service>
+    <service id="TyCode\Shop\Product\Application\ProductResponse" class="TyCode\Shop\Product\Application\ProductResponse" autowire="true" autoconfigure="true">
+      <argument type="service" id="TyCode\Shop\Product\Domain\Product"/>
+    </service>
+    <service id="TyCode\Shop\Product\Application\ProductsResponse" class="TyCode\Shop\Product\Application\ProductsResponse" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Product\Application\ProductsResponse&quot;: argument &quot;$products&quot; of method &quot;__construct()&quot; needs an instance of &quot;TyCode\Shop\Product\Domain\Products&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
+    </service>
+    <service id="TyCode\Shop\Product\Domain\Event\CreatedProductEvent" class="TyCode\Shop\Product\Domain\Event\CreatedProductEvent" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Product\Domain\Event\CreatedProductEvent&quot;: argument &quot;$id&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
     </service>
     <service id="TyCode\Shop\Product\Domain\Product" class="TyCode\Shop\Product\Domain\Product" autowire="true" autoconfigure="true">
       <argument type="service" id="TyCode\Shop\Product\Domain\ProductId"/>
@@ -137,8 +156,6 @@
       <argument type="service" id="TyCode\Shop\Product\Domain\ProductPrice"/>
       <argument type="service" id="TyCode\Shop\Product\Domain\ProductImages"/>
       <argument type="service" id="TyCode\Shop\Product\Domain\ProductStockQuantity"/>
-      <argument type="service" id="TyCode\Shop\Product\Domain\ProductRating"/>
-      <argument type="service" id="TyCode\Shop\Product\Domain\ProductReviews"/>
     </service>
     <service id="TyCode\Shop\Product\Domain\ProductDesc" class="TyCode\Shop\Product\Domain\ProductDesc" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Product\Domain\ProductDesc&quot;: argument &quot;$value&quot; of method &quot;TyCode\Shared\Domain\ValueObject\StringValueObject::__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
@@ -185,9 +202,6 @@
     <service id="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteria" class="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteria" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
-    <service id="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteriaCQRS" class="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteriaCQRS" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-    </service>
     <service id="TyCode\Shop\Product\Infrastructure\Web\GetProducts" class="TyCode\Shop\Product\Infrastructure\Web\GetProducts" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
@@ -197,24 +211,70 @@
     <service id="TyCode\Shop\Product\Infrastructure\Web\PostProductCreate" class="TyCode\Shop\Product\Infrastructure\Web\PostProductCreate" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
-    <service id="TyCode\Shop\Product\Infrastructure\Web\PostProductCreateCQRS" class="TyCode\Shop\Product\Infrastructure\Web\PostProductCreateCQRS" public="true" autowire="true" autoconfigure="true">
+    <service id="TyCode\Shop\Product\Infrastructure\Web\ProductResponseMapper" class="TyCode\Shop\Product\Infrastructure\Web\ProductResponseMapper" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
-    <service id="TyCode\Shop\Product\Infrastructure\Web\ProductResponse" class="TyCode\Shop\Product\Infrastructure\Web\ProductResponse" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
+    <service id="TyCode\Shop\Review\Application\Checker\CheckerReviewCommand" class="TyCode\Shop\Review\Application\Checker\CheckerReviewCommand" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Review\Application\Checker\CheckerReviewCommand&quot;: argument &quot;$id&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
     </service>
-    <service id="TyCode\Shop\Review\Application\CQRS\Create\CreateReviewCommand" class="TyCode\Shop\Review\Application\CQRS\Create\CreateReviewCommand" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Review\Application\CQRS\Create\CreateReviewCommand&quot;: argument &quot;$id&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
+    <service id="TyCode\Shop\Review\Application\Checker\CheckerReviewCommandHandler" class="TyCode\Shop\Review\Application\Checker\CheckerReviewCommandHandler" autowire="true" autoconfigure="true">
+      <tag name="tycode.command_handler"/>
+      <argument type="service" id="TyCode\Shop\Review\Application\Checker\ReviewChecker"/>
     </service>
-    <service id="TyCode\Shop\Review\Application\CQRS\Create\CreateReviewCommandHandler" class="TyCode\Shop\Review\Application\CQRS\Create\CreateReviewCommandHandler" autowire="true" autoconfigure="true">
+    <service id="TyCode\Shop\Review\Application\Checker\ReviewChecker" class="TyCode\Shop\Review\Application\Checker\ReviewChecker" autowire="true" autoconfigure="true">
+      <argument type="service" id="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventBus"/>
+      <argument type="service" id="TyCode\Shop\Review\Infrastructure\Persistence\DoctrineProductReviewRepository"/>
+      <argument type="service" id="TyCode\Shop\Review\Application\FindById\ReviewFindById"/>
+    </service>
+    <service id="TyCode\Shop\Review\Application\Create\CreateReviewCommand" class="TyCode\Shop\Review\Application\Create\CreateReviewCommand" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Review\Application\Create\CreateReviewCommand&quot;: argument &quot;$id&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
+    </service>
+    <service id="TyCode\Shop\Review\Application\Create\CreateReviewCommandHandler" class="TyCode\Shop\Review\Application\Create\CreateReviewCommandHandler" autowire="true" autoconfigure="true">
       <tag name="tycode.command_handler"/>
       <argument type="service" id="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventBus"/>
+      <argument type="service" id="TyCode\Shop\Review\Application\Create\ReviewCreator"/>
     </service>
-    <service id="TyCode\Shop\Review\Application\Event\CreatedReviewEvent" class="TyCode\Shop\Review\Application\Event\CreatedReviewEvent" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Shop\Review\Application\Event\CreatedReviewEvent&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Shop/Review/Application/Event/CreatedReviewEvent.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
+    <service id="TyCode\Shop\Review\Application\Create\ReviewCreator" class="TyCode\Shop\Review\Application\Create\ReviewCreator" autowire="true" autoconfigure="true">
+      <argument type="service" id="TyCode\Shop\Review\Infrastructure\Persistence\DoctrineProductReviewRepository"/>
+    </service>
+    <service id="TyCode\Shop\Review\Application\Event\CreateReviewEvent" class="TyCode\Shop\Review\Application\Event\CreateReviewEvent" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Review\Application\Event\CreateReviewEvent&quot;: argument &quot;$id&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
+    </service>
+    <service id="TyCode\Shop\Review\Application\FindByCriteria\FindReviewsByCriteriaQuery" class="TyCode\Shop\Review\Application\FindByCriteria\FindReviewsByCriteriaQuery" autowire="true" autoconfigure="true">
+      <argument type="service" id="TyCode\Shared\Domain\Criteria\Criteria"/>
+    </service>
+    <service id="TyCode\Shop\Review\Application\FindByCriteria\FindReviewsByCriteriaQueryHandler" class="TyCode\Shop\Review\Application\FindByCriteria\FindReviewsByCriteriaQueryHandler" autowire="true" autoconfigure="true">
+      <tag name="tycode.query_handler"/>
+      <argument type="service" id="TyCode\Shop\Review\Application\FindByCriteria\ReviewFinderByCriteria"/>
+    </service>
+    <service id="TyCode\Shop\Review\Application\FindByCriteria\ReviewFinderByCriteria" class="TyCode\Shop\Review\Application\FindByCriteria\ReviewFinderByCriteria" autowire="true" autoconfigure="true">
+      <argument type="service" id="TyCode\Shop\Review\Infrastructure\Persistence\DoctrineProductReviewRepository"/>
+    </service>
+    <service id="TyCode\Shop\Review\Application\FindById\ReviewFindById" class="TyCode\Shop\Review\Application\FindById\ReviewFindById" autowire="true" autoconfigure="true">
+      <argument type="service" id="TyCode\Shop\Review\Infrastructure\Persistence\DoctrineProductReviewRepository"/>
+    </service>
+    <service id="TyCode\Shop\Review\Application\FindByProductId\FindReviewByProductIdQuery" class="TyCode\Shop\Review\Application\FindByProductId\FindReviewByProductIdQuery" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Review\Application\FindByProductId\FindReviewByProductIdQuery&quot;: argument &quot;$productId&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
+    </service>
+    <service id="TyCode\Shop\Review\Application\FindByProductId\FindReviewsByProductIdQueryHandler" class="TyCode\Shop\Review\Application\FindByProductId\FindReviewsByProductIdQueryHandler" autowire="true" autoconfigure="true">
+      <tag name="tycode.query_handler"/>
+      <argument type="service" id="TyCode\Shop\Review\Application\FindByProductId\ReviewFinderProductId"/>
+    </service>
+    <service id="TyCode\Shop\Review\Application\FindByProductId\ReviewFinderProductId" class="TyCode\Shop\Review\Application\FindByProductId\ReviewFinderProductId" autowire="true" autoconfigure="true">
+      <argument type="service" id="TyCode\Shop\Review\Infrastructure\Persistence\DoctrineProductReviewRepository"/>
+    </service>
+    <service id="TyCode\Shop\Review\Application\ReviewResponse" class="TyCode\Shop\Review\Application\ReviewResponse" autowire="true" autoconfigure="true">
+      <argument type="service" id="TyCode\Shop\Review\Domain\Review"/>
+    </service>
+    <service id="TyCode\Shop\Review\Application\ReviewsResponse" class="TyCode\Shop\Review\Application\ReviewsResponse" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Review\Application\ReviewsResponse&quot;: argument &quot;$reviews&quot; of method &quot;__construct()&quot; needs an instance of &quot;TyCode\Shop\Review\Domain\Reviews&quot; but this type has been excluded in &quot;config/services.yaml&quot;."/>
     </service>
     <service id="TyCode\Shop\Review\Application\Subscriber\CreateReviewOn" class="TyCode\Shop\Review\Application\Subscriber\CreateReviewOn" autowire="true" autoconfigure="true">
       <tag name="shop.event_subscriber"/>
+      <argument type="service" id="TyCode\Shared\Infrastructure\Bus\Command\SymfonyMessageCommandBus"/>
+    </service>
+    <service id="TyCode\Shop\Review\Domain\Event\DeliveredReviewEvent" class="TyCode\Shop\Review\Domain\Event\DeliveredReviewEvent" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Shop\Review\Domain\Event\DeliveredReviewEvent&quot;: argument &quot;$id&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
     </service>
     <service id="TyCode\Shop\Review\Domain\Review" class="TyCode\Shop\Review\Domain\Review" autowire="true" autoconfigure="true">
       <argument type="service" id="TyCode\Shop\Review\Domain\ReviewId"/>
@@ -268,13 +328,19 @@
     <service id="TyCode\Shop\Review\Infrastructure\Persistence\DoctrineProductReviewRepository" class="TyCode\Shop\Review\Infrastructure\Persistence\DoctrineProductReviewRepository" autowire="true" autoconfigure="true">
       <argument type="service" id="Doctrine\ORM\EntityManager"/>
     </service>
+    <service id="TyCode\Shop\Review\Infrastructure\Web\GetReviewByProductId" class="TyCode\Shop\Review\Infrastructure\Web\GetReviewByProductId" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="TyCode\Shop\Review\Infrastructure\Web\GetReviewsByCriteria" class="TyCode\Shop\Review\Infrastructure\Web\GetReviewsByCriteria" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
     <service id="TyCode\Shop\Review\Infrastructure\Web\HealthCheckGetController" class="TyCode\Shop\Review\Infrastructure\Web\HealthCheckGetController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
-    <service id="TyCode\Shop\Review\Infrastructure\Web\PostReviewCreate" class="TyCode\Shop\Review\Infrastructure\Web\PostReviewCreate" public="true" autowire="true" autoconfigure="true">
+    <service id="TyCode\Shop\Review\Infrastructure\Web\PutCheckerReview" class="TyCode\Shop\Review\Infrastructure\Web\PutCheckerReview" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
-    <service id="TyCode\Shop\Review\Infrastructure\Web\ReviewResponse" class="TyCode\Shop\Review\Infrastructure\Web\ReviewResponse" public="true" autowire="true" autoconfigure="true">
+    <service id="TyCode\Shop\Review\Infrastructure\Web\ReviewResponseMapper" class="TyCode\Shop\Review\Infrastructure\Web\ReviewResponseMapper" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
     <service id="TyCode\Shop\Shared\Infrastructure\Doctrine\DbalTypesSearcher" class="TyCode\Shop\Shared\Infrastructure\Doctrine\DbalTypesSearcher" autowire="true" autoconfigure="true"/>
@@ -455,7 +521,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.VPLxAWb"/>
+      <argument type="service" id=".service_locator.LBJ4mOn"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -1629,7 +1695,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.VPLxAWb"/>
+      <argument type="service" id=".service_locator.LBJ4mOn"/>
     </service>
     <service id="routing.resolver" class="Symfony\Component\Config\Loader\LoaderResolver">
       <call method="addLoader">
@@ -2160,12 +2226,22 @@
       <argument type="service" id="maker.security_config_updater"/>
       <argument type="service" id="maker.security_controller_builder"/>
     </service>
-    <service id=".instanceof.TyCode\Shared\Domain\Bus\Command\CommandHandler.0.TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommandHandler" class="TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommandHandler" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommandHandler" class="TyCode\Shop\Product\Application\CQRS\Create\CreateProductCommandHandler" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.TyCode\Shared\Domain\Bus\Query\QueryHandler.0.TyCode\Shop\Product\Application\CQRS\FindByCriteria\FindProductByCriteriaQueryHandler" class="TyCode\Shop\Product\Application\CQRS\FindByCriteria\FindProductByCriteriaQueryHandler" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.TyCode\Shop\Product\Application\CQRS\FindByCriteria\FindProductByCriteriaQueryHandler" class="TyCode\Shop\Product\Application\CQRS\FindByCriteria\FindProductByCriteriaQueryHandler" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.TyCode\Shared\Domain\Bus\Command\CommandHandler.0.TyCode\Shop\Review\Application\CQRS\Create\CreateReviewCommandHandler" class="TyCode\Shop\Review\Application\CQRS\Create\CreateReviewCommandHandler" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.TyCode\Shop\Review\Application\CQRS\Create\CreateReviewCommandHandler" class="TyCode\Shop\Review\Application\CQRS\Create\CreateReviewCommandHandler" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.TyCode\Shared\Domain\Bus\Command\CommandHandler.0.TyCode\Shop\Product\Application\Create\CreateProductCommandHandler" class="TyCode\Shop\Product\Application\Create\CreateProductCommandHandler" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.TyCode\Shop\Product\Application\Create\CreateProductCommandHandler" class="TyCode\Shop\Product\Application\Create\CreateProductCommandHandler" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.TyCode\Shared\Domain\Bus\Query\QueryHandler.0.TyCode\Shop\Product\Application\FindAll\FindProductsQueryHandler" class="TyCode\Shop\Product\Application\FindAll\FindProductsQueryHandler" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.TyCode\Shop\Product\Application\FindAll\FindProductsQueryHandler" class="TyCode\Shop\Product\Application\FindAll\FindProductsQueryHandler" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.TyCode\Shared\Domain\Bus\Query\QueryHandler.0.TyCode\Shop\Product\Application\FindByCriteria\FindProductByCriteriaQueryHandler" class="TyCode\Shop\Product\Application\FindByCriteria\FindProductByCriteriaQueryHandler" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.TyCode\Shop\Product\Application\FindByCriteria\FindProductByCriteriaQueryHandler" class="TyCode\Shop\Product\Application\FindByCriteria\FindProductByCriteriaQueryHandler" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.TyCode\Shared\Domain\Bus\Query\QueryHandler.0.TyCode\Shop\Product\Application\FindById\FindProductQueryHandler" class="TyCode\Shop\Product\Application\FindById\FindProductQueryHandler" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.TyCode\Shop\Product\Application\FindById\FindProductQueryHandler" class="TyCode\Shop\Product\Application\FindById\FindProductQueryHandler" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.TyCode\Shared\Domain\Bus\Command\CommandHandler.0.TyCode\Shop\Review\Application\Checker\CheckerReviewCommandHandler" class="TyCode\Shop\Review\Application\Checker\CheckerReviewCommandHandler" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.TyCode\Shop\Review\Application\Checker\CheckerReviewCommandHandler" class="TyCode\Shop\Review\Application\Checker\CheckerReviewCommandHandler" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.TyCode\Shared\Domain\Bus\Command\CommandHandler.0.TyCode\Shop\Review\Application\Create\CreateReviewCommandHandler" class="TyCode\Shop\Review\Application\Create\CreateReviewCommandHandler" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.TyCode\Shop\Review\Application\Create\CreateReviewCommandHandler" class="TyCode\Shop\Review\Application\Create\CreateReviewCommandHandler" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.TyCode\Shared\Domain\Bus\Query\QueryHandler.0.TyCode\Shop\Review\Application\FindByCriteria\FindReviewsByCriteriaQueryHandler" class="TyCode\Shop\Review\Application\FindByCriteria\FindReviewsByCriteriaQueryHandler" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.TyCode\Shop\Review\Application\FindByCriteria\FindReviewsByCriteriaQueryHandler" class="TyCode\Shop\Review\Application\FindByCriteria\FindReviewsByCriteriaQueryHandler" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.TyCode\Shared\Domain\Bus\Query\QueryHandler.0.TyCode\Shop\Review\Application\FindByProductId\FindReviewsByProductIdQueryHandler" class="TyCode\Shop\Review\Application\FindByProductId\FindReviewsByProductIdQueryHandler" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.TyCode\Shop\Review\Application\FindByProductId\FindReviewsByProductIdQueryHandler" class="TyCode\Shop\Review\Application\FindByProductId\FindReviewsByProductIdQueryHandler" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.TyCode\Shared\Domain\Bus\Event\EventSubscriber.0.TyCode\Shop\Review\Application\Subscriber\CreateReviewOn" class="TyCode\Shop\Review\Application\Subscriber\CreateReviewOn" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.TyCode\Shop\Review\Application\Subscriber\CreateReviewOn" class="TyCode\Shop\Review\Application\Subscriber\CreateReviewOn" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Console\Command\Command.0.TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand" class="TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand" autowire="true" abstract="true"/>
@@ -2555,34 +2631,10 @@
         <argument key="loader" type="service_closure" id=".errored..service_locator.y4_Zrx..Symfony\Component\Config\Loader\LoaderInterface"/>
       </argument>
     </service>
-    <service id=".service_locator.Fibiztl" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="productFinderId" type="service_closure" id="TyCode\Shop\Product\Application\Find\ProductFinderId"/>
-      </argument>
-    </service>
-    <service id=".service_locator.aIPOfxe" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="productFinderByCriteria" type="service_closure" id="TyCode\Shop\Product\Application\Find\ProductFinderByCriteria"/>
-      </argument>
-    </service>
     <service id=".service_locator.EgMTexf" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="queryBus" type="service_closure" id="TyCode\Shared\Infrastructure\Bus\Query\SymfonyMessageQueryBus"/>
-      </argument>
-    </service>
-    <service id=".service_locator.Vw4xC8x" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="productFinderAll" type="service_closure" id="TyCode\Shop\Product\Application\Find\ProductFinderAll"/>
-      </argument>
-    </service>
-    <service id=".service_locator.6Q6Yeh_" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="productCreator" type="service_closure" id="TyCode\Shop\Product\Application\Create\ProductCreator"/>
       </argument>
     </service>
     <service id=".service_locator.lwNoDbx" class="Symfony\Component\DependencyInjection\ServiceLocator">
@@ -2599,32 +2651,32 @@
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
-    <service id=".service_locator.VPLxAWb" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.LBJ4mOn" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProduct::__invoke" type="service_closure" id=".service_locator.Fibiztl"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteria::__invoke" type="service_closure" id=".service_locator.aIPOfxe"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteriaCQRS::__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProducts::__invoke" type="service_closure" id=".service_locator.Vw4xC8x"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\PostProductCreate::__invoke" type="service_closure" id=".service_locator.6Q6Yeh_"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\PostProductCreateCQRS::__invoke" type="service_closure" id=".service_locator.lwNoDbx"/>
-        <argument key="TyCode\Shop\Review\Infrastructure\Web\PostReviewCreate::__invoke" type="service_closure" id=".service_locator.lwNoDbx"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProduct::__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteria::__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProducts::__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\PostProductCreate::__invoke" type="service_closure" id=".service_locator.lwNoDbx"/>
+        <argument key="TyCode\Shop\Review\Infrastructure\Web\GetReviewByProductId::__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\Shop\Review\Infrastructure\Web\GetReviewsByCriteria::__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\Shop\Review\Infrastructure\Web\PutCheckerReview::__invoke" type="service_closure" id=".service_locator.lwNoDbx"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProduct:__invoke" type="service_closure" id=".service_locator.Fibiztl"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProduct" type="service_closure" id=".service_locator.Fibiztl"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteria:__invoke" type="service_closure" id=".service_locator.aIPOfxe"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteria" type="service_closure" id=".service_locator.aIPOfxe"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteriaCQRS:__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteriaCQRS" type="service_closure" id=".service_locator.EgMTexf"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProducts:__invoke" type="service_closure" id=".service_locator.Vw4xC8x"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProducts" type="service_closure" id=".service_locator.Vw4xC8x"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\PostProductCreate:__invoke" type="service_closure" id=".service_locator.6Q6Yeh_"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\PostProductCreate" type="service_closure" id=".service_locator.6Q6Yeh_"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\PostProductCreateCQRS:__invoke" type="service_closure" id=".service_locator.lwNoDbx"/>
-        <argument key="TyCode\Shop\Product\Infrastructure\Web\PostProductCreateCQRS" type="service_closure" id=".service_locator.lwNoDbx"/>
-        <argument key="TyCode\Shop\Review\Infrastructure\Web\PostReviewCreate:__invoke" type="service_closure" id=".service_locator.lwNoDbx"/>
-        <argument key="TyCode\Shop\Review\Infrastructure\Web\PostReviewCreate" type="service_closure" id=".service_locator.lwNoDbx"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProduct:__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProduct" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteria:__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteria" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProducts:__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\GetProducts" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\PostProductCreate:__invoke" type="service_closure" id=".service_locator.lwNoDbx"/>
+        <argument key="TyCode\Shop\Product\Infrastructure\Web\PostProductCreate" type="service_closure" id=".service_locator.lwNoDbx"/>
+        <argument key="TyCode\Shop\Review\Infrastructure\Web\GetReviewByProductId:__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\Shop\Review\Infrastructure\Web\GetReviewByProductId" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\Shop\Review\Infrastructure\Web\GetReviewsByCriteria:__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\Shop\Review\Infrastructure\Web\GetReviewsByCriteria" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\Shop\Review\Infrastructure\Web\PutCheckerReview:__invoke" type="service_closure" id=".service_locator.lwNoDbx"/>
+        <argument key="TyCode\Shop\Review\Infrastructure\Web\PutCheckerReview" type="service_closure" id=".service_locator.lwNoDbx"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
       </argument>
@@ -3356,9 +3408,6 @@
     <service id="TyCode\Shared\Domain\Bus\Query\QueryBus" alias="TyCode\Shared\Infrastructure\Bus\Query\SymfonyMessageQueryBus"/>
     <service id="TyCode\Shared\Domain\Bus\Event\EventBus" alias="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventBus"/>
     <service id="TyCode\Shared\Domain\Bus\Event\EventSubscriber" alias="TyCode\Shop\Review\Application\Subscriber\CreateReviewOn"/>
-    <service id="TyCode\Shared\Domain\Bus\Query\Query" alias="TyCode\Shop\Product\Application\CQRS\FindByCriteria\FindProductByCriteriaQuery"/>
-    <service id="TyCode\Shared\Domain\Bus\Query\QueryHandler" alias="TyCode\Shop\Product\Application\CQRS\FindByCriteria\FindProductByCriteriaQueryHandler"/>
-    <service id="TyCode\Shared\Domain\Bus\Query\Response" alias="TyCode\Shop\Product\Application\CQRS\FindByCriteria\ProductsResponse"/>
     <service id="Symfony\Component\DependencyInjection\ParameterBag\ContainerBagInterface" alias="parameter_bag"/>
     <service id="Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface" alias="parameter_bag"/>
     <service id="Symfony\Component\EventDispatcher\EventDispatcherInterface" alias="debug.event_dispatcher"/>
@@ -3418,20 +3467,16 @@
     <service id="messenger.default_bus" alias="messenger.bus.default" public="true"/>
     <service id="Symfony\Component\Messenger\MessageBusInterface" alias="messenger.bus.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.w7.f4fT" public="true"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.VPLxAWb"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.LBJ4mOn"/>
     <service id="Psr\Log\LoggerInterface" alias="logger"/>
     <service id=".service_locator.Xbsa8iG" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.bJ.4HC5" alias=".service_locator.w7.f4fT"/>
-    <service id=".service_locator.7GGcvs_" alias=".service_locator.VPLxAWb"/>
+    <service id=".service_locator.xSojV3_" alias=".service_locator.LBJ4mOn"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>
     <service id="controller_resolver" alias="debug.controller_resolver"/>
     <service id="argument_resolver" alias="debug.argument_resolver"/>
     <service id=".service_locator.gFlme_s" alias=".service_locator.y4_Zrx."/>
-    <service id=".service_locator.W91TBOQ" alias=".service_locator.Fibiztl"/>
-    <service id=".service_locator.QMIDFC0" alias=".service_locator.aIPOfxe"/>
     <service id=".service_locator.WmuW8oO" alias=".service_locator.EgMTexf"/>
-    <service id=".service_locator.qrnnG.n" alias=".service_locator.Vw4xC8x"/>
-    <service id=".service_locator.Yhz_5Li" alias=".service_locator.6Q6Yeh_"/>
     <service id=".service_locator.8KMcB9P" alias=".service_locator.lwNoDbx"/>
     <service id=".service_locator.jyh.CQG" alias=".service_locator.M1u7FKz"/>
     <service id=".service_locator.u6DWx23" alias=".service_locator.cXsfP3P"/>
