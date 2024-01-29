@@ -1,11 +1,11 @@
 ###
-GET http://172.28.5.98:8000/review-health-check
+GET http://172.28.5.98:8000/shop/health-check
 
 ###
-GET http://172.28.5.98:8000/review/af8e08ae-a651-4416-9bde-92283b78737a
+GET http://172.28.5.98:8000/shop/review/af8e08ae-a651-4416-9bde-92283b78737a
 
 ###
-PUT http://172.28.5.98:8000/review/540d07b5-0608-4803-b6c6-61e2fb12bb16
+PUT http://172.28.5.98:8000/shop/review/1de9a843-d4e8-4698-8561-eda3e591b161
 Content-Type: application/json
 
 {

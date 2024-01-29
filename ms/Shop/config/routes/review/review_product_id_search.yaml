@@ -1,0 +1,4 @@
+review_search_get:
+  path: /shop/review/{product_id}
+  controller: TyCode\ms\Shop\Controller\Review\GetReviewByProductId
+  methods:  [GET]

@@ -1,4 +1,4 @@
 product_search_get:
-  path: /product/{id}
-  controller: TyCode\Shop\Product\Infrastructure\Web\GetProduct
+  path: /shop/product/{id}
+  controller: TyCode\ms\Shop\Controller\Product\GetProduct
   methods:  [GET]

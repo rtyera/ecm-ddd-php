@@ -8,11 +8,11 @@ final class RabbitMqExchangeNameFormatter
 {
     public static function retry(string $exchangeName): string
     {
-        return "retry.$exchangeName";
+        return "$exchangeName.retry";
     }
 
     public static function deadLetter(string $exchangeName): string
     {
-        return "dead_letter.$exchangeName";
+        return "$exchangeName.dead_letter";
     }
 }

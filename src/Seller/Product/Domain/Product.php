@@ -23,9 +23,7 @@ final class Product extends AggregateRoot
         ProductName $name,
         ProductPrice $price,
         ProductImages $images,
-        ProductStockQuantity $stockQuantity/*,
-        ProductRating $rating,
-        ProductReviews $reviews*/): self
+        ProductStockQuantity $stockQuantity): self
     {
         $product = new self($id, $name, $price, $images, $stockQuantity);
 

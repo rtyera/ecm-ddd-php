@@ -17,6 +17,14 @@ services:
         TyCode\Shared\Domain\Bus\Event\EventSubscriber:
             tags: ['seller.event_subscriber']
 
+    TyCode\ms\Seller\:
+        resource: '../src'
+
+    #Controller
+    TyCode\ms\Seller\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+
     TyCode\Seller\:
         resource: '../../../src/Seller/'
         exclude:
@@ -30,14 +38,6 @@ services:
 
     TyCode\Shared\Infrastructure\Bus\Event\EventJsonDeserializer:
         autowire: true
-
-    TyCode\Seller\Product\Infrastructure\Web\:
-        resource: '../../../src/Seller/Product/Infrastructure/Web'
-        tags: ['controller.service_arguments']
-
-    TyCode\Seller\Review\Infrastructure\Web\:
-        resource: '../../../src/Seller/Review/Infrastructure/Web'
-        tags: ['controller.service_arguments']
 
     # Command/Query Handlers
     TyCode\Shared\Infrastructure\Bus\Command\SymfonyMessageCommandBus:
@@ -68,7 +68,7 @@ services:
               write_timeout: 2
               connect_timeout: 5
 
-    TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand:
+    TyCode\ms\Seller\Command\RabbitMq\ConfigureRabbitMqCommand:
         arguments:
             - '@TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConfigurer'
             - '%env(RABBITMQ_EXCHANGE)%'

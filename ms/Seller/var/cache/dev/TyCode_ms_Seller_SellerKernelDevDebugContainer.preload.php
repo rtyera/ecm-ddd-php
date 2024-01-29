@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg', 'embed'], true)) {
 }
 
 require dirname(__DIR__, 5).'/vendor/autoload.php';
-(require __DIR__.'/TyCode_ms_Seller_SellerKernelDevDebugContainer.php')->set(\ContainerUx6xq0T\TyCode_ms_Seller_SellerKernelDevDebugContainer::class, null);
+(require __DIR__.'/TyCode_ms_Seller_SellerKernelDevDebugContainer.php')->set(\ContainerNSYmMWZ\TyCode_ms_Seller_SellerKernelDevDebugContainer::class, null);
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -48,18 +48,16 @@ $classes[] = 'TyCode\Seller\Product\Application\FindByCriteria\ProductFinderByCr
 $classes[] = 'TyCode\Seller\Product\Application\FindById\FindProductQueryHandler';
 $classes[] = 'TyCode\Seller\Product\Application\FindById\ProductFinderId';
 $classes[] = 'TyCode\Seller\Product\Infrastructure\Persistence\DoctrineProductRepository';
-$classes[] = 'TyCode\Seller\Product\Infrastructure\Web\GetProduct';
-$classes[] = 'TyCode\Seller\Product\Infrastructure\Web\GetProductByCriteria';
-$classes[] = 'TyCode\Seller\Product\Infrastructure\Web\GetProducts';
-$classes[] = 'TyCode\Seller\Product\Infrastructure\Web\HealthCheckGetController';
-$classes[] = 'TyCode\Seller\Product\Infrastructure\Web\ProductResponseMapper';
 $classes[] = 'TyCode\Seller\Review\Application\Create\CreateReviewCommandHandler';
 $classes[] = 'TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventBus';
-$classes[] = 'TyCode\Seller\Review\Infrastructure\Web\HealthCheckGetController';
-$classes[] = 'TyCode\Seller\Review\Infrastructure\Web\PostReviewCreate';
 $classes[] = 'TyCode\Shared\Infrastructure\Bus\Command\SymfonyMessageCommandBus';
 $classes[] = 'TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConnection';
 $classes[] = 'TyCode\Shared\Infrastructure\Bus\Query\SymfonyMessageQueryBus';
+$classes[] = 'TyCode\ms\Seller\Controller\HealthCheckGetController';
+$classes[] = 'TyCode\ms\Seller\Controller\Product\GetProduct';
+$classes[] = 'TyCode\ms\Seller\Controller\Product\GetProductByCriteria';
+$classes[] = 'TyCode\ms\Seller\Controller\Product\GetProducts';
+$classes[] = 'TyCode\ms\Seller\Controller\Review\PostReviewCreate';
 $classes[] = 'Symfony\Component\Cache\Adapter\FilesystemAdapter';
 $classes[] = 'Symfony\Component\HttpKernel\CacheClearer\Psr6CacheClearer';
 $classes[] = 'Symfony\Component\Cache\Marshaller\DefaultMarshaller';

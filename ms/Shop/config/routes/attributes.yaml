@@ -1,9 +1,9 @@
-controllers:
-    resource:
-        path: ../../../../src/Shop/Product/Infrastructure/Web/
-        namespace: TyCode\Shop\Product\Infrastructure\Web
-    type: attribute
+# controllers:
+#     resource:
+#         path: ../../../../src/Shop/Product/Infrastructure/Web/
+#         namespace: TyCode\Shop\Product\Infrastructure\Web
+#     type: attribute
 
-kernel:
-    resource: TyCode\ms\Shop\ShopKernel
-    type: attribute
+# kernel:
+#     resource: TyCode\ms\Shop\ShopKernel
+#     type: attribute

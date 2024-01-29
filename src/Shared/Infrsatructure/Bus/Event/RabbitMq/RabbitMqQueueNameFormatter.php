@@ -17,7 +17,7 @@ final class RabbitMqQueueNameFormatter
 
         $queueNameParts = [
             'ecm',
-            // $subscriberClassPaths[3],
+            $subscriberClassPaths[1],
             last($subscriberClassPaths),
         ];
 
@@ -28,14 +28,14 @@ final class RabbitMqQueueNameFormatter
     {
         $queueName = self::format($subscriber);
 
-        return "retry.$queueName";
+        return "$queueName.retry";
     }
 
     public static function formatDeadLetter(EventSubscriber $subscriber): string
     {
         $queueName = self::format($subscriber);
 
-        return "dead_letter.$queueName";
+        return "$queueName.dead_letter";
     }
 
     public static function shortFormat(EventSubscriber $subscriber): string

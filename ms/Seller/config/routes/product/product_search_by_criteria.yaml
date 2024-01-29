@@ -1,4 +1,4 @@
 product_search_by_criteria_get:
-  path: /product-by-criteria
-  controller: TyCode\Seller\Product\Infrastructure\Web\GetProductByCriteria
+  path: /seller/product-by-criteria
+  controller: TyCode\ms\Seller\Controller\Product\GetProductByCriteria
   methods:  [GET]

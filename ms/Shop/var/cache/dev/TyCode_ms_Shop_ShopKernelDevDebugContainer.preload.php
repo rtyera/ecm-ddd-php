@@ -10,7 +10,7 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg', 'embed'], true)) {
 }
 
 require dirname(__DIR__, 5).'/vendor/autoload.php';
-(require __DIR__.'/TyCode_ms_Shop_ShopKernelDevDebugContainer.php')->set(\ContainerY69DSNH\TyCode_ms_Shop_ShopKernelDevDebugContainer::class, null);
+(require __DIR__.'/TyCode_ms_Shop_ShopKernelDevDebugContainer.php')->set(\ContainerZ1jLAI5\TyCode_ms_Shop_ShopKernelDevDebugContainer::class, null);
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -50,12 +50,6 @@ $classes[] = 'TyCode\Shop\Product\Application\FindByCriteria\ProductFinderByCrit
 $classes[] = 'TyCode\Shop\Product\Application\FindById\FindProductQueryHandler';
 $classes[] = 'TyCode\Shop\Product\Application\FindById\ProductFinderId';
 $classes[] = 'TyCode\Shop\Product\Infrastructure\Persistence\DoctrineProductRepository';
-$classes[] = 'TyCode\Shop\Product\Infrastructure\Web\GetProduct';
-$classes[] = 'TyCode\Shop\Product\Infrastructure\Web\GetProductByCriteria';
-$classes[] = 'TyCode\Shop\Product\Infrastructure\Web\GetProducts';
-$classes[] = 'TyCode\Shop\Product\Infrastructure\Web\HealthCheckGetController';
-$classes[] = 'TyCode\Shop\Product\Infrastructure\Web\PostProductCreate';
-$classes[] = 'TyCode\Shop\Product\Infrastructure\Web\ProductResponseMapper';
 $classes[] = 'TyCode\Shop\Review\Application\Checker\CheckerReviewCommandHandler';
 $classes[] = 'TyCode\Shop\Review\Application\Checker\ReviewChecker';
 $classes[] = 'TyCode\Shop\Review\Application\FindById\ReviewFindById';
@@ -66,11 +60,13 @@ $classes[] = 'TyCode\Shop\Review\Application\FindByCriteria\ReviewFinderByCriter
 $classes[] = 'TyCode\Shop\Review\Application\FindByProductId\FindReviewsByProductIdQueryHandler';
 $classes[] = 'TyCode\Shop\Review\Application\FindByProductId\ReviewFinderProductId';
 $classes[] = 'TyCode\Shop\Review\Infrastructure\Persistence\DoctrineProductReviewRepository';
-$classes[] = 'TyCode\Shop\Review\Infrastructure\Web\GetReviewByProductId';
-$classes[] = 'TyCode\Shop\Review\Infrastructure\Web\GetReviewsByCriteria';
-$classes[] = 'TyCode\Shop\Review\Infrastructure\Web\HealthCheckGetController';
-$classes[] = 'TyCode\Shop\Review\Infrastructure\Web\PutCheckerReview';
-$classes[] = 'TyCode\Shop\Review\Infrastructure\Web\ReviewResponseMapper';
+$classes[] = 'TyCode\ms\Shop\Controller\HealthCheckGetController';
+$classes[] = 'TyCode\ms\Shop\Controller\Product\GetProduct';
+$classes[] = 'TyCode\ms\Shop\Controller\Product\GetProductByCriteria';
+$classes[] = 'TyCode\ms\Shop\Controller\Product\GetProducts';
+$classes[] = 'TyCode\ms\Shop\Controller\Product\PostProductCreate';
+$classes[] = 'TyCode\ms\Shop\Controller\Review\GetReviewByProductId';
+$classes[] = 'TyCode\ms\Shop\Controller\Review\PutCheckerReview';
 $classes[] = 'Symfony\Component\Cache\Adapter\FilesystemAdapter';
 $classes[] = 'Symfony\Component\HttpKernel\CacheClearer\Psr6CacheClearer';
 $classes[] = 'Symfony\Component\Cache\Marshaller\DefaultMarshaller';
@@ -149,8 +145,3 @@ $classes[] = 'Symfony\Component\HttpKernel\EventListener\SessionListener';
 $classes[] = 'Symfony\Component\HttpKernel\EventListener\ValidateRequestListener';
 
 $preloaded = Preloader::preload($classes);
-
-$classes = [];
-$classes[] = 'Symfony\\Component\\Routing\\Generator\\CompiledUrlGenerator';
-$classes[] = 'Symfony\\Bundle\\FrameworkBundle\\Routing\\RedirectableCompiledUrlMatcher';
-$preloaded = Preloader::preload($classes, $preloaded);

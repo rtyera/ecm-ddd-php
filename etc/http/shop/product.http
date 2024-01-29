@@ -1,26 +1,26 @@
 ###
-GET http://172.28.5.98:8000/product-health-check
+GET http://172.28.5.98:8000/shop/health-check
 
 ###
-GET http://172.28.5.98:8000/product/1eb6d1e2-1806-4812-ae88-d351cca8a6cb
+GET http://172.28.5.98:8000/shop/product/8ab56334-6a53-4b66-8b52-5cbbaecfdc93
 
 ###
-GET http://172.28.5.98:8000/products
+GET http://172.28.5.98:8000/shop/products
 
 ###
-http://172.28.5.98:8000/product-by-criteria?operator[gt]=price:400.0&operator[not_in]=name:Samsumg A13
+http://172.28.5.98:8000/shop/product-by-criteria?operator[gt]=price:250.0&operator[not_in]=name:Samsumg A13
 
 ###
-http://172.28.5.98:8000/product-by-criteria?id=1eb6d1e2-1806-4812-ae88-d351cca8a6cb
+http://172.28.5.98:8000/shop/product-by-criteria?id=8ab56334-6a53-4b66-8b52-5cbbaecfdc93
 
 ###
-POST http://172.28.5.98:8000/product
+POST http://172.28.5.98:8000/shop/product
 Content-Type: application/json
 
 {
-    "id": "8ab56334-6a53-4b66-8b52-5cbbaecfdc93",
-    "name": "Redmi Note 13 Pro",
-    "price": 350.50,
+    "id": "9213aa64-1b0b-4b0b-8738-68001f9cca75",
+    "name": "Redmi Note 13",
+    "price": 210.95,
     "images": [
         "localhost/image1",
         "localhost/image2",

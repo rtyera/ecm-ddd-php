@@ -1,14 +1,14 @@
 ###
-GET http://172.28.5.98:8000/product-health-check
+GET http://172.28.5.98:8000/seller/health-check
 
 ###
-GET http://172.28.5.98:8000/product/1eb6d1e2-1806-4812-ae88-d351cca8a6cb
+GET http://172.28.5.98:8000/seller/product/9213aa64-1b0b-4b0b-8738-68001f9cca75
 
 ###
-GET http://172.28.5.98:8000/products
+GET http://172.28.5.98:8000/seller/products
 
 ###
-http://172.28.5.98:8000/product-by-criteria?operator[lt]=price:400.0&operator[not_in]=name:Samsumg A13
+http://172.28.5.98:8000/seller/product-by-criteria?operator[lt]=price:400.0&operator[not_in]=name:Samsumg A13
 
 ###
-http://172.28.5.98:8000/product-by-criteria?id=1eb6d1e2-1806-4812-ae88-d351cca8a6cb
+http://172.28.5.98:8000/seller/product-by-criteria?id=9213aa64-1b0b-4b0b-8738-68001f9cca75

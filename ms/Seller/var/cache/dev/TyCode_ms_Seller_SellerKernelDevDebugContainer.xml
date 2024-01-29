@@ -96,6 +96,51 @@
       <argument>%env(APP_ENV)%</argument>
       <factory class="TyCode\Seller\Shared\Infrastructure\Doctrine\SellerEntityManagerFactory" method="create"/>
     </service>
+    <service id="TyCode\ms\Seller\Command\RabbitMq\ConfigureRabbitMqCommand" class="TyCode\ms\Seller\Command\RabbitMq\ConfigureRabbitMqCommand" autowire="true" autoconfigure="true">
+      <tag name="console.command"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConfigurer"/>
+      <argument>%env(RABBITMQ_EXCHANGE)%</argument>
+      <argument type="tagged_iterator" tag="seller.event_subscriber"/>
+      <call method="setName">
+        <argument>ecm:seller:rabbitmq:configure</argument>
+      </call>
+    </service>
+    <service id="TyCode\ms\Seller\Command\RabbitMq\ConsumeRabbitMqEventsCommand" class="TyCode\ms\Seller\Command\RabbitMq\ConsumeRabbitMqEventsCommand" autowire="true" autoconfigure="true">
+      <tag name="console.command"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventsConsumer"/>
+      <argument type="service" id="TyCode\Shared\Infrastructure\Bus\Event\EventSubscriberLocator"/>
+      <call method="setName">
+        <argument>ecm:seller:rabbitmq:events:consume</argument>
+      </call>
+    </service>
+    <service id="TyCode\ms\Seller\Command\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" class="TyCode\ms\Seller\Command\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" autowire="true" autoconfigure="true">
+      <tag name="console.command"/>
+      <tag name="container.no_preload"/>
+      <argument type="service" id="TyCode\Shared\Infrastructure\Bus\Event\EventSubscriberLocator"/>
+      <call method="setName">
+        <argument>ecm:seller:rabbitmq:events:generate-supervisor-files</argument>
+      </call>
+    </service>
+    <service id="TyCode\ms\Seller\Controller\HealthCheckGetController" class="TyCode\ms\Seller\Controller\HealthCheckGetController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="TyCode\ms\Seller\Controller\Product\GetProduct" class="TyCode\ms\Seller\Controller\Product\GetProduct" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="TyCode\ms\Seller\Controller\Product\GetProductByCriteria" class="TyCode\ms\Seller\Controller\Product\GetProductByCriteria" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="TyCode\ms\Seller\Controller\Product\GetProducts" class="TyCode\ms\Seller\Controller\Product\GetProducts" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="TyCode\ms\Seller\Controller\Review\PostReviewCreate" class="TyCode\ms\Seller\Controller\Review\PostReviewCreate" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="TyCode\ms\Seller\SellerKernel" class="TyCode\ms\Seller\SellerKernel" autowire="true" autoconfigure="true">
+      <tag name="container.error" message="Cannot autowire service &quot;TyCode\ms\Seller\SellerKernel&quot;: argument &quot;$environment&quot; of method &quot;Symfony\Component\HttpKernel\Kernel::__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
+    </service>
     <service id="TyCode\Seller\Product\Domain\Products" class="TyCode\Seller\Product\Domain\Products" abstract="true">
       <tag name="container.excluded" source="in &quot;config/services.yaml&quot;"/>
     </service>
@@ -202,19 +247,10 @@
       <tag name="container.error" message="Cannot autowire service &quot;TyCode\Seller\Product\Domain\ProductStockQuantity&quot;: argument &quot;$value&quot; of method &quot;TyCode\Shared\Domain\ValueObject\IntValueObject::__construct()&quot; is type-hinted &quot;int&quot;, you should configure its value explicitly."/>
     </service>
     <service id="TyCode\Seller\Product\Domain\Review" class="TyCode\Seller\Product\Domain\Review" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Seller\Product\Domain\Review&quot;: argument &quot;$message&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
+      <tag name="container.error" message="Cannot autowire service &quot;TyCode\Seller\Product\Domain\Review&quot;: argument &quot;$author&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
     </service>
     <service id="TyCode\Seller\Product\Domain\Reviews" class="TyCode\Seller\Product\Domain\Reviews" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;TyCode\Seller\Product\Domain\Reviews&quot;: argument &quot;$items&quot; of method &quot;TyCode\Shared\Domain\Collection::__construct()&quot; is type-hinted &quot;array&quot;, you should configure its value explicitly."/>
-    </service>
-    <service id="TyCode\Seller\Product\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand" class="TyCode\Seller\Product\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Seller\Product\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Seller/Product/Infrastructure/Cli/RabbitMq/ConfigureRabbitMqCommand.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
-    </service>
-    <service id="TyCode\Seller\Product\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand" class="TyCode\Seller\Product\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Seller\Product\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Seller/Product/Infrastructure/Cli/RabbitMq/ConsumeRabbitMqEventsCommand.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
-    </service>
-    <service id="TyCode\Seller\Product\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" class="TyCode\Seller\Product\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" autowire="true" autoconfigure="true">
-      <tag name="container.error" message="The autoloader expected class &quot;TyCode\Seller\Product\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand&quot; to be defined in file &quot;/mnt/d/Study/vhosts-php/ecommerce/vendor/composer/../../src/Seller/Product/Infrastructure/Cli/RabbitMq/GenerateSupervisorRabbitMqConsumerFilesCommand.php&quot;. The file was found but the class was not in it, the class name or namespace probably has a typo."/>
     </service>
     <service id="TyCode\Seller\Product\Infrastructure\Persistence\Doctrine\ProductIdType" class="TyCode\Seller\Product\Infrastructure\Persistence\Doctrine\ProductIdType" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Class &quot;TyCode\Shared\Infrastructure\Persistence\Doctrine\UuidType&quot; not found while loading &quot;TyCode\Seller\Product\Infrastructure\Persistence\Doctrine\ProductIdType&quot;."/>
@@ -225,21 +261,7 @@
     <service id="TyCode\Seller\Product\Infrastructure\Persistence\DoctrineProductRepository" class="TyCode\Seller\Product\Infrastructure\Persistence\DoctrineProductRepository" autowire="true" autoconfigure="true">
       <argument type="service" id="Doctrine\ORM\EntityManager"/>
     </service>
-    <service id="TyCode\Seller\Product\Infrastructure\Web\GetProduct" class="TyCode\Seller\Product\Infrastructure\Web\GetProduct" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-    </service>
-    <service id="TyCode\Seller\Product\Infrastructure\Web\GetProductByCriteria" class="TyCode\Seller\Product\Infrastructure\Web\GetProductByCriteria" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-    </service>
-    <service id="TyCode\Seller\Product\Infrastructure\Web\GetProducts" class="TyCode\Seller\Product\Infrastructure\Web\GetProducts" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-    </service>
-    <service id="TyCode\Seller\Product\Infrastructure\Web\HealthCheckGetController" class="TyCode\Seller\Product\Infrastructure\Web\HealthCheckGetController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-    </service>
-    <service id="TyCode\Seller\Product\Infrastructure\Web\ProductResponseMapper" class="TyCode\Seller\Product\Infrastructure\Web\ProductResponseMapper" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-    </service>
+    <service id="TyCode\Seller\Product\Infrastructure\Web\ProductResponseMapper" class="TyCode\Seller\Product\Infrastructure\Web\ProductResponseMapper" autowire="true" autoconfigure="true"/>
     <service id="TyCode\Seller\Review\Application\Create\CreateReviewCommand" class="TyCode\Seller\Review\Application\Create\CreateReviewCommand" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;TyCode\Seller\Review\Application\Create\CreateReviewCommand&quot;: argument &quot;$id&quot; of method &quot;__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
     </service>
@@ -268,39 +290,6 @@
     </service>
     <service id="TyCode\Seller\Review\Domain\ReviewMessage" class="TyCode\Seller\Review\Domain\ReviewMessage" autowire="true" autoconfigure="true">
       <tag name="container.error" message="Cannot autowire service &quot;TyCode\Seller\Review\Domain\ReviewMessage&quot;: argument &quot;$value&quot; of method &quot;TyCode\Shared\Domain\ValueObject\StringValueObject::__construct()&quot; is type-hinted &quot;string&quot;, you should configure its value explicitly."/>
-    </service>
-    <service id="TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand" class="TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand" autowire="true" autoconfigure="true">
-      <tag name="console.command"/>
-      <tag name="container.no_preload"/>
-      <argument type="service" id="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConfigurer"/>
-      <argument>%env(RABBITMQ_EXCHANGE)%</argument>
-      <argument type="tagged_iterator" tag="seller.event_subscriber"/>
-      <call method="setName">
-        <argument>ecm:rabbitmq:configure</argument>
-      </call>
-    </service>
-    <service id="TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand" class="TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand" autowire="true" autoconfigure="true">
-      <tag name="console.command"/>
-      <tag name="container.no_preload"/>
-      <argument type="service" id="TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventsConsumer"/>
-      <argument type="service" id="TyCode\Shared\Infrastructure\Bus\Event\EventSubscriberLocator"/>
-      <call method="setName">
-        <argument>ecm:rabbitmq:events:consume</argument>
-      </call>
-    </service>
-    <service id="TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" class="TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" autowire="true" autoconfigure="true">
-      <tag name="console.command"/>
-      <tag name="container.no_preload"/>
-      <argument type="service" id="TyCode\Shared\Infrastructure\Bus\Event\EventSubscriberLocator"/>
-      <call method="setName">
-        <argument>ecm:rabbitmq:events:generate-supervisor-files</argument>
-      </call>
-    </service>
-    <service id="TyCode\Seller\Review\Infrastructure\Web\HealthCheckGetController" class="TyCode\Seller\Review\Infrastructure\Web\HealthCheckGetController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-    </service>
-    <service id="TyCode\Seller\Review\Infrastructure\Web\PostReviewCreate" class="TyCode\Seller\Review\Infrastructure\Web\PostReviewCreate" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
     </service>
     <service id="TyCode\Seller\Shared\Infrastructure\Doctrine\DbalTypesSearcher" class="TyCode\Seller\Shared\Infrastructure\Doctrine\DbalTypesSearcher" autowire="true" autoconfigure="true"/>
     <service id="TyCode\Seller\Shared\Infrastructure\Doctrine\DoctrinePrefixesSearcher" class="TyCode\Seller\Shared\Infrastructure\Doctrine\DoctrinePrefixesSearcher" autowire="true" autoconfigure="true"/>
@@ -480,7 +469,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.Zbeqssn"/>
+      <argument type="service" id=".service_locator.48pJwow"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -1654,7 +1643,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.Zbeqssn"/>
+      <argument type="service" id=".service_locator.48pJwow"/>
     </service>
     <service id="routing.resolver" class="Symfony\Component\Config\Loader\LoaderResolver">
       <call method="addLoader">
@@ -2185,6 +2174,12 @@
       <argument type="service" id="maker.security_config_updater"/>
       <argument type="service" id="maker.security_controller_builder"/>
     </service>
+    <service id=".instanceof.Symfony\Component\Console\Command\Command.0.TyCode\ms\Seller\Command\RabbitMq\ConfigureRabbitMqCommand" class="TyCode\ms\Seller\Command\RabbitMq\ConfigureRabbitMqCommand" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.TyCode\ms\Seller\Command\RabbitMq\ConfigureRabbitMqCommand" class="TyCode\ms\Seller\Command\RabbitMq\ConfigureRabbitMqCommand" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Console\Command\Command.0.TyCode\ms\Seller\Command\RabbitMq\ConsumeRabbitMqEventsCommand" class="TyCode\ms\Seller\Command\RabbitMq\ConsumeRabbitMqEventsCommand" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.TyCode\ms\Seller\Command\RabbitMq\ConsumeRabbitMqEventsCommand" class="TyCode\ms\Seller\Command\RabbitMq\ConsumeRabbitMqEventsCommand" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Console\Command\Command.0.TyCode\ms\Seller\Command\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" class="TyCode\ms\Seller\Command\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.TyCode\ms\Seller\Command\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" class="TyCode\ms\Seller\Command\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.TyCode\Shared\Domain\Bus\Command\CommandHandler.0.TyCode\Seller\Product\Application\AddReview\AddReviewCommandHandler" class="TyCode\Seller\Product\Application\AddReview\AddReviewCommandHandler" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.TyCode\Seller\Product\Application\AddReview\AddReviewCommandHandler" class="TyCode\Seller\Product\Application\AddReview\AddReviewCommandHandler" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.TyCode\Shared\Domain\Bus\Command\CommandHandler.0.TyCode\Seller\Product\Application\Create\CreateProductCommandHandler" class="TyCode\Seller\Product\Application\Create\CreateProductCommandHandler" autowire="true" abstract="true"/>
@@ -2201,12 +2196,6 @@
     <service id=".abstract.instanceof.TyCode\Seller\Product\Application\Subscriber\DeliveredReviewOn" class="TyCode\Seller\Product\Application\Subscriber\DeliveredReviewOn" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.TyCode\Shared\Domain\Bus\Command\CommandHandler.0.TyCode\Seller\Review\Application\Create\CreateReviewCommandHandler" class="TyCode\Seller\Review\Application\Create\CreateReviewCommandHandler" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.TyCode\Seller\Review\Application\Create\CreateReviewCommandHandler" class="TyCode\Seller\Review\Application\Create\CreateReviewCommandHandler" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Console\Command\Command.0.TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand" class="TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand" class="TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Console\Command\Command.0.TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand" class="TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand" class="TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Console\Command\Command.0.TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" class="TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" class="TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.w7.f4fT" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -2594,33 +2583,29 @@
         <argument key="queryBus" type="service_closure" id="TyCode\Shared\Infrastructure\Bus\Query\SymfonyMessageQueryBus"/>
       </argument>
     </service>
-    <service id=".service_locator.6rQKJLZ" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection"/>
-    </service>
     <service id=".service_locator.lwNoDbx" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="commandBus" type="service_closure" id="TyCode\Shared\Infrastructure\Bus\Command\SymfonyMessageCommandBus"/>
       </argument>
     </service>
-    <service id=".service_locator.Zbeqssn" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.48pJwow" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="TyCode\Seller\Product\Infrastructure\Web\GetProduct::__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
-        <argument key="TyCode\Seller\Product\Infrastructure\Web\GetProductByCriteria::__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
-        <argument key="TyCode\Seller\Product\Infrastructure\Web\GetProducts::__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
-        <argument key="TyCode\Seller\Review\Infrastructure\Web\PostReviewCreate::__invoke" type="service_closure" id=".service_locator.lwNoDbx"/>
+        <argument key="TyCode\ms\Seller\Controller\Product\GetProduct::__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\ms\Seller\Controller\Product\GetProductByCriteria::__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\ms\Seller\Controller\Product\GetProducts::__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\ms\Seller\Controller\Review\PostReviewCreate::__invoke" type="service_closure" id=".service_locator.lwNoDbx"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
-        <argument key="TyCode\Seller\Product\Infrastructure\Web\GetProduct:__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
-        <argument key="TyCode\Seller\Product\Infrastructure\Web\GetProduct" type="service_closure" id=".service_locator.EgMTexf"/>
-        <argument key="TyCode\Seller\Product\Infrastructure\Web\GetProductByCriteria:__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
-        <argument key="TyCode\Seller\Product\Infrastructure\Web\GetProductByCriteria" type="service_closure" id=".service_locator.EgMTexf"/>
-        <argument key="TyCode\Seller\Product\Infrastructure\Web\GetProducts:__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
-        <argument key="TyCode\Seller\Product\Infrastructure\Web\GetProducts" type="service_closure" id=".service_locator.EgMTexf"/>
-        <argument key="TyCode\Seller\Review\Infrastructure\Web\PostReviewCreate:__invoke" type="service_closure" id=".service_locator.lwNoDbx"/>
-        <argument key="TyCode\Seller\Review\Infrastructure\Web\PostReviewCreate" type="service_closure" id=".service_locator.lwNoDbx"/>
+        <argument key="TyCode\ms\Seller\Controller\Product\GetProduct:__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\ms\Seller\Controller\Product\GetProduct" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\ms\Seller\Controller\Product\GetProductByCriteria:__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\ms\Seller\Controller\Product\GetProductByCriteria" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\ms\Seller\Controller\Product\GetProducts:__invoke" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\ms\Seller\Controller\Product\GetProducts" type="service_closure" id=".service_locator.EgMTexf"/>
+        <argument key="TyCode\ms\Seller\Controller\Review\PostReviewCreate:__invoke" type="service_closure" id=".service_locator.lwNoDbx"/>
+        <argument key="TyCode\ms\Seller\Controller\Review\PostReviewCreate" type="service_closure" id=".service_locator.lwNoDbx"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.y4_Zrx."/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.y4_Zrx."/>
       </argument>
@@ -3220,11 +3205,11 @@
     </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <tag name="container.no_preload"/>
-      <argument type="service" id=".service_locator.yOih5iU"/>
+      <argument type="service" id=".service_locator.2P4mzRy"/>
       <argument type="collection">
-        <argument key="ecm:rabbitmq:configure">TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand</argument>
-        <argument key="ecm:rabbitmq:events:consume">TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand</argument>
-        <argument key="ecm:rabbitmq:events:generate-supervisor-files">TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand</argument>
+        <argument key="ecm:seller:rabbitmq:configure">TyCode\ms\Seller\Command\RabbitMq\ConfigureRabbitMqCommand</argument>
+        <argument key="ecm:seller:rabbitmq:events:consume">TyCode\ms\Seller\Command\RabbitMq\ConsumeRabbitMqEventsCommand</argument>
+        <argument key="ecm:seller:rabbitmq:events:generate-supervisor-files">TyCode\ms\Seller\Command\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand</argument>
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
         <argument key="cache:clear">console.command.cache_clear</argument>
@@ -3284,12 +3269,12 @@
         <argument key="make:security:form-login">maker.auto_command.make_security_form_login</argument>
       </argument>
     </service>
-    <service id=".service_locator.yOih5iU" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.2P4mzRy" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand" type="service_closure" id="TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand"/>
-        <argument key="TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand" type="service_closure" id="TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand"/>
-        <argument key="TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" type="service_closure" id="TyCode\Seller\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand"/>
+        <argument key="TyCode\ms\Seller\Command\RabbitMq\ConfigureRabbitMqCommand" type="service_closure" id="TyCode\ms\Seller\Command\RabbitMq\ConfigureRabbitMqCommand"/>
+        <argument key="TyCode\ms\Seller\Command\RabbitMq\ConsumeRabbitMqEventsCommand" type="service_closure" id="TyCode\ms\Seller\Command\RabbitMq\ConsumeRabbitMqEventsCommand"/>
+        <argument key="TyCode\ms\Seller\Command\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" type="service_closure" id="TyCode\ms\Seller\Command\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand"/>
         <argument key="console.command.about" type="service_closure" id=".console.command.about.lazy"/>
         <argument key="console.command.assets_install" type="service_closure" id=".console.command.assets_install.lazy"/>
         <argument key="console.command.cache_clear" type="service_closure" id=".console.command.cache_clear.lazy"/>
@@ -3410,11 +3395,11 @@
     <service id="messenger.default_bus" alias="messenger.bus.default" public="true"/>
     <service id="Symfony\Component\Messenger\MessageBusInterface" alias="messenger.bus.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.w7.f4fT" public="true"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.Zbeqssn"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.48pJwow"/>
     <service id="Psr\Log\LoggerInterface" alias="logger"/>
     <service id=".service_locator.Xbsa8iG" alias="messenger.retry_strategy_locator"/>
     <service id=".service_locator.bJ.4HC5" alias=".service_locator.w7.f4fT"/>
-    <service id=".service_locator.lcHHbN8" alias=".service_locator.Zbeqssn"/>
+    <service id=".service_locator.MG5FyfU" alias=".service_locator.48pJwow"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>
     <service id="controller_resolver" alias="debug.controller_resolver"/>
     <service id="argument_resolver" alias="debug.argument_resolver"/>

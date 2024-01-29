@@ -1,3 +1,9 @@
+Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for ".instanceof.Symfony\Component\Console\Command\Command.0.TyCode\ms\Shop\Command\RabbitMq\ConfigureRabbitMqCommand" (parent: .abstract.instanceof.TyCode\ms\Shop\Command\RabbitMq\ConfigureRabbitMqCommand).
+Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for "TyCode\ms\Shop\Command\RabbitMq\ConfigureRabbitMqCommand" (parent: .instanceof.Symfony\Component\Console\Command\Command.0.TyCode\ms\Shop\Command\RabbitMq\ConfigureRabbitMqCommand).
+Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for ".instanceof.Symfony\Component\Console\Command\Command.0.TyCode\ms\Shop\Command\RabbitMq\ConsumeRabbitMqEventsCommand" (parent: .abstract.instanceof.TyCode\ms\Shop\Command\RabbitMq\ConsumeRabbitMqEventsCommand).
+Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for "TyCode\ms\Shop\Command\RabbitMq\ConsumeRabbitMqEventsCommand" (parent: .instanceof.Symfony\Component\Console\Command\Command.0.TyCode\ms\Shop\Command\RabbitMq\ConsumeRabbitMqEventsCommand).
+Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for ".instanceof.Symfony\Component\Console\Command\Command.0.TyCode\ms\Shop\Command\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" (parent: .abstract.instanceof.TyCode\ms\Shop\Command\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand).
+Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for "TyCode\ms\Shop\Command\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" (parent: .instanceof.Symfony\Component\Console\Command\Command.0.TyCode\ms\Shop\Command\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand).
 Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for ".instanceof.TyCode\Shared\Domain\Bus\Command\CommandHandler.0.TyCode\Shop\Product\Application\Create\CreateProductCommandHandler" (parent: .abstract.instanceof.TyCode\Shop\Product\Application\Create\CreateProductCommandHandler).
 Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for "TyCode\Shop\Product\Application\Create\CreateProductCommandHandler" (parent: .instanceof.TyCode\Shared\Domain\Bus\Command\CommandHandler.0.TyCode\Shop\Product\Application\Create\CreateProductCommandHandler).
 Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for ".instanceof.TyCode\Shared\Domain\Bus\Query\QueryHandler.0.TyCode\Shop\Product\Application\FindAll\FindProductsQueryHandler" (parent: .abstract.instanceof.TyCode\Shop\Product\Application\FindAll\FindProductsQueryHandler).
@@ -16,12 +22,6 @@ Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Reso
 Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for "TyCode\Shop\Review\Application\FindByProductId\FindReviewsByProductIdQueryHandler" (parent: .instanceof.TyCode\Shared\Domain\Bus\Query\QueryHandler.0.TyCode\Shop\Review\Application\FindByProductId\FindReviewsByProductIdQueryHandler).
 Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for ".instanceof.TyCode\Shared\Domain\Bus\Event\EventSubscriber.0.TyCode\Shop\Review\Application\Subscriber\CreateReviewOn" (parent: .abstract.instanceof.TyCode\Shop\Review\Application\Subscriber\CreateReviewOn).
 Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for "TyCode\Shop\Review\Application\Subscriber\CreateReviewOn" (parent: .instanceof.TyCode\Shared\Domain\Bus\Event\EventSubscriber.0.TyCode\Shop\Review\Application\Subscriber\CreateReviewOn).
-Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for ".instanceof.Symfony\Component\Console\Command\Command.0.TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand" (parent: .abstract.instanceof.TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand).
-Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for "TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand" (parent: .instanceof.Symfony\Component\Console\Command\Command.0.TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand).
-Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for ".instanceof.Symfony\Component\Console\Command\Command.0.TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand" (parent: .abstract.instanceof.TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand).
-Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for "TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand" (parent: .instanceof.Symfony\Component\Console\Command\Command.0.TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand).
-Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for ".instanceof.Symfony\Component\Console\Command\Command.0.TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" (parent: .abstract.instanceof.TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand).
-Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for "TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand" (parent: .instanceof.Symfony\Component\Console\Command\Command.0.TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand).
 Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for "cache.app" (parent: cache.adapter.filesystem).
 Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for "cache.system" (parent: cache.adapter.system).
 Symfony\Component\DependencyInjection\Compiler\ResolveChildDefinitionsPass: Resolving inheritance for "cache.validator" (parent: cache.system).
@@ -90,8 +90,6 @@ Symfony\Component\DependencyInjection\Compiler\AutowirePass: Skipping service "T
 Symfony\Component\DependencyInjection\Compiler\AutowirePass: Skipping service "TyCode\Shared\Infrsatructure\Persistence\Doctrine\DoctrineRepository": Class or interface "TyCode\Shared\Infrsatructure\Persistence\Doctrine\DoctrineRepository" cannot be loaded.
 Symfony\Component\DependencyInjection\Compiler\AutowirePass: Skipping service "TyCode\Shared\Infrsatructure\Persistence\Doctrine\JsonCustomType": Class or interface "TyCode\Shared\Infrsatructure\Persistence\Doctrine\JsonCustomType" cannot be loaded.
 Symfony\Component\DependencyInjection\Compiler\AutowirePass: Skipping service "TyCode\Shared\Infrsatructure\Persistence\Doctrine\UuidType": Class or interface "TyCode\Shared\Infrsatructure\Persistence\Doctrine\UuidType" cannot be loaded.
-Symfony\Component\HttpKernel\DependencyInjection\RemoveEmptyControllerArgumentLocatorsPass: Removing service-argument resolver for controller "TyCode\Shop\Product\Infrastructure\Web\ProductResponseMapper::productsToArray": no corresponding services exist for the referenced types.
-Symfony\Component\HttpKernel\DependencyInjection\RemoveEmptyControllerArgumentLocatorsPass: Removing service-argument resolver for controller "TyCode\Shop\Review\Infrastructure\Web\ReviewResponseMapper::ReviewsToArray": no corresponding services exist for the referenced types.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service "TyCode\Shop\Product\Domain\ProductRepository"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service "TyCode\Shop\Review\Domain\ReviewRepository"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service "TyCode\Shared\Domain\Bus\Command\CommandBus"; reason: private alias.
@@ -147,7 +145,7 @@ Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service "Psr\Log\LoggerInterface"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.Xbsa8iG"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.bJ.4HC5"; reason: private alias.
-Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.xSojV3_"; reason: private alias.
+Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.jeX2bls"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service "controller_resolver"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service "argument_resolver"; reason: private alias.
 Symfony\Component\DependencyInjection\Compiler\RemovePrivateAliasesPass: Removed service ".service_locator.gFlme_s"; reason: private alias.
@@ -199,6 +197,12 @@ Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Re
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service "messenger.middleware.traceable"; reason: abstract.
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service "messenger.retry.abstract_multiplier_retry_strategy"; reason: abstract.
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service "maker.auto_command.abstract"; reason: abstract.
+Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".instanceof.Symfony\Component\Console\Command\Command.0.TyCode\ms\Shop\Command\RabbitMq\ConfigureRabbitMqCommand"; reason: abstract.
+Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".abstract.instanceof.TyCode\ms\Shop\Command\RabbitMq\ConfigureRabbitMqCommand"; reason: abstract.
+Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".instanceof.Symfony\Component\Console\Command\Command.0.TyCode\ms\Shop\Command\RabbitMq\ConsumeRabbitMqEventsCommand"; reason: abstract.
+Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".abstract.instanceof.TyCode\ms\Shop\Command\RabbitMq\ConsumeRabbitMqEventsCommand"; reason: abstract.
+Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".instanceof.Symfony\Component\Console\Command\Command.0.TyCode\ms\Shop\Command\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand"; reason: abstract.
+Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".abstract.instanceof.TyCode\ms\Shop\Command\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand"; reason: abstract.
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".instanceof.TyCode\Shared\Domain\Bus\Command\CommandHandler.0.TyCode\Shop\Product\Application\Create\CreateProductCommandHandler"; reason: abstract.
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".abstract.instanceof.TyCode\Shop\Product\Application\Create\CreateProductCommandHandler"; reason: abstract.
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".instanceof.TyCode\Shared\Domain\Bus\Query\QueryHandler.0.TyCode\Shop\Product\Application\FindAll\FindProductsQueryHandler"; reason: abstract.
@@ -217,12 +221,7 @@ Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Re
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".abstract.instanceof.TyCode\Shop\Review\Application\FindByProductId\FindReviewsByProductIdQueryHandler"; reason: abstract.
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".instanceof.TyCode\Shared\Domain\Bus\Event\EventSubscriber.0.TyCode\Shop\Review\Application\Subscriber\CreateReviewOn"; reason: abstract.
 Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".abstract.instanceof.TyCode\Shop\Review\Application\Subscriber\CreateReviewOn"; reason: abstract.
-Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".instanceof.Symfony\Component\Console\Command\Command.0.TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand"; reason: abstract.
-Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".abstract.instanceof.TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand"; reason: abstract.
-Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".instanceof.Symfony\Component\Console\Command\Command.0.TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand"; reason: abstract.
-Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".abstract.instanceof.TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand"; reason: abstract.
-Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".instanceof.Symfony\Component\Console\Command\Command.0.TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand"; reason: abstract.
-Symfony\Component\DependencyInjection\Compiler\RemoveAbstractDefinitionsPass: Removed service ".abstract.instanceof.TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\GenerateSupervisorRabbitMqConsumerFilesCommand"; reason: abstract.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\ms\Shop\ShopKernel"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Product\Application\Create\CreateProductCommand"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Product\Application\FindAll\FindProductsQuery"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Product\Application\FindByCriteria\FindProductByCriteriaQuery"; reason: unused.
@@ -243,6 +242,7 @@ Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Remo
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Product\Domain\Reviews"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductIdType"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Product\Infrastructure\Persistence\Doctrine\ProductReviewsType"; reason: unused.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Product\Infrastructure\Web\ProductResponseMapper"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Review\Application\Checker\CheckerReviewCommand"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Review\Application\Create\CreateReviewCommand"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Review\Application\Event\CreateReviewEvent"; reason: unused.
@@ -257,6 +257,7 @@ Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Remo
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Review\Domain\ReviewId"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Review\Domain\ReviewMessage"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Review\Infrastructure\Persistence\Doctrine\ReviewIdType"; reason: unused.
+Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Review\Infrastructure\Web\ReviewResponseMapper"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Shared\Infrastructure\Doctrine\DbalTypesSearcher"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Shared\Infrastructure\Doctrine\DoctrinePrefixesSearcher"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "TyCode\Shop\Shared\Infrastructure\Doctrine\ShopEntityManagerFactory"; reason: unused.
@@ -328,10 +329,10 @@ Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Remo
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "maker.maker.make_functional_test"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "maker.maker.make_subscriber"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service "maker.maker.make_unit_test"; reason: unused.
-Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service ".service_locator.B2729Jl"; reason: unused.
-Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service ".service_locator.LGsG099"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service ".service_locator.lLv4pWF"; reason: unused.
 Symfony\Component\DependencyInjection\Compiler\RemoveUnusedDefinitionsPass: Removed service ".service_locator.XXv1IfR"; reason: unused.
+Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConfigurer" to "TyCode\ms\Shop\Command\RabbitMq\ConfigureRabbitMqCommand".
+Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventsConsumer" to "TyCode\ms\Shop\Command\RabbitMq\ConsumeRabbitMqEventsCommand".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "TyCode\Shop\Product\Application\Create\ProductCreator" to "TyCode\Shop\Product\Application\Create\CreateProductCommandHandler".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "TyCode\Shop\Product\Application\FindAll\ProductFinderAll" to "TyCode\Shop\Product\Application\FindAll\FindProductsQueryHandler".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "TyCode\Shop\Product\Application\FindByCriteria\ProductFinderByCriteria" to "TyCode\Shop\Product\Application\FindByCriteria\FindProductByCriteriaQueryHandler".
@@ -341,8 +342,6 @@ Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inl
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "TyCode\Shop\Review\Application\Create\ReviewCreator" to "TyCode\Shop\Review\Application\Create\CreateReviewCommandHandler".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "TyCode\Shop\Review\Application\FindByCriteria\ReviewFinderByCriteria" to "TyCode\Shop\Review\Application\FindByCriteria\FindReviewsByCriteriaQueryHandler".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "TyCode\Shop\Review\Application\FindByProductId\ReviewFinderProductId" to "TyCode\Shop\Review\Application\FindByProductId\FindReviewsByProductIdQueryHandler".
-Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConfigurer" to "TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConfigureRabbitMqCommand".
-Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventsConsumer" to "TyCode\Shop\Review\Infrastructure\Cli\RabbitMq\ConsumeRabbitMqEventsCommand".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "TyCode\Shared\Infrastructure\Bus\Event\EventMapping" to "TyCode\Shared\Infrastructure\Bus\Event\EventJsonDeserializer".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "TyCode\Shared\Infrastructure\Bus\Event\EventJsonDeserializer" to "TyCode\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventsConsumer".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "clock" to "argument_resolver.datetime".
@@ -423,7 +422,7 @@ Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inl
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service ".service_locator.cUcW89y" to ".service_locator.cUcW89y.router.cache_warmer".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "argument_metadata_factory" to "debug.argument_resolver.inner".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service ".service_locator.M1u7FKz" to "debug.argument_resolver.inner".
-Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service ".service_locator.MIC5Kx9" to "console.command_loader".
+Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service ".service_locator._0kumdi" to "console.command_loader".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service ".service_locator.PvoQzFT.router.default" to "router".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "parameter_bag" to "router".
 Symfony\Component\DependencyInjection\Compiler\InlineServiceDefinitionsPass: Inlined service "config_cache_factory" to "router".

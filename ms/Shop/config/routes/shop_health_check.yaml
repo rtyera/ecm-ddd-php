@@ -1,0 +1,4 @@
+shop_health_check_get:
+  path: /shop/health-check
+  controller: TyCode\ms\Shop\Controller\HealthCheckGetController
+  methods:  [GET]
